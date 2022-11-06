@@ -1,0 +1,46 @@
+[build.environment]
+  NPM_FLAGS = "--version"
+
+[build]
+  command = "npx pnpm i --shamefully-hoist --store=node_modules/.pnpm-store && npx pnpm build:css && npx pnpm build:remix"
+  publish = "public"
+
+[dev]
+  command = "pnpm watch"
+  port = 2000
+
+[context.dev.environment]
+  NODE_ENV = "development"
+  REMIX_ENV = "development"
+
+# [[redirects]]
+#   from = "/api/users/login"
+#   to = "/.netlify/functions/login"
+#   status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+
+[[headers]]
+  for = "/build/*"
+  [headers.values]
+    "Cache-Control" = "public, max-age=31536000, s-maxage=31536000"
+
+[functions]
+  node_bundler = "esbuild"
+
+### disabling seed function
+# [[edge_functions]]
+#   path = "/api/users/seed-admin-user"
+#   function = "seedAdminUser"
+
+### disabling until edge functions support the deno unstable flag on production
+# [[edge_functions]]
+#   path = "/api/users/login"
+#   function = "loginPlanetscale"
+
+[[edge_functions]]
+  path = "/api/users/login"
+  function = "loginSupabase"

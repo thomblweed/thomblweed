@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+
+api
+.cache
+.env
+.netlify
+
+/build/
+/public/build
+
+app/styles

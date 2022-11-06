@@ -2,15 +2,14 @@
   "name": "thomblweed",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx dev $1",
+    "build": "nx build $1"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@nrwl/nx-cloud": "latest",
-    "nx": "15.0.7",
-    "prettier": "^2.6.2"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+    "@nrwl/remix": "^14.7.0",
+    "nx": "15.0.7"
+  }
 }
