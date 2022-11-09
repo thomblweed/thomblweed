@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nx dev $1",
+    "dev:netlify": "nx dev:ntl $1",
     "build": "nx build $1"
   },
   "private": true,

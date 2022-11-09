@@ -41,6 +41,6 @@
 #   path = "/api/users/login"
 #   function = "loginPlanetscale"
 
-[[edge_functions]]
-  path = "/api/users/login"
-  function = "loginSupabase"
+# [[edge_functions]]
+#   path = "/api/users/login"
+#   function = "loginSupabase"
