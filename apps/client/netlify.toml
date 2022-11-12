@@ -41,6 +41,4 @@
 #   path = "/api/users/login"
 #   function = "loginPlanetscale"
 
-# [[edge_functions]]
-#   path = "/api/users/login"
-#   function = "loginSupabase"
+### had to rename the netlify folder to netlify.old to prevent error on local dev when not using the functions
