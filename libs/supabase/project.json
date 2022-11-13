@@ -1,0 +1,21 @@
+{
+  "root": "libs/supabase",
+  "sourceRoot": "libs/supabase",
+  "projectType": "library",
+  "targets": {
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["supabase start"],
+        "cwd": "libs/supabase"
+      }
+    },
+    "stop": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["supabase stop"],
+        "cwd": "libs/supabase"
+      }
+    }
+  }
+}
