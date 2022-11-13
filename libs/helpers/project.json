@@ -1,0 +1,14 @@
+{
+  "root": "libs/helpers",
+  "sourceRoot": "libs/helpers",
+  "projectType": "library",
+  "targets": {
+    "seed-supabase-user": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["ts-node ./src/seedSupabaseUser.ts"],
+        "cwd": "libs/helpers"
+      }
+    }
+  }
+}
