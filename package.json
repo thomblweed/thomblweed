@@ -4,8 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nx dev $1",
-    "dev:netlify": "nx netlify:dev $1",
+    "dev": "nx run-many --target=dev",
+    "dev:ntl": "nx run-many --target=netlify:dev",
     "build": "nx build $1",
     "db:start": "nx run supabase:start",
     "db:stop": "nx run supabase:stop",
