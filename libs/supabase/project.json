@@ -16,6 +16,24 @@
         "commands": ["supabase stop"],
         "cwd": "libs/supabase"
       }
+    },
+    "encrypt": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") seed.sql > seed.enc.sql"
+        ],
+        "cwd": "libs/supabase"
+      }
+    },
+    "decrypt": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") seed.enc.sql > seed.sql"
+        ],
+        "cwd": "libs/supabase"
+      }
     }
   }
 }
