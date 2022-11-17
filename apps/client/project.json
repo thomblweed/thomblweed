@@ -3,5 +3,25 @@
   "name": "client",
   "sourceRoot": "apps/client",
   "projectType": "application",
-  "tags": []
+  "tags": [],
+  "targets": {
+    "encrypt": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.local > .env.enc"
+        ],
+        "cwd": "apps/client"
+      }
+    },
+    "decrypt": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env.local"
+        ],
+        "cwd": "apps/client"
+      }
+    }
+  }
 }
