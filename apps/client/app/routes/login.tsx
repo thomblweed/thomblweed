@@ -1,7 +1,7 @@
 import type {
   ActionFunction,
   ErrorBoundaryComponent,
-  LinksFunction
+  LinksFunction,
 } from '@remix-run/node';
 import { useActionData, useTransition } from '@remix-run/react';
 
@@ -15,12 +15,11 @@ import { LoginFields } from '~/enums/login-fields.enum';
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: loginStyles },
   ...sectionStyles(),
-  ...formStyles()
+  ...formStyles(),
 ];
 
-export const action: ActionFunction = async ({ request }) => {
+export const action: ActionFunction = async ({ request }) =>
   loginHandler(request);
-};
 
 export default function Login() {
   const { state } = useTransition();
@@ -28,31 +27,31 @@ export default function Login() {
   return (
     <Section>
       <h2>Admin Login</h2>
-      <div className='formContainer'>
+      <div className="formContainer">
         <Form
-          method='post'
+          method="post"
           schema={{
             fields: [
               {
                 type: FieldType.EMAIL,
                 name: LoginFields.EMAIL,
                 label: 'Email Address',
-                required: true
+                required: true,
               },
               {
                 type: FieldType.PASSWORD,
                 name: LoginFields.PASSWORD,
                 label: 'Password',
-                required: true
-              }
+                required: true,
+              },
             ],
             buttons: [
               {
                 label: 'Login',
                 type: ButtonType.SUBMIT,
-                id: 'login-button'
-              }
-            ]
+                id: 'login-button',
+              },
+            ],
           }}
           busy={state === 'submitting' || state === 'loading'}
           error={actionData?.loginError}
