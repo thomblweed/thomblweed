@@ -2,15 +2,23 @@
   "name": "thomblweed",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "dev": "nx dev $1",
-    "dev:netlify": "nx netlify:dev $1",
-    "build": "nx build $1"
-  },
   "private": true,
+  "scripts": {
+    "dev": "nx run-many --target=dev",
+    "dev:ntl": "nx run-many --target=netlify:dev",
+    "build": "nx build $1",
+    "db:start": "nx run supabase:start",
+    "db:stop": "nx run supabase:stop",
+    "db:dump": "pg_dump postgresql://postgres:postgres@localhost:54322/postgres --inserts -f dump.sql",
+    "db:seed-user": "nx run helpers:seed-supabase-user",
+    "encrypt": "nx run-many --target=encrypt",
+    "decrypt": "nx run-many --target=decrypt"
+  },
   "devDependencies": {
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/remix": "^14.7.0",
-    "nx": "15.0.13"
+    "nx": "15.0.13",
+    "@supabase/supabase-js": "2",
+    "ts-node": "^10.9.1"
   }
 }
