@@ -9,8 +9,9 @@
     "build": "nx build $1",
     "db:start": "nx run supabase:start",
     "db:stop": "nx run supabase:stop",
-    "db:dump": "pg_dump postgresql://postgres:postgres@localhost:54322/postgres --inserts -f dump.sql",
+    "db:dump": "nx run supabase:dump",
     "db:seed-user": "nx run helpers:seed-supabase-user",
+    "db:diff": "nx run supabase:diff",
     "encrypt": "nx run-many --target=encrypt",
     "decrypt": "nx run-many --target=decrypt"
   },

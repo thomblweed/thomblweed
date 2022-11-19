@@ -34,6 +34,22 @@
         ],
         "cwd": "libs/supabase"
       }
+    },
+    "diff": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["supabase db diff -f diffs"],
+        "cwd": "libs/supabase"
+      }
+    },
+    "dump": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pg_dump postgresql://postgres:postgres@localhost:54322/postgres --inserts -f dump.sql"
+        ],
+        "cwd": "libs/supabase"
+      }
     }
   }
 }
