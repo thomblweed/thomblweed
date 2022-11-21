@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { json, redirect } from '@remix-run/node';
-import { createServerClient } from '@supabase/auth-helpers-remix';
 
 import { LoginFields } from '~/enums/login-fields.enum';
+import { getSupabaseClient } from '~/service/supabase.service';
 import { getFormValuesFromRequest } from '~/utils';
 
 export const loginHandler = async (request: Request) => {
@@ -15,13 +15,9 @@ export const loginHandler = async (request: Request) => {
   }
 
   const response = new Response();
-  const supabaseClient = createServerClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
-    { request, response }
-  );
+  const supabase = getSupabaseClient(request, response);
 
-  const { error, data } = await supabaseClient.auth.signInWithPassword({
+  const { error, data } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
