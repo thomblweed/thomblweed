@@ -12,6 +12,7 @@
     "db:dump": "nx run supabase:dump",
     "db:seed-user": "nx run helpers:seed-supabase-user",
     "db:diff": "nx run supabase:diff",
+    "db:push": "nx run supabase:push",
     "encrypt": "nx run-many --target=encrypt",
     "decrypt": "nx run-many --target=decrypt"
   },
