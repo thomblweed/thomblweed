@@ -18,7 +18,8 @@
   "devDependencies": {
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/remix": "^14.7.0",
-    "@supabase/supabase-js": "2",
+    "@supabase/supabase-js": "^2.1.0",
+    "netlify-cli": "^12.2.4",
     "nx": "15.0.13",
     "supabase": "^1.14.3",
     "ts-node": "^10.9.1"
