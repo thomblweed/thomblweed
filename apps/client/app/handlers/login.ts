@@ -17,7 +17,7 @@ export const loginHandler = async (request: Request) => {
   const response = new Response();
   const supabase = getSupabaseClient(request, response);
 
-  const { error, data } = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
@@ -28,17 +28,23 @@ export const loginHandler = async (request: Request) => {
         loginError: 'An error occured when logging in',
       },
       {
-        headers: {
-          'set-cookie':
-            'supabase-auth-token= ; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
-        },
+        headers: response.headers,
       }
+      // TODO: look into http only at a later date
+      // {
+      //   headers: {
+      //     'set-cookie':
+      //       'supabase-auth-token= ; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
+      //   },
+      // }
     );
   }
 
   return redirect('/', {
-    headers: {
-      'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
-    },
+    headers: response.headers,
+    // TODO: look into http only at a later date
+    // headers: {
+    //   'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
+    // },
   });
 };

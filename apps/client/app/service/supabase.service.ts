@@ -5,5 +5,12 @@ export const getSupabaseClient = (request: Request, response: Response) =>
   createServerClient(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_ANON_KEY!,
-    { request, response }
+    {
+      request,
+      response,
+      cookieOptions: {
+        secure: true,
+        maxAge: 48000,
+      },
+    }
   );

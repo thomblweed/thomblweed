@@ -1,18 +1,19 @@
 import type { LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import { getSupabaseClient } from '~/service/supabase.service';
 
 export const loader: LoaderFunction = async ({ request }) => {
   const response = new Response();
   const supabase = getSupabaseClient(request, response);
-  const { status, data } = await supabase
+  const { data } = await supabase
     .from('user_profile')
     .select(`user_roles(role)`)
     .single();
-  if (status === 200 && data != null) {
+  if (data != null) {
     const {
       user_roles: { role },
     } = data;
-    console.log({ role });
+    return json({ role });
   }
   return response;
 };
