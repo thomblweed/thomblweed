@@ -12,38 +12,38 @@ export interface Database {
       user_profile: {
         Row: {
           id: number
-          role_id: number
-          user_id: string
-          created_at: string
+          role_id: number | null
+          user_id: string | null
+          created_at: string | null
         }
         Insert: {
           id?: number
-          role_id: number
-          user_id: string
-          created_at?: string
+          role_id?: number | null
+          user_id?: string | null
+          created_at?: string | null
         }
         Update: {
           id?: number
-          role_id?: number
-          user_id?: string
-          created_at?: string
+          role_id?: number | null
+          user_id?: string | null
+          created_at?: string | null
         }
       }
       user_roles: {
         Row: {
+          role: string | null
+          created_at: string | null
           id: number
-          created_at: string
-          role: string
         }
         Insert: {
+          role?: string | null
+          created_at?: string | null
           id?: number
-          created_at?: string
-          role?: string
         }
         Update: {
+          role?: string | null
+          created_at?: string | null
           id?: number
-          created_at?: string
-          role?: string
         }
       }
     }

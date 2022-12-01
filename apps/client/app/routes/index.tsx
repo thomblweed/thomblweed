@@ -17,7 +17,6 @@ export const loader: LoaderFunction = async ({ request }) => {
     .from('user_profile')
     .select(`user_roles(role)`)
     .single()) as unknown as UserRoles;
-  console.log({ data });
   if (data == null) {
     return response;
   }

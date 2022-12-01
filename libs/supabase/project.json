@@ -59,6 +59,15 @@
         ],
         "cwd": "libs/supabase"
       }
+    },
+    "types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "supabase gen types typescript --local > ../types/src/lib/supabase/database.types.ts"
+        ],
+        "cwd": "libs/supabase"
+      }
     }
   }
 }

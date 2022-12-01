@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "nx run-many --target=dev",
-    "dev:ntl": "nx run-many --target=netlify:dev",
+    "dev:ntl": "nx run client:netlify-dev",
     "build": "nx build $1",
     "db:start": "nx run supabase:start",
     "db:stop": "nx run supabase:stop",
@@ -13,6 +13,7 @@
     "db:seed-user": "nx run helpers:seed-supabase-user",
     "db:diff": "nx run supabase:diff",
     "db:push": "nx run supabase:push",
+    "db:types": "nx run supabase:types",
     "encrypt": "nx run-many --target=encrypt",
     "decrypt": "nx run-many --target=decrypt"
   },
