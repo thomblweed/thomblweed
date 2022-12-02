@@ -3,7 +3,6 @@
 ## Prerequisites
 
 - package manager > https://pnpm.io/installation
-- task runner > https://taskfile.dev/installation/
 - deno for Netlify edge fucntions > https://deno.land/
 
 ```sh

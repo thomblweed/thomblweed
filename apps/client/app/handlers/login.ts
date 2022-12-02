@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { json, redirect } from '@remix-run/node';
-import { createServerClient } from '@supabase/auth-helpers-remix';
 
 import { LoginFields } from '~/enums/login-fields.enum';
+import { getSupabaseClient } from '~/service/supabase.service';
 import { getFormValuesFromRequest } from '~/utils';
 
 export const loginHandler = async (request: Request) => {
@@ -15,13 +15,9 @@ export const loginHandler = async (request: Request) => {
   }
 
   const response = new Response();
-  const supabaseClient = createServerClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
-    { request, response }
-  );
+  const supabase = getSupabaseClient(request, response);
 
-  const { error, data } = await supabaseClient.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
@@ -32,17 +28,23 @@ export const loginHandler = async (request: Request) => {
         loginError: 'An error occured when logging in',
       },
       {
-        headers: {
-          'set-cookie':
-            'supabase-auth-token= ; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
-        },
+        headers: response.headers,
       }
+      // TODO: look into http only at a later date
+      // {
+      //   headers: {
+      //     'set-cookie':
+      //       'supabase-auth-token= ; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
+      //   },
+      // }
     );
   }
 
   return redirect('/', {
-    headers: {
-      'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
-    },
+    headers: response.headers,
+    // TODO: look into http only at a later date
+    // headers: {
+    //   'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
+    // },
   });
 };

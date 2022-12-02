@@ -9,7 +9,7 @@ import { Section, links as sectionStyles } from '~/components/Section';
 import { Form, links as formStyles } from '~/components/Form';
 import { ButtonType, FieldType } from '~/components/Form/enums';
 import loginStyles from '~/styles/routes/login.css';
-import { loginHandler } from '~/handlers/login-handler';
+import { loginHandler } from '~/handlers/login';
 import { LoginFields } from '~/enums/login-fields.enum';
 
 export const links: LinksFunction = () => [
