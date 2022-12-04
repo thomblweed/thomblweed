@@ -1,7 +1,7 @@
 import type {
   ErrorBoundaryComponent,
   LinksFunction,
-  MetaFunction
+  MetaFunction,
 } from '@remix-run/node';
 import {
   Links,
@@ -9,7 +9,7 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from '@remix-run/react';
 import type { ReactNode } from 'react';
 
@@ -22,17 +22,17 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: styles },
   { rel: 'stylesheet', href: fontStyles },
-  ...mainLayoutStyles()
+  ...mainLayoutStyles(),
 ];
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'thomblweed',
-  viewport: 'width=device-width,initial-scale=1'
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 const Document = ({ children }: { children: ReactNode }) => (
-  <html lang='en'>
+  <html lang="en">
     <head>
       <Meta />
       <Links />

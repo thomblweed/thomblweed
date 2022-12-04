@@ -3,7 +3,7 @@ import { createServerClient } from '@supabase/auth-helpers-remix';
 
 import type { Database } from '@types';
 
-export const getSupabaseClient = (request: Request, response: Response) =>
+export const createSupabaseClient = (request: Request, response: Response) =>
   createServerClient<Database>(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_ANON_KEY!,
