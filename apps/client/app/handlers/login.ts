@@ -8,7 +8,7 @@ import { getFormValuesFromRequest } from '~/utils';
 export const loginHandler = async (request: Request) => {
   const [email, password] = (await getFormValuesFromRequest(request, [
     LoginFields.EMAIL,
-    LoginFields.PASSWORD,
+    LoginFields.PASSWORD
   ])) as string[];
   if (email == null || password == null) {
     return json({ loginError: 'email and/or password must be provided' });
@@ -19,16 +19,16 @@ export const loginHandler = async (request: Request) => {
 
   const { error } = await supabase.auth.signInWithPassword({
     email,
-    password,
+    password
   });
 
   if (error) {
     return json(
       {
-        loginError: 'An error occured when logging in',
+        loginError: 'An error occured when logging in'
       },
       {
-        headers: response.headers,
+        headers: response.headers
       }
       // TODO: look into http only at a later date
       // {
@@ -41,7 +41,7 @@ export const loginHandler = async (request: Request) => {
   }
 
   return redirect('/', {
-    headers: response.headers,
+    headers: response.headers
     // TODO: look into http only at a later date
     // headers: {
     //   'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
