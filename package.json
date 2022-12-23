@@ -23,7 +23,7 @@
     "@supabase/supabase-js": "^2.1.0",
     "netlify-cli": "^12.2.4",
     "nx": "15.0.13",
-    "supabase": "^1.14.3",
+    "supabase": "^1.27.7",
     "ts-node": "^10.9.1"
   }
 }
