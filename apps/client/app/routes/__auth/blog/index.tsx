@@ -6,9 +6,11 @@ import { createSupabaseClient } from '~/service/supabase/supabase.service';
 import { Button, links as buttonStyles } from '~/components/Elements/Button';
 import type { Database } from '@types';
 
-type UserRoles = {
+type UserRoles = Database['public']['Tables']['user_roles']['Row'];
+
+type UserData = {
   data: {
-    user_roles: Database['public']['Tables']['user_roles']['Row'];
+    user_roles: UserRoles;
   } | null;
 };
 
@@ -20,7 +22,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     .from('user_profile')
     .select(`user_roles(role)`)
     .limit(1)
-    .single()) as unknown as UserRoles;
+    .single()) as unknown as UserData;
 
   if (data == null) {
     return json({ role: 'user' });
@@ -32,7 +34,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function Blog() {
-  const { role } = useLoaderData();
+  const { role } = useLoaderData<UserRoles>();
   const { submit, state } = useFetcher();
 
   return (

@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "nx run-many --target=dev",
-    "dev:ntl": "nx run client:netlify-dev",
+    "client:ntl": "nx run client:netlify-dev",
     "build": "nx build $1",
-    "db:start": "nx run supabase:start",
+    "db:start": "nx run supabase:dev",
     "db:stop": "nx run supabase:stop",
     "db:dump": "nx run supabase:dump",
     "db:seed-user": "nx run helpers:seed-supabase-user",

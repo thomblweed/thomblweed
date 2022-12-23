@@ -30,21 +30,10 @@ export const loginHandler = async (request: Request) => {
       {
         headers: response.headers
       }
-      // TODO: look into http only at a later date
-      // {
-      //   headers: {
-      //     'set-cookie':
-      //       'supabase-auth-token= ; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT',
-      //   },
-      // }
     );
   }
 
   return redirect('/', {
     headers: response.headers
-    // TODO: look into http only at a later date
-    // headers: {
-    //   'set-cookie': `supabase-auth-token=${data.session?.access_token}; Max-Age=48000; HttpOnly; secure; path="/";`,
-    // },
   });
 };
