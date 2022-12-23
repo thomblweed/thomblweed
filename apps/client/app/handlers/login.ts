@@ -23,6 +23,7 @@ export const loginHandler = async (request: Request) => {
   });
 
   if (error) {
+    console.error(error);
     return json(
       {
         loginError: 'An error occured when logging in'
