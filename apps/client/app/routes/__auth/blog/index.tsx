@@ -37,6 +37,10 @@ export default function Blog() {
   const { role } = useLoaderData<UserRoles>();
   const { submit, state } = useFetcher();
 
+  const addBlog = () => {
+    submit({}, { method: 'post', action: '/api/blog/add-blog' });
+  };
+
   return (
     <section>
       <h2>Blog</h2>
@@ -45,9 +49,7 @@ export default function Blog() {
           width="normal"
           type="button"
           disabled={state === 'submitting' || state === 'loading'}
-          onClick={() => {
-            submit({}, { method: 'post', action: '/api/blog/add-blog' });
-          }}
+          onClick={addBlog}
         >
           Add Blog
         </Button>
