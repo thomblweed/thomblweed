@@ -21,14 +21,14 @@ export const createSupabaseClient = (request: Request, response?: Response) =>
     }
   );
 
-export const getRoleForCurrentUser = async (client: SupabaseClient) =>
+export const getRoleDataForCurrentUser = async (client: SupabaseClient) =>
   (
     await client
       .from('user_profile')
       .select(`user_roles(role)`)
       .limit(1)
       .single()
-  ).data?.user_roles as UserRole;
+  ).data?.user_roles as UserRole | undefined;
 
 export const getAllBlogs = async (client: SupabaseClient) =>
   (await client.from('blogs').select('*')).data as Blog[] | null;
