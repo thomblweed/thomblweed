@@ -1,16 +1,19 @@
-import type { DataFunctionArgs } from '@remix-run/node';
+import type { DataFunctionArgs, LinksFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
 
-import { AdminLayout } from '~/layouts/Admin';
-
+import { AdminLayout, links as adminStyles } from '~/layouts/Admin';
 import {
-  createSupabaseClient,
+  createSupabaseServerClient,
   getRoleDataForCurrentUser
 } from '~/service/supabase/supabase.service';
 
+export type AdminContext = { isAdmin: boolean };
+
+export const links: LinksFunction = () => [...adminStyles()];
+
 export const loader = async ({ request }: DataFunctionArgs) => {
-  const supabase = createSupabaseClient(request);
+  const supabase = createSupabaseServerClient(request);
   const roleData = await getRoleDataForCurrentUser(supabase);
 
   return json({
@@ -20,12 +23,13 @@ export const loader = async ({ request }: DataFunctionArgs) => {
 
 export default function Admin() {
   const { currentUserRole } = useLoaderData<typeof loader>();
+  const isAdmin = currentUserRole === 'admin';
 
-  return currentUserRole === 'admin' ? (
+  return isAdmin ? (
     <AdminLayout>
-      <Outlet />
+      <Outlet context={{ isAdmin }} />
     </AdminLayout>
   ) : (
-    <Outlet />
+    <Outlet context={{ isAdmin }} />
   );
 }

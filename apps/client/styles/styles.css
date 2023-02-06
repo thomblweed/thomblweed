@@ -65,6 +65,10 @@ body {
   height: 100%;
 }
 
+h2 {
+  font-size: var(--fs-secondary-heading);
+}
+
 /* debug */
 /* * {
   outline: 1px solid red;

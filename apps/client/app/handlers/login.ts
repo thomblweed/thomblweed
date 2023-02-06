@@ -2,7 +2,7 @@
 import { json, redirect } from '@remix-run/node';
 
 import { LoginFields } from '~/enums/login-fields.enum';
-import { createSupabaseClient } from '~/service/supabase/supabase.service';
+import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 import { getFormValuesFromRequest } from '~/utils';
 
 export const loginHandler = async (request: Request) => {
@@ -15,7 +15,7 @@ export const loginHandler = async (request: Request) => {
   }
 
   const response = new Response();
-  const supabase = createSupabaseClient(request, response);
+  const supabase = createSupabaseServerClient(request, response);
 
   const { error } = await supabase.auth.signInWithPassword({
     email,

@@ -1,7 +1,7 @@
 import { json } from '@remix-run/node';
 import type { ActionFunction, LoaderFunction } from '@remix-run/node';
 
-import { createSupabaseClient } from '~/service/supabase/supabase.service';
+import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 
 export const loader: LoaderFunction = () =>
   json({ message: 'method not allow' }, 405);
@@ -10,7 +10,7 @@ export const action: ActionFunction = async ({ request }) => {
   if (request.method !== 'POST') {
     return json({ message: 'method not allow' }, 405);
   }
-  const supabase = createSupabaseClient(request);
+  const supabase = createSupabaseServerClient(request);
   const { data, error: userError } = await supabase.auth.getUser();
   if (userError) {
     console.error(userError);

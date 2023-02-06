@@ -6,7 +6,10 @@ import type { Database } from '@types';
 type UserRole = Database['public']['Tables']['user_roles']['Row'];
 type Blog = Database['public']['Tables']['blogs']['Row'];
 
-export const createSupabaseClient = (request: Request, response?: Response) =>
+export const createSupabaseServerClient = (
+  request: Request,
+  response?: Response
+) =>
   createServerClient<Database>(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_ANON_KEY!,
