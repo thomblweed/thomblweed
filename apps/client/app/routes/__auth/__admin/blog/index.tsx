@@ -23,14 +23,12 @@ export const loader = async ({ request }: DataFunctionArgs) => {
 export default function Blog() {
   const { blogs } = useLoaderData<typeof loader>();
   const { isAdmin } = useOutletContext<AdminContext>();
-  const { submit, state } = useFetcher();
-  console.log({ state });
+  const { submit } = useFetcher();
 
-  const handleDeleteBlog = (id: number) => {
-    console.log({ id });
-    const iD = id.toString();
-    console.log({ iD });
-    submit({}, { method: 'post', action: '/api/blog/delete-blog' });
+  const handleSubmit = (id: number) => {
+    const formData = new FormData();
+    formData.set('id', id.toString());
+    submit(formData, { method: 'post', action: '/api/blog/delete-blog' });
   };
 
   return (
@@ -40,11 +38,7 @@ export default function Blog() {
         <div key={id}>
           <div>{title}</div>
           {isAdmin ? (
-            <Button
-              type="button"
-              width="none"
-              onClick={() => handleDeleteBlog(id)}
-            >
+            <Button type="button" width="none" onClick={() => handleSubmit(id)}>
               &#10005;
             </Button>
           ) : null}

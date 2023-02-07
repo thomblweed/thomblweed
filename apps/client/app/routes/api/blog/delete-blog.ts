@@ -11,8 +11,8 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ message: 'method not allow' }, 405);
   }
   console.log({ request });
-  //   const payload = await request.json();
-  //   console.log({ payload });
+  // const payload = await request.formData();
+  // console.log({ payload });
   //   const supabase = createSupabaseServerClient(request);
 
   return json({ message: 'success' }, 201);
