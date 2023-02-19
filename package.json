@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nx run-many --target=dev",
     "client:ntl": "nx run client:netlify-dev",
-    "build": "nx build $1",
+    "build": "nx run-many --target=build",
     "db:start": "nx run supabase:dev",
     "db:stop": "nx run supabase:stop",
     "db:dump": "nx run supabase:dump",
@@ -20,10 +20,10 @@
   "devDependencies": {
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/remix": "^14.7.0",
-    "@supabase/supabase-js": "^2.5.0",
-    "netlify-cli": "^12.10.0",
-    "nx": "15.4.1",
-    "supabase": "^1.34.5",
+    "@supabase/supabase-js": "^2.8.0",
+    "netlify-cli": "^12.13.1",
+    "nx": "15.7.2",
+    "supabase": "^1.38.5",
     "ts-node": "^10.9.1"
   }
 }
