@@ -18,12 +18,12 @@
     "decrypt": "nx run-many --target=decrypt"
   },
   "devDependencies": {
-    "@nrwl/nx-cloud": "15.0.2",
-    "@nrwl/remix": "^14.7.0",
-    "@supabase/supabase-js": "^2.8.0",
-    "netlify-cli": "^12.13.1",
-    "nx": "15.7.2",
-    "supabase": "^1.38.5",
+    "@nrwl/nx-cloud": "15.2.3",
+    "@nrwl/remix": "^15.8.6",
+    "@supabase/supabase-js": "^2.11.0",
+    "netlify-cli": "^13.1.6",
+    "nx": "15.8.7",
+    "supabase": "^1.42.7",
     "ts-node": "^10.9.1"
   }
 }
