@@ -4,6 +4,8 @@
 
   --clr-alternate: hsl(323, 22%, 47%);
   --clr-grey: hsl(208, 88%, 83%);
+  --clr-bright: hsl(180, 100%, 97%);
+  --clr-green: hsl(151, 51%, 57%);
 
   --clr-dark: hsl(237, 43%, 10%);
 
@@ -58,6 +60,10 @@ body {
   font-size: var(--fs-body);
   color: var(--clr-grey);
   background-color: var(--clr-dark);
+  background-image: url('/images/afNV2ce.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   display: flex;
   flex-direction: column;

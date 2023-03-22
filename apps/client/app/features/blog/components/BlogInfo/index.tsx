@@ -19,9 +19,9 @@ export const links: LinksFunction = () => [
 
 export const BlogInfo = ({ isAdmin, id, title }: BlogInfoProps) => {
   return (
-    <div key={id} className="blog-info">
-      <div>{title}</div>
+    <article key={id} className="blog-info">
+      <h3>{title}</h3>
       {isAdmin ? <DeleteBlog id={id} /> : null}
-    </div>
+    </article>
   );
 };

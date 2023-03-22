@@ -32,7 +32,7 @@ export default function Blog() {
   const { isAdmin } = useOutletContext<AdminContext>();
 
   return (
-    <section>
+    <section className="container">
       <h2>Blog</h2>
       <div className="blog-container">
         {blogs?.map(({ title, id }) => (

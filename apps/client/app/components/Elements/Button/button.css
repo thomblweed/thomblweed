@@ -38,5 +38,9 @@
 }
 
 .button-width-none {
-  min-width: auto;
+  width: var(--spacing-400);
+  height: var(--spacing-400);
+  padding: 0;
+  border-radius: var(--spacing-100);
+  line-height: 0;
 }
