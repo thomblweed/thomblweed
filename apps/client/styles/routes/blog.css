@@ -1,6 +1,6 @@
 .blog-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: var(--spacing-400);
   margin-block: var(--spacing-300);
 }

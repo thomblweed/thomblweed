@@ -60,15 +60,16 @@ body {
   font-size: var(--fs-body);
   color: var(--clr-grey);
   background-color: var(--clr-dark);
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   background-image: url('/images/afNV2ce.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 }
 
 h2 {
