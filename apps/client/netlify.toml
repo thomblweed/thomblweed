@@ -2,7 +2,7 @@
   NPM_FLAGS = "--version"
 
 [build]
-  command = "pnpm i --no-frozen-lockfile && pnpm build:css && pnpm build:remix"
+  command = "npx pnpm i --no-frozen-lockfile --shamefully-hoist --store=node_modules/.pnpm-store && npx pnpm build:css && npx pnpm build:remix"
   publish = "public"
 
 [dev]
