@@ -1,16 +1,11 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-// import type { Environment } from '~/config';
-// const env = (process.env.NODE_ENV as Environment) ?? 'development';
-
 const defaultConfig: AxiosRequestConfig = {
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json'
-  }
-  // TODO: double check this
-  // withCredentials: env === 'development' ? true : false
+    'Content-Type': 'application/json',
+  },
 };
 
 export const createAxiosInstance = (
@@ -20,7 +15,7 @@ export const createAxiosInstance = (
   axios.create({
     baseURL,
     ...defaultConfig,
-    ...configOverride
+    ...configOverride,
   });
 
 export const axiosService = async <Response>(
@@ -30,5 +25,5 @@ export const axiosService = async <Response>(
 ): Promise<AxiosResponse<Response>> =>
   await instance.request({
     url,
-    ...options
+    ...options,
   });

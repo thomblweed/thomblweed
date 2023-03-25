@@ -1,0 +1,10 @@
+.blog-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-grey);
+  border-radius: 0.25rem;
+  color: var(--clr-dark);
+  box-shadow: 0 0 6px 1px var(--clr-bright);
+  height: 200px;
+  padding: 0.5rem;
+}

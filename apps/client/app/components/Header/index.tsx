@@ -11,7 +11,7 @@ import { Navigation, links as navigationStyles } from '~/components/Navigation';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: headerStyles },
-  ...navigationStyles()
+  ...navigationStyles(),
 ];
 
 export const Header = () => {
@@ -31,13 +31,13 @@ export const Header = () => {
     //     </Suspense>
     //   ) : null}
     // </>
-    <header className='container'>
-      <div className='header-container'>
+    <header className="container">
+      <div className="header-container">
         <Logo />
         <Navigation
           items={[
             { value: 'Home', route: '/' },
-            { value: 'Blog', route: '/blog' }
+            { value: 'Blog', route: '/blog' },
           ]}
           content={({ value, route }) => (
             <NavLink

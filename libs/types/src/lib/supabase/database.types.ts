@@ -9,41 +9,61 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      user_profile: {
+      blogs: {
         Row: {
           id: number
-          role_id: number | null
-          user_id: string | null
-          created_at: string | null
+          created_on: string
+          title: string
+          created_by: string
         }
         Insert: {
           id?: number
-          role_id?: number | null
-          user_id?: string | null
-          created_at?: string | null
+          created_on: string
+          title: string
+          created_by: string
         }
         Update: {
           id?: number
+          created_on?: string
+          title?: string
+          created_by?: string
+        }
+      }
+      user_profile: {
+        Row: {
+          id: number
+          created_at: string | null
+          role_id: number | null
+          user_id: string | null
+        }
+        Insert: {
+          id?: number
+          created_at?: string | null
           role_id?: number | null
           user_id?: string | null
+        }
+        Update: {
+          id?: number
           created_at?: string | null
+          role_id?: number | null
+          user_id?: string | null
         }
       }
       user_roles: {
         Row: {
-          role: string | null
-          created_at: string | null
           id: number
+          created_at: string | null
+          role: string | null
         }
         Insert: {
-          role?: string | null
-          created_at?: string | null
           id?: number
+          created_at?: string | null
+          role?: string | null
         }
         Update: {
-          role?: string | null
-          created_at?: string | null
           id?: number
+          created_at?: string | null
+          role?: string | null
         }
       }
     }

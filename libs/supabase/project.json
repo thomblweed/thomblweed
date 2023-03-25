@@ -3,7 +3,7 @@
   "sourceRoot": "libs/supabase",
   "projectType": "library",
   "targets": {
-    "start": {
+    "dev": {
       "executor": "nx:run-commands",
       "options": {
         "commands": ["supabase start"],

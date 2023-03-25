@@ -8,7 +8,7 @@ import fieldStyles from './field.css';
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: fieldStyles },
   ...labelStyles(),
-  ...inputStyles()
+  ...inputStyles(),
 ];
 
 type FieldProps = {
@@ -24,9 +24,9 @@ export const Field = ({
   label,
   type,
   disabled,
-  required
+  required,
 }: FieldProps) => (
-  <div className='field' id={name} role='group'>
+  <div className="field" id={name} role="group">
     <Label text={label} htmlFor={name} />
     <Input
       aria-label={`${label}`}

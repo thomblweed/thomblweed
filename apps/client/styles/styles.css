@@ -4,6 +4,8 @@
 
   --clr-alternate: hsl(323, 22%, 47%);
   --clr-grey: hsl(208, 88%, 83%);
+  --clr-bright: hsl(180, 100%, 97%);
+  --clr-green: hsl(151, 51%, 57%);
 
   --clr-dark: hsl(237, 43%, 10%);
 
@@ -50,7 +52,7 @@
 
 html,
 body {
-  min-height: 1100px;
+  /* min-height: 1100px; */
 }
 
 body {
@@ -59,10 +61,34 @@ body {
   color: var(--clr-grey);
   background-color: var(--clr-dark);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  background-image: url('/images/space-city-1920.jpg');
+  /* image-set(
+    url('/images/space-city-480.jpg') 1x,
+    url('/images/space-city-960.jpg') 2x,
+    url('/images/space-city-1440.jpg') 3x,
+      url('/images/space-city-1920.jpg') 4x,
+    url('/images/space-city-2400.jpg') 5x
+  ); */
+  /* background-image: -webkit-image-set(
+    url('/images/space-city-480.jpg') 1x,
+    url('/images/space-city-960.jpg') 2x,
+    url('/images/space-city-1440.jpg') 3x,
+      url('/images/space-city-1920.jpg') 4x,
+    url('/images/space-city-2400.jpg') 5x
+  ); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-blend-mode: multiply; */
+}
+
+h2 {
+  font-size: var(--fs-secondary-heading);
 }
 
 /* debug */

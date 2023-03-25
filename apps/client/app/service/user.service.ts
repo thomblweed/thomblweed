@@ -14,7 +14,7 @@ export const getCurrentUser = async () =>
 export const signoutUser = async () =>
   (
     await axiosService<null>(axiosInstance, authAPIConfig.logout, {
-      method: 'POST'
+      method: 'POST',
     })
   ).data;
 
@@ -22,6 +22,6 @@ export const signinUser = async (credentials: Credentials) =>
   (
     await axiosService<User>(axiosInstance, authAPIConfig.login, {
       method: 'POST',
-      data: credentials
+      data: credentials,
     })
   ).data;

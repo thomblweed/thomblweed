@@ -9,7 +9,7 @@ import { links as headerStyles } from '~/components/Header';
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: mainStyles },
   ...headerStyles(),
-  ...footerStyles(),
+  ...footerStyles()
 ];
 
 export const MainLayout = ({ children }: { children: ReactNode }) => (

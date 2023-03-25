@@ -14,8 +14,8 @@ export const login = async (
     session.set('user', user);
     return redirect('/', {
       headers: {
-        'set-cookie': await commitSession(session)
-      }
+        'set-cookie': await commitSession(session),
+      },
     });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
@@ -28,8 +28,8 @@ export const login = async (
       { loginError: errorMessage },
       {
         headers: {
-          'set-cookie': await commitSession(session)
-        }
+          'set-cookie': await commitSession(session),
+        },
       }
     );
   }
