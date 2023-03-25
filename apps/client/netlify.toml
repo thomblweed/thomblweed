@@ -2,7 +2,7 @@
   NPM_FLAGS = "--version"
 
 [build]
-  command = "pnpm build:css && pnpm build:remix"
+  command = "pnpm i && pnpm build:css && pnpm build:remix"
   publish = "public"
 
 [dev]
