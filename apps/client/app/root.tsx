@@ -21,9 +21,9 @@ import styles from '~/styles/styles.css';
 export const links: LinksFunction = () => [
   {
     rel: 'preload',
-    href: 'space-city.jpg',
-    imagesrcset:
-      '/images/space-city-480.jpg 480w, /images/space-city-960.jpg 960w, /images/space-city-1440.jpg 1440w, /images/space-city-1920.jpg 1920w, /images/space-city-2400.jpg 2400w',
+    href: '/images/space-city-1920.jpg',
+    // imagesrcset:
+    //   '/images/space-city-480.jpg 480w, /images/space-city-960.jpg 960w, /images/space-city-1440.jpg 1440w, /images/space-city-1920.jpg 1920w, /images/space-city-2400.jpg 2400w',
     as: 'image',
     type: 'image/jpg'
   },
