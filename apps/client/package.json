@@ -10,7 +10,7 @@
     "watch:remix": "cross-env NODE_ENV=development REMIX_ENV=development remix watch",
     "dev": "npm-run-all build:remix --parallel \"dev:*\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
-    "dev:remix": "cross-env NODE_ENV=development REMIX_ENV=development remix watch --port 2000",
+    "dev:remix": "cross-env NODE_ENV=development REMIX_ENV=development remix watch",
     "dev:arc": "cross-env NODE_ENV=development REMIX_ENV=development arc sandbox",
     "start": "cross-env NODE_ENV=production arc sandbox",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
