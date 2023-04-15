@@ -1,5 +1,5 @@
-import { json } from '@remix-run/node';
 import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 
 import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 

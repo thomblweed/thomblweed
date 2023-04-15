@@ -1,8 +1,4 @@
-import type {
-  ErrorBoundaryComponent,
-  LinksFunction,
-  MetaFunction
-} from '@remix-run/node';
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -33,11 +29,11 @@ export const links: LinksFunction = () => [
   ...mainLayoutStyles()
 ];
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'thomblweed',
-  viewport: 'width=device-width,initial-scale=1'
-});
+export const meta: V2_MetaFunction = () => [
+  { charset: 'utf-8' },
+  { title: 'thomblweed' },
+  { name: 'viewport', viewport: 'width=device-width,initial-scale=1' }
+];
 
 const Document = ({ children }: { children: ReactNode }) => (
   <html lang="en">
@@ -64,7 +60,7 @@ export default function Root() {
   );
 }
 
-export const ErrorBoundary: ErrorBoundaryComponent = () => (
+export const ErrorBoundary = () => (
   <Document>
     <MainLayout>
       <div>Bad things have happened</div>

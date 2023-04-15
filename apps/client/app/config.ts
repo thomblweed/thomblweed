@@ -17,7 +17,7 @@ export const config: Config = {
   development: {
     api: {
       auth: {
-        baseUrl: 'http://localhost:2000/api/users',
+        baseUrl: 'http://localhost:3333/api/users',
         login: '/login',
         logout: '/signout',
         getUser: '/currentuser'
