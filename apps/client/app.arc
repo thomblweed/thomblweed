@@ -11,4 +11,3 @@ thomblweed-client
 @aws
 profile default
 region eu-west-2
-  
