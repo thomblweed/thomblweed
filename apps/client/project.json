@@ -22,13 +22,6 @@
         ],
         "cwd": "apps/client"
       }
-    },
-    "netlify-dev": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["netlify dev"],
-        "cwd": "apps/client"
-      }
     }
   }
 }

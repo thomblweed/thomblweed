@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nx run-many --target=dev",
-    "client:ntl": "nx run client:netlify-dev",
     "build": "nx run-many --target=build",
+    "clean": "nx run-many --target=clean",
     "db:start": "nx run supabase:dev",
     "db:stop": "nx run supabase:stop",
     "db:dump": "nx run supabase:dump",
@@ -18,6 +18,7 @@
     "decrypt": "nx run-many --target=decrypt"
   },
   "dependencies": {
+    "@remix-run/architect": "^1.15.0",
     "@remix-run/node": "^1.15.0",
     "@remix-run/react": "^1.15.0",
     "@supabase/auth-helpers-remix": "^0.1.8",
@@ -31,10 +32,8 @@
   "devDependencies": {
     "@architect/architect": "^10.11.2",
     "@nrwl/nx-cloud": "15.3.5",
-    "@remix-run/architect": "^1.15.0",
     "@remix-run/dev": "^1.15.0",
     "@remix-run/eslint-config": "^1.15.0",
-    "@remix-run/serve": "^1.15.0",
     "@supabase/supabase-js": "^2.20.0",
     "@types/bcrypt": "^5.0.0",
     "@types/react": "^18.0.35",

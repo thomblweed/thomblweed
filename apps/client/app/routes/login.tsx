@@ -1,16 +1,12 @@
-import type {
-  ActionFunction,
-  ErrorBoundaryComponent,
-  LinksFunction
-} from '@remix-run/node';
+import type { ActionFunction, LinksFunction } from '@remix-run/node';
 import { useActionData, useTransition } from '@remix-run/react';
 
-import { Section, links as sectionStyles } from '~/components/Section';
 import { Form, links as formStyles } from '~/components/Form';
 import { ButtonType, FieldType } from '~/components/Form/enums';
-import loginStyles from '~/styles/routes/login.css';
-import { loginHandler } from '~/handlers/login';
+import { Section, links as sectionStyles } from '~/components/Section';
 import { LoginFields } from '~/enums/login-fields.enum';
+import { loginHandler } from '~/handlers/login';
+import loginStyles from '~/styles/routes/login.css';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: loginStyles },
@@ -62,9 +58,9 @@ export default function Login() {
 }
 
 // eslint-disable-next-line react/prop-types
-export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => (
-  <div>
-    {/* eslint-disable-next-line react/prop-types */}
-    <div>{error.message}</div>
-  </div>
-);
+// export const ErrorBoundary: V2_ErrorBoundaryComponent = ({ error }) => (
+//   <div>
+//     {/* eslint-disable-next-line react/prop-types */}
+//     <div>{error.message}</div>
+//   </div>
+// );
