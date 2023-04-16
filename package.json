@@ -4,9 +4,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "nx run-many --target=dev",
-    "build": "nx run-many --target=build",
-    "clean": "nx run-many --target=clean",
+    "dev": "nx run-many --target=dev --output-style=stream",
+    "build": "nx run-many --target=build --output-style=stream",
+    "clean": "nx run-many --target=clean --output-style=stream",
+    "deploy": "nx run-many --target=deploy --output-style=stream",
+    "destroy": "nx run-many --target=destroy --output-style=stream",
     "db:start": "nx run supabase:dev",
     "db:stop": "nx run supabase:stop",
     "db:dump": "nx run supabase:dump",
@@ -14,8 +16,8 @@
     "db:diff": "nx run supabase:diff",
     "db:push": "nx run supabase:push",
     "db:types": "nx run supabase:types",
-    "encrypt": "nx run-many --target=encrypt",
-    "decrypt": "nx run-many --target=decrypt"
+    "encrypt": "nx run-many --target=encrypt --output-style=stream",
+    "decrypt": "nx run-many --target=decrypt --output-style=stream"
   },
   "dependencies": {
     "@remix-run/architect": "^1.15.0",
