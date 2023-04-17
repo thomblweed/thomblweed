@@ -23,6 +23,11 @@ export const links: LinksFunction = () => [
     as: 'image',
     type: 'image/jpg'
   },
+  {
+    rel: 'icon',
+    type: 'image/x-icon',
+    href: '/_static/favicon.ico'
+  },
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: styles },
   { rel: 'stylesheet', href: fontStyles },
