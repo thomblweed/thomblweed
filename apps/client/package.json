@@ -13,7 +13,7 @@
     "dev:remix": "cross-env NODE_ENV=development remix watch",
     "dev:arc": "cross-env NODE_ENV=development arc sandbox --port 2000",
     "start": "cross-env NODE_ENV=production arc sandbox",
-    "deploy": "pnpm build && arc deploy production",
+    "deploy": "pnpm build && arc deploy --production",
     "destroy": "arc destroy --app thomblweed-client --force",
     "clean": "pnpm clean:build",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
