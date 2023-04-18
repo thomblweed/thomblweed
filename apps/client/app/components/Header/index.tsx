@@ -47,6 +47,7 @@ export const Header = () => {
                 )
               }
               to={route}
+              reloadDocument={true}
             >
               {value}
             </NavLink>

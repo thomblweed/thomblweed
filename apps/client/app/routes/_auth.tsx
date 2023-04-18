@@ -8,9 +8,13 @@ export const loader: LoaderFunction = async ({ request }) => {
   const { data } = await supabase.auth.getSession();
   const refresh_token = data?.session?.refresh_token;
   if (refresh_token) {
-    await supabase.auth.refreshSession({
-      refresh_token
-    });
+    try {
+      await supabase.auth.refreshSession({
+        refresh_token
+      });
+    } catch (error) {
+      console.error('Error refreshing session');
+    }
   }
 
   return new Response();

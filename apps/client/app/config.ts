@@ -1,4 +1,4 @@
-export type Environment = 'development' | 'integration' | 'test' | 'production';
+export type Environment = 'development' | 'staging' | 'test' | 'production';
 
 export type Config = {
   [key in Environment]: {
@@ -24,10 +24,10 @@ export const config: Config = {
       }
     }
   },
-  integration: {
+  staging: {
     api: {
       auth: {
-        baseUrl: 'http://integration',
+        baseUrl: 'http://staging/api/users',
         login: '/login',
         logout: '/logout',
         getUser: '/currentuser'
@@ -47,7 +47,7 @@ export const config: Config = {
   production: {
     api: {
       auth: {
-        baseUrl: process.env.PROD_API_AUTH_URL || 'http://localhost:8080',
+        baseUrl: process.env.PROD_API_AUTH_URL || 'http://produrl',
         login: '/login',
         logout: '/logout',
         getUser: '/currentuser'

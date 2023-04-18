@@ -3,8 +3,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "pnpm clean:build && pnpm build:css && pnpm build:remix",
-    "build:remix": "remix build",
-    "build:css": "postcss styles --base styles --dir app/styles --env production",
+    "build:remix": "NODE_ENV=production remix build",
+    "build:css": "NODE_ENV=production postcss styles --base styles --dir app/styles --env production",
     "watch": "run-p \"watch:*\"",
     "watch:css": "postcss styles --base styles --dir app/styles -w",
     "watch:remix": "cross-env NODE_ENV=development REMIX_ENV=development remix watch",
