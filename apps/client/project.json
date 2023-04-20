@@ -9,7 +9,6 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env > .env.enc",
           "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.arc > preferences.enc"
         ],
         "cwd": "apps/client"
