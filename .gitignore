@@ -41,3 +41,8 @@ Thumbs.db
 # Remix files
 apps/**/build
 apps/**/.cache
+
+# terraform files
+.terraform
+*.tfplan
+*.tfstate*
