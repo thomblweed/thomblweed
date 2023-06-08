@@ -19,7 +19,10 @@ export const createSupabaseServerClient = (
       cookieOptions: {
         secure: true,
         maxAge: 48000,
-        name: 'thomblweed-auth-token'
+        name: 'thomblweed-auth-token',
+        domain: 'localhost:2000',
+        path: '/',
+        sameSite: 'lax'
       }
     }
   );

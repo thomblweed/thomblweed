@@ -10,13 +10,14 @@
     "watch:remix": "cross-env NODE_ENV=development REMIX_ENV=development remix watch",
     "watch:arc": "cross-env NODE_ENV=development arc sandbox --port 2000",
     "dev": "npm-run-all build:remix --parallel \"watch:*\"",
-    "dev:css": "postcss styles --base styles --dir app/styles -w",
-    "dev:remix": "cross-env NODE_ENV=development remix watch",
-    "start": "cross-env NODE_ENV=production arc sandbox",
+    "dev:remix": "cross-env NODE_ENV=development remix dev --port 2000",
+    "start": "NODE_ENV=production pnpm clean:cache && pnpm build && npm-run-all --parallel \"start:*\"",
+    "start:arc": "cross-env NODE_ENV=production arc sandbox",
     "deploy": "NODE_ENV=production pnpm build && arc deploy --production",
     "destroy": "arc destroy --app thomblweed-client --force",
-    "clean": "pnpm clean:build",
+    "clean": "pnpm clean:build && pnpm clean:cache",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
+    "clean:cache": "if [ -d \".cache\" ]; then rm -rf \".cache\"; fi",
     "lint": "eslint ."
   },
   "engines": {
