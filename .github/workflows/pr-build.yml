@@ -3,6 +3,8 @@ name: PR Build
 on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
+    branches:
+      - '!main'
 
 jobs:
   build:
