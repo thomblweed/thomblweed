@@ -4,17 +4,30 @@ name: Build and deploy
 on: [push, pull_request]
 
 jobs:
-  # Build and test
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [18]
     steps:
-      - name: Build App
-        uses: architect/action-build@v3
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
 
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Deploy app
