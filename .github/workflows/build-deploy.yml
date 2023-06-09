@@ -37,6 +37,9 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Deploy Client
         run: pnpm deploy
         env:
