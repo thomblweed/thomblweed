@@ -1,9 +1,8 @@
-name: Build
+name: PR Build
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   build:
