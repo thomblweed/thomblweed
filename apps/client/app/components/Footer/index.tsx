@@ -11,10 +11,10 @@ export const links: LinksFunction = () => [
 ];
 
 export const Footer = ({ footerText }: FooterProps) => (
-  <footer className='footer | container'>
+  <footer className="footer">
     <div>
-      <p className='text-normal text-alternate'>{footerText}</p>
-      <p className='text-small text-secondary'>
+      <p className="text-normal text-alternate">{footerText}</p>
+      <p className="text-small text-secondary">
         Copyright &copy; {new Date().getFullYear()}
       </p>
     </div>

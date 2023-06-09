@@ -1,11 +1,13 @@
-node_modules
 .DS_Store
 
 .cache
-.env.local
-.netlify
+.env
 
 /build/
 /public/build
+/server/index.js*
+preferences.arc
+sam.json
+sam.yaml
 
 app/styles

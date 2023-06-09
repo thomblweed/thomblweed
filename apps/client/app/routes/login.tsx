@@ -1,16 +1,17 @@
-import type {
-  ActionFunction,
-  ErrorBoundaryComponent,
-  LinksFunction
-} from '@remix-run/node';
-import { useActionData, useTransition } from '@remix-run/react';
+import type { ActionFunction, LinksFunction } from '@remix-run/node';
+import {
+  isRouteErrorResponse,
+  useActionData,
+  useNavigation,
+  useRouteError
+} from '@remix-run/react';
 
-import { Section, links as sectionStyles } from '~/components/Section';
 import { Form, links as formStyles } from '~/components/Form';
 import { ButtonType, FieldType } from '~/components/Form/enums';
-import loginStyles from '~/styles/routes/login.css';
-import { loginHandler } from '~/handlers/login';
+import { Section, links as sectionStyles } from '~/components/Section';
 import { LoginFields } from '~/enums/login-fields.enum';
+import { loginHandler } from '~/handlers/login';
+import loginStyles from '~/styles/routes/login.css';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: loginStyles },
@@ -22,8 +23,9 @@ export const action: ActionFunction = async ({ request }) =>
   loginHandler(request);
 
 export default function Login() {
-  const { state } = useTransition();
+  const { state } = useNavigation();
   const actionData = useActionData<{ loginError?: string }>();
+
   return (
     <Section>
       <h2>Admin Login</h2>
@@ -61,10 +63,28 @@ export default function Login() {
   );
 }
 
-// eslint-disable-next-line react/prop-types
-export const ErrorBoundary: ErrorBoundaryComponent = ({ error }) => (
-  <div>
-    {/* eslint-disable-next-line react/prop-types */}
-    <div>{error.message}</div>
-  </div>
-);
+export const ErrorBoundary = () => {
+  const error = useRouteError();
+
+  if (isRouteErrorResponse(error)) {
+    return (
+      <div>
+        <h2>
+          {error.status} {error.statusText}
+        </h2>
+        <p>{error.data}</p>
+      </div>
+    );
+  } else if (error instanceof Error) {
+    return (
+      <div>
+        <h2>Error</h2>
+        <p>{error.message}</p>
+        <p>The stack trace is:</p>
+        <pre>{error.stack}</pre>
+      </div>
+    );
+  } else {
+    return <div>Unknown Error</div>;
+  }
+};

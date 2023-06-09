@@ -2,6 +2,7 @@
   "root": "libs/helpers",
   "sourceRoot": "libs/helpers",
   "projectType": "library",
+  "name": "helpers",
   "targets": {
     "seed-supabase-user": {
       "executor": "nx:run-commands",

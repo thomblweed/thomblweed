@@ -1,17 +1,17 @@
-import { NavLink } from '@remix-run/react';
 import type { LinksFunction } from '@remix-run/node';
+import { NavLink } from '@remix-run/react';
 // import { useContext } from 'react';
 
 // import { DeviceContext } from '~/state/context/DeviceContext';
-import headerStyles from './header.css';
-import { Logo } from '../Logo';
 import { Navigation, links as navigationStyles } from '~/components/Navigation';
+import { Logo } from '../Logo';
+import headerStyles from './header.css';
 
 // const Placeholder = () => <div className='h-[68px]'></div>;
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: headerStyles },
-  ...navigationStyles(),
+  ...navigationStyles()
 ];
 
 export const Header = () => {
@@ -31,13 +31,13 @@ export const Header = () => {
     //     </Suspense>
     //   ) : null}
     // </>
-    <header className="container">
+    <header>
       <div className="header-container">
         <Logo />
         <Navigation
           items={[
             { value: 'Home', route: '/' },
-            { value: 'Blog', route: '/blog' },
+            { value: 'Blog', route: '/blog' }
           ]}
           content={({ value, route }) => (
             <NavLink
@@ -47,6 +47,7 @@ export const Header = () => {
                 )
               }
               to={route}
+              reloadDocument={true}
             >
               {value}
             </NavLink>
