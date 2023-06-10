@@ -38,7 +38,7 @@ export const links: LinksFunction = () => [
 
 export const meta: V2_MetaFunction = () => [
   { charset: 'utf-8' },
-  { title: 'thomblweed' },
+  { title: 'thomas newman' },
   { name: 'viewport', viewport: 'width=device-width,initial-scale=1' }
 ];
 

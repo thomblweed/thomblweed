@@ -15,6 +15,6 @@ export const MainLayout = ({ children }: { children: ReactNode }) => (
   <>
     <Header />
     <main className="main">{children}</main>
-    <Footer footerText="thomblweed" />
+    <Footer footerText="thomas newman" />
   </>
 );
