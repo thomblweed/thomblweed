@@ -14,7 +14,14 @@ export const links: LinksFunction = () => [
 export const MainLayout = ({ children }: { children: ReactNode }) => (
   <>
     <Header />
-    <picture style={{ position: 'absolute', zIndex: '-1', inset: 0 }}>
+    <picture
+      style={{
+        position: 'absolute',
+        zIndex: '-1',
+        inset: 0,
+        mixBlendMode: 'soft-light'
+      }}
+    >
       <source
         media="(min-width: 2400px)"
         srcSet="/_static/images/space-city-2400.jpg"
@@ -28,7 +35,7 @@ export const MainLayout = ({ children }: { children: ReactNode }) => (
         srcSet="/_static/images/space-city-1440.jpg"
       />
       <source
-        media="(min-width: 960px)"
+        media="(min-width: 500px)"
         srcSet="/_static/images/space-city-960.jpg"
       />
       <img

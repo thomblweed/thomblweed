@@ -31,7 +31,7 @@ export const links: LinksFunction = () => [
 export const meta: V2_MetaFunction = () => [
   { charset: 'utf-8' },
   { title: 'thomas newman' },
-  { name: 'viewport', viewport: 'width=device-width,initial-scale=1' }
+  { name: 'viewport', content: 'width=device-width, minimum-scale=1' }
 ];
 
 const Document = ({ children }: { children: ReactNode }) => (
