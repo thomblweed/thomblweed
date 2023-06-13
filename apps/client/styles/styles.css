@@ -65,26 +65,6 @@ body {
   min-height: 100dvh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-
-  background-image: url('/_static/images/space-city-1920.jpg');
-  /* image-set(
-    url('/images/space-city-480.jpg') 1x,
-    url('/images/space-city-960.jpg') 2x,
-    url('/images/space-city-1440.jpg') 3x,
-      url('/images/space-city-1920.jpg') 4x,
-    url('/images/space-city-2400.jpg') 5x
-  ); */
-  /* background-image: -webkit-image-set(
-    url('/images/space-city-480.jpg') 1x,
-    url('/images/space-city-960.jpg') 2x,
-    url('/images/space-city-1440.jpg') 3x,
-      url('/images/space-city-1920.jpg') 4x,
-    url('/images/space-city-2400.jpg') 5x
-  ); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* background-blend-mode: multiply; */
 }
 
 h2 {
