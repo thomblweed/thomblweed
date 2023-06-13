@@ -3,10 +3,10 @@ import type { ReactNode } from 'react';
 
 import { Footer, links as footerStyles } from '~/components/Footer';
 import { Header, links as headerStyles } from '~/components/Header';
-import mainStyles from './main.css';
+import mainLayoutStyles from './main-layout.css';
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: mainStyles },
+  { rel: 'stylesheet', href: mainLayoutStyles },
   ...headerStyles(),
   ...footerStyles()
 ];
@@ -14,14 +14,7 @@ export const links: LinksFunction = () => [
 export const MainLayout = ({ children }: { children: ReactNode }) => (
   <>
     <Header />
-    <picture
-      style={{
-        position: 'absolute',
-        zIndex: '-1',
-        inset: 0,
-        mixBlendMode: 'soft-light'
-      }}
-    >
+    <picture className="picture-background">
       <source
         media="(min-width: 2400px)"
         srcSet="/_static/images/space-city-2400.jpg"
@@ -31,7 +24,7 @@ export const MainLayout = ({ children }: { children: ReactNode }) => (
         srcSet="/_static/images/space-city-1920.jpg"
       />
       <source
-        media="(min-width: 1440px)"
+        media="(min-width: 1280px)"
         srcSet="/_static/images/space-city-1440.jpg"
       />
       <source
@@ -41,7 +34,7 @@ export const MainLayout = ({ children }: { children: ReactNode }) => (
       <img
         src="/_static/images/space-city-480.jpg"
         alt="space city"
-        style={{ objectFit: 'cover', minWidth: '100%', minHeight: '100%' }}
+        className="image-background"
       />
     </picture>
     <main className="main">{children}</main>

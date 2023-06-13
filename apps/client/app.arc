@@ -7,6 +7,7 @@ thomblweed-client
   src server
 
 @static
+compression br
 
 @aws
 profile default

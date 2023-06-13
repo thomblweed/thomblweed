@@ -1,0 +1,16 @@
+.main {
+  margin-block: var(--spacing-300);
+}
+
+.picture-background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+}
+
+.image-background {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
