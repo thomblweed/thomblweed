@@ -13,7 +13,6 @@ export const links: LinksFunction = () => [
 
 export const MainLayout = ({ children }: { children: ReactNode }) => (
   <>
-    <Header />
     <picture className="picture-background">
       <source
         media="(min-width: 2400px)"
@@ -37,6 +36,7 @@ export const MainLayout = ({ children }: { children: ReactNode }) => (
         className="image-background"
       />
     </picture>
+    <Header />
     <main className="main">{children}</main>
     <Footer footerText="thomas newman" />
   </>

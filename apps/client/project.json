@@ -9,6 +9,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
+          "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env > .env.enc",
           "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.arc > preferences.enc"
         ],
         "cwd": "apps/client"
@@ -18,7 +19,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env",
+          "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env",
           "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.enc > preferences.arc"
         ],
         "cwd": "apps/client"

@@ -17,7 +17,7 @@ export const config: Config = {
   development: {
     api: {
       auth: {
-        baseUrl: 'http://localhost:2000/api/users',
+        baseUrl: process.env.API_AUTH_URL || 'http://localhost:2000/api/users',
         login: '/login',
         logout: '/signout',
         getUser: '/currentuser'
@@ -27,7 +27,7 @@ export const config: Config = {
   staging: {
     api: {
       auth: {
-        baseUrl: 'http://staging/api/users',
+        baseUrl: process.env.API_AUTH_URL || 'http://staging/api/users',
         login: '/login',
         logout: '/logout',
         getUser: '/currentuser'
@@ -37,7 +37,7 @@ export const config: Config = {
   test: {
     api: {
       auth: {
-        baseUrl: 'http://testurl',
+        baseUrl: process.env.API_AUTH_URL || 'http://testurl',
         login: '/login',
         logout: '/logout',
         getUser: '/currentuser'
@@ -47,7 +47,7 @@ export const config: Config = {
   production: {
     api: {
       auth: {
-        baseUrl: process.env.PROD_API_AUTH_URL || 'http://produrl',
+        baseUrl: process.env.API_AUTH_URL || 'http://produrl',
         login: '/login',
         logout: '/logout',
         getUser: '/currentuser'
