@@ -7,7 +7,7 @@ thomblweed-client
   src server
 
 @static
-compression true
+compression br
 prune true
 
 @aws
