@@ -1,10 +1,30 @@
+import type { LinksFunction } from '@remix-run/node';
+
+import { Section, links as sectionStyles } from '~/components/Section';
+import homeStyles from '~/styles/routes/home.css';
+
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: homeStyles },
+  ...sectionStyles()
+];
+
 export default function Home() {
   return (
-    <section>
-      <p>
-        Hello! I&apos;m a web developer and welcome to my site with nothing in
-        it :-) (yet)
-      </p>
-    </section>
+    <Section>
+      <div className="about-container">
+        <picture className="profile-picture">
+          <img
+            src="/_static/images/thom.jpg"
+            alt="thomas newman"
+            className="profile-img"
+          />
+          {/* <div className="fade-block"></div> */}
+        </picture>
+        <p>
+          Hello! I&apos;m a web developer and welcome to my site with nothing in
+          it :-) (yet)
+        </p>
+      </div>
+    </Section>
   );
 }

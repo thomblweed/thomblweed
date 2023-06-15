@@ -4,13 +4,14 @@ import { NavLink } from '@remix-run/react';
 
 // import { DeviceContext } from '~/state/context/DeviceContext';
 import { Navigation, links as navigationStyles } from '~/components/Navigation';
-import { Logo } from '../Logo';
+import { Logo, links as logoStyles } from '../Logo';
 import headerStyles from './header.css';
 
 // const Placeholder = () => <div className='h-[68px]'></div>;
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: headerStyles },
+  ...logoStyles(),
   ...navigationStyles()
 ];
 
