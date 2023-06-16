@@ -18,11 +18,9 @@ export default function Home() {
             alt="thomas newman"
             className="profile-img"
           />
-          {/* <div className="fade-block"></div> */}
         </picture>
-        <p>
-          Hello! I&apos;m a web developer and welcome to my site with nothing in
-          it :-) (yet)
+        <p className="about-me-text">
+          Hello! I&apos;m a web developer and welcome to my site.
         </p>
       </div>
     </Section>
