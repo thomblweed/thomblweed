@@ -1,29 +1,35 @@
+:root {
+  --photo-width: 240px;
+}
+
 .about-container {
   display: grid;
-  border-radius: var(--spacing-100);
-  background-color: var(--clr-dark);
+  gap: var(--spacing-300);
 }
 
 .profile-picture {
-  width: 240px;
   padding: var(--spacing-200);
+  margin: var(--spacing-200);
 }
 .profile-img {
   border-radius: var(--spacing-100);
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(40%);
+  -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(30%);
+  /* box-shadow: 0 0 8px 1px var(--clr-alternate); */
 }
 
 .about-me-text {
   padding: var(--spacing-200);
+  margin: var(--spacing-200);
+  text-align: center;
 }
 
-@media (min-width: 50em) {
-  .about-container {
-    grid-template-columns: 1fr 2fr;
+@media (min-width: 40rem) {
+  :root {
+    --photo-width: 310px;
   }
 
-  .profile-picture {
-    width: 310px;
+  .about-container {
+    grid-template-columns: minmax(var(--photo-width), 1fr) 2fr;
   }
 }

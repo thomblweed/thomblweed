@@ -1,5 +1,8 @@
 .section {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  border-radius: var(--spacing-100);
+  background-color: var(--clr-dark);
+}
+
+.inner-section {
+  padding: var(--spacing-300);
 }
