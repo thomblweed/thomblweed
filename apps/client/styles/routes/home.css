@@ -16,6 +16,7 @@
   margin: var(--spacing-200);
   justify-self: center;
 }
+
 .profile-img {
   border-radius: var(--spacing-100);
   -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
@@ -27,7 +28,6 @@
 .about-me-text {
   padding: var(--spacing-200);
   margin: var(--spacing-200);
-  text-align: center;
 }
 
 @media (min-width: 48rem) {

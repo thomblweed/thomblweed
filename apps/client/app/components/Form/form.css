@@ -1,0 +1,9 @@
+.form {
+  display: grid;
+  margin-inline: var(--spacing-300);
+}
+
+.form button {
+  margin-top: var(--spacing-400);
+  margin-bottom: var(--spacing-300);
+}
