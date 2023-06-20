@@ -12,7 +12,7 @@
     border-color var(--transition-duration);
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   .input {
     height: 3rem;
   }

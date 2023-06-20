@@ -33,11 +33,15 @@
   --spacing-200: 0.5rem;
   --spacing-300: 1rem;
   --spacing-400: 1.5rem;
+  --spacing-500: 2rem;
+  --spacing-600: 3rem;
+  --spacing-700: 4rem;
+  --spacing-800: 5rem;
 
   --transition-duration: 0.3s;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   :root {
     --fs-body: var(--fs-450);
     --fs-primary-heading: var(--fs-700);
@@ -81,16 +85,16 @@ p {
 /* Utility classes */
 
 .container {
-  --max-width: 540px;
-  --spacing-size: 1rem;
+  --max-width: 48rem;
+  --spacing-size: 1.5rem;
 
   width: min(var(--max-width), 100% - (var(--spacing-size) * 2));
   margin-inline: auto;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
   .container {
-    --max-width: 1400px;
+    --max-width: 87.5rem;
   }
 }
 
