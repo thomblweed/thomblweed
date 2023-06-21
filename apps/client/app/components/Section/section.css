@@ -1,7 +1,6 @@
 .section {
   border-radius: var(--spacing-100);
   background-color: var(--clr-dark);
-  width: 100%;
 }
 
 .inner-section {

@@ -30,35 +30,37 @@ export default function Login() {
     <>
       <div className="center">
         <Section>
-          <h2>Admin Login</h2>
-          <Form
-            method="post"
-            schema={{
-              fields: [
-                {
-                  type: FieldType.EMAIL,
-                  name: LoginFields.EMAIL,
-                  label: 'Email Address',
-                  required: true
-                },
-                {
-                  type: FieldType.PASSWORD,
-                  name: LoginFields.PASSWORD,
-                  label: 'Password',
-                  required: true
-                }
-              ],
-              buttons: [
-                {
-                  label: 'Login',
-                  type: ButtonType.SUBMIT,
-                  id: 'login-button'
-                }
-              ]
-            }}
-            busy={state === 'submitting' || state === 'loading'}
-            error={actionData?.loginError}
-          />
+          <div className="admin-login">
+            <h2>Admin Login</h2>
+            <Form
+              method="post"
+              schema={{
+                fields: [
+                  {
+                    type: FieldType.EMAIL,
+                    name: LoginFields.EMAIL,
+                    label: 'Email Address',
+                    required: true
+                  },
+                  {
+                    type: FieldType.PASSWORD,
+                    name: LoginFields.PASSWORD,
+                    label: 'Password',
+                    required: true
+                  }
+                ],
+                buttons: [
+                  {
+                    label: 'Login',
+                    type: ButtonType.SUBMIT,
+                    id: 'login-button'
+                  }
+                ]
+              }}
+              busy={state === 'submitting' || state === 'loading'}
+              error={actionData?.loginError}
+            />
+          </div>
         </Section>
       </div>
     </>

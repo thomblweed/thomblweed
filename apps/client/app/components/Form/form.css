@@ -1,6 +1,5 @@
 .form {
   display: grid;
-  margin-inline: var(--spacing-300);
 }
 
 .form button {
