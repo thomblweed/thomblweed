@@ -20,7 +20,7 @@ export const createSupabaseServerClient = (
         secure: true,
         maxAge: 48000,
         name: 'thomblweed-auth-token',
-        domain: 'localhost:2000',
+        domain: process.env.SUPABASE_COOKIE_DOMAIN,
         path: '/',
         sameSite: 'lax'
       }

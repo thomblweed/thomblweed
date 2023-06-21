@@ -1,13 +1,18 @@
-import type { RefAttributes } from 'react';
-import { Form as RemixForm } from '@remix-run/react';
-import type { FormMethod } from '@remix-run/react';
 import type { LinksFunction } from '@remix-run/node';
+import type { FormMethod } from '@remix-run/react';
+import { Form as RemixForm } from '@remix-run/react';
+import type { RefAttributes } from 'react';
 
-import type { FormField, FormSchema } from './types';
-import { Field, links as fieldStyles } from './Field';
 import { Button, links as buttonStyles } from '../Elements/Button';
+import { Field, links as fieldStyles } from './Field';
+import formStyles from './form.css';
+import type { FormField, FormSchema } from './types';
 
-export const links: LinksFunction = () => [...fieldStyles(), ...buttonStyles()];
+export const links: LinksFunction = () => [
+  { href: formStyles, rel: 'stylesheet' },
+  ...fieldStyles(),
+  ...buttonStyles()
+];
 
 type FormProps = {
   schema: FormSchema;
@@ -26,7 +31,7 @@ export const Form = ({
   error,
   ...rest
 }: FormProps & RefAttributes<HTMLFormElement>) => (
-  <RemixForm method={method} action={action} {...rest}>
+  <RemixForm method={method} action={action} className="form" {...rest}>
     {schema.fields?.map((field: FormField) => (
       <Field
         key={field.name}
@@ -38,7 +43,7 @@ export const Form = ({
       />
     ))}
     {schema.buttons?.map(({ id, type, label }) => (
-      <Button key={id} disabled={busy} type={type} width='full'>
+      <Button key={id} disabled={busy} type={type} width="full">
         {label}
       </Button>
     ))}

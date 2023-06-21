@@ -12,5 +12,7 @@ type SectionProps = {
 };
 
 export const Section: FC<SectionProps> = ({ children }) => (
-  <section className='section'>{children}</section>
+  <section className="section">
+    <div className="inner-section">{children}</div>
+  </section>
 );

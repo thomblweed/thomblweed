@@ -1,0 +1,40 @@
+:root {
+  --photo-width: 240px;
+}
+
+.about-container {
+  display: grid;
+}
+
+.about-me {
+  max-width: 48rem;
+  justify-self: center;
+  margin: var(--spacing-200);
+}
+
+.profile-picture {
+  margin: var(--spacing-200);
+}
+
+.profile-img {
+  border-radius: var(--spacing-100);
+  -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(30%);
+  width: var(--photo-width);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --photo-width: 310px;
+  }
+
+  .profile-picture {
+    justify-self: center;
+  }
+
+  .about-container {
+    grid-template-columns: minmax(var(--photo-width), 1fr) 4fr;
+    align-items: center;
+    gap: var(--spacing-300);
+  }
+}

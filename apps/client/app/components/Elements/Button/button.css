@@ -12,13 +12,15 @@
   transition: all var(--transition-duration);
 }
 
-.button:hover:enabled,
-.button:focus:enabled {
-  color: var(--clr-alternate);
-  background-color: var(--clr-grey);
-  box-shadow: 0 0 8px 1px var(--clr-primary);
-  text-shadow: 0 0 8px var(--clr-primary);
-  outline: none;
+@media (hover: hover) and (pointer: fine) {
+  .button:hover:enabled,
+  .button:focus:enabled {
+    color: var(--clr-alternate);
+    background-color: var(--clr-grey);
+    box-shadow: 0 0 8px 1px var(--clr-primary);
+    text-shadow: 0 0 8px var(--clr-primary);
+    outline: none;
+  }
 }
 
 .button:disabled {
