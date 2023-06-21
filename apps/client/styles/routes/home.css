@@ -9,12 +9,11 @@
 .about-me {
   max-width: 48rem;
   justify-self: center;
+  margin: var(--spacing-200);
 }
 
 .profile-picture {
-  padding: var(--spacing-200);
   margin: var(--spacing-200);
-  justify-self: center;
 }
 
 .profile-img {
@@ -22,12 +21,6 @@
   -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
   filter: grayscale(30%);
   width: var(--photo-width);
-  /* box-shadow: 0 0 8px 1px var(--clr-alternate); */
-}
-
-.about-me-text {
-  padding: var(--spacing-200);
-  margin: var(--spacing-200);
 }
 
 @media (min-width: 48rem) {
@@ -35,8 +28,12 @@
     --photo-width: 310px;
   }
 
+  .profile-picture {
+    justify-self: center;
+  }
+
   .about-container {
-    grid-template-columns: minmax(var(--photo-width), 1fr) 2fr;
+    grid-template-columns: minmax(var(--photo-width), 1fr) 4fr;
     align-items: center;
     gap: var(--spacing-300);
   }

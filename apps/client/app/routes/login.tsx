@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="login-section-container">
+      <div className="center">
         <Section>
           <h2>Admin Login</h2>
           <Form
