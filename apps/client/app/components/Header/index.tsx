@@ -33,7 +33,7 @@ export const Header = () => {
     //   ) : null}
     // </>
     <header>
-      <div className="header-container">
+      <div className="header-container container">
         <Logo />
         <Navigation
           items={[

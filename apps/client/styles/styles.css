@@ -6,6 +6,7 @@
   --clr-grey: hsl(208, 88%, 83%);
   --clr-bright: hsl(180, 100%, 97%);
   --clr-dark: hsl(237, 43%, 10%);
+  --clr-dark-red: hsl(288, 43%, 9%);
 
   --ff-primary: 'Roboto Mono', 'Helvetica', 'Arial', 'sans-serif';
   --ff-body: var(--ff-primary);
@@ -96,7 +97,7 @@ p {
 @media (min-width: 48rem) {
   .container {
     --max-width: 87.5rem;
-    --spacing-size: 1.5rem;
+    --spacing-size: 1rem;
   }
 }
 

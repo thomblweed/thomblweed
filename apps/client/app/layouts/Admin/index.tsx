@@ -18,7 +18,7 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-      <div className="admin-container">
+      <div className="admin-container container">
         <Button
           type="button"
           disabled={state === 'submitting' || state === 'loading'}

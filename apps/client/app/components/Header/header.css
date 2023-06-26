@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: var(--spacing-300);
-  margin-bottom: var(--spacing-200);
+  margin-bottom: var(--spacing-300);
 }
 
 .nav-link {
