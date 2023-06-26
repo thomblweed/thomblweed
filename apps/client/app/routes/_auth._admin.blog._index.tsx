@@ -2,6 +2,7 @@ import type { DataFunctionArgs, LinksFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 
+import { Section, links as sectionStyles } from '~/components/Section';
 import {
   BlogInfo,
   links as blogInfoStyles
@@ -15,6 +16,7 @@ import type { AdminContext } from './_auth._admin';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: blogStyles },
+  ...sectionStyles(),
   ...blogInfoStyles()
 ];
 
@@ -32,13 +34,13 @@ export default function Blog() {
   const { isAdmin } = useOutletContext<AdminContext>();
 
   return (
-    <section>
+    <Section>
       <h2>Blog</h2>
       <div className="blog-container">
         {blogs?.map(({ title, id }) => (
           <BlogInfo key={id} isAdmin={isAdmin} id={id} title={title} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

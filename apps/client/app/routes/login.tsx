@@ -27,43 +27,39 @@ export default function Login() {
   const actionData = useActionData<{ loginError?: string }>();
 
   return (
-    <>
-      <div className="center">
-        <Section>
-          <div className="admin-login">
-            <h2>Admin Login</h2>
-            <Form
-              method="post"
-              schema={{
-                fields: [
-                  {
-                    type: FieldType.EMAIL,
-                    name: LoginFields.EMAIL,
-                    label: 'Email Address',
-                    required: true
-                  },
-                  {
-                    type: FieldType.PASSWORD,
-                    name: LoginFields.PASSWORD,
-                    label: 'Password',
-                    required: true
-                  }
-                ],
-                buttons: [
-                  {
-                    label: 'Login',
-                    type: ButtonType.SUBMIT,
-                    id: 'login-button'
-                  }
-                ]
-              }}
-              busy={state === 'submitting' || state === 'loading'}
-              error={actionData?.loginError}
-            />
-          </div>
-        </Section>
+    <div className="center">
+      <div>
+        <h2>Admin Login</h2>
+        <Form
+          method="post"
+          schema={{
+            fields: [
+              {
+                type: FieldType.EMAIL,
+                name: LoginFields.EMAIL,
+                label: 'Email Address',
+                required: true
+              },
+              {
+                type: FieldType.PASSWORD,
+                name: LoginFields.PASSWORD,
+                label: 'Password',
+                required: true
+              }
+            ],
+            buttons: [
+              {
+                label: 'Login',
+                type: ButtonType.SUBMIT,
+                id: 'login-button'
+              }
+            ]
+          }}
+          busy={state === 'submitting' || state === 'loading'}
+          error={actionData?.loginError}
+        />
       </div>
-    </>
+    </div>
   );
 }
 

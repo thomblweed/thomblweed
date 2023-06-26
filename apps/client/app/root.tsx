@@ -40,7 +40,7 @@ const Document = ({ children }: { children: ReactNode }) => (
       <Meta />
       <Links />
     </head>
-    <body className="container">
+    <body>
       {children}
       <ScrollRestoration />
       <Scripts />
