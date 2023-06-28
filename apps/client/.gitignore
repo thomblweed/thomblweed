@@ -5,7 +5,7 @@
 
 /build/
 /public/build
-/server/index.js*
+/server/index.mjs*
 preferences.arc
 sam.json
 sam.yaml
