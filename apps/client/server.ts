@@ -1,5 +1,8 @@
 import { createRequestHandler } from '@remix-run/architect';
 import * as build from '@remix-run/dev/server-build';
+import { installGlobals } from '@remix-run/node';
+
+installGlobals();
 
 export const handler = createRequestHandler({
   build,

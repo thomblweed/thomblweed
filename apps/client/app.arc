@@ -10,6 +10,10 @@ thomblweed-client
 compression br
 prune true
 
+@plugins
+plugin-remix
+  src plugin-remix.js
+
 @aws
 profile default
 region eu-west-2
