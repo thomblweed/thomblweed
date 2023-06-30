@@ -27,6 +27,7 @@
   --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-600);
   --fs-secondary-heading: var(--fs-500);
+  --fs-third-heading: var(--fs-450);
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-400);
 
@@ -47,6 +48,7 @@
     --fs-body: var(--fs-450);
     --fs-primary-heading: var(--fs-700);
     --fs-secondary-heading: var(--fs-600);
+    --fs-third-heading: var(--fs-500);
     --fs-button: var(--fs-450);
 
     --fs-nav: var(--fs-300);
@@ -65,13 +67,21 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+ul,
+li {
+  font-size: var(--fs-body);
+}
+
 h2 {
   color: var(--clr-primary);
   font-size: var(--fs-secondary-heading);
   margin-bottom: var(--spacing-300);
 }
-h2:before {
-  content: '> ';
+
+h3 {
+  color: var(--clr-secondary);
+  font-size: var(--fs-third-heading);
+  margin-bottom: var(--spacing-200);
 }
 
 p {

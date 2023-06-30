@@ -4,11 +4,8 @@
 
 .about-grid {
   display: grid;
-  height: 100%;
-}
-
-.about-center {
-  margin: auto 0;
+  grid-template-rows: max-content max-content;
+  gap: var(--spacing-300);
 }
 
 .about-container {
@@ -32,9 +29,30 @@
   width: var(--photo-width);
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-300);
+  /* justify-items: center; */
+}
+
+.skills-item {
+  /* justify-self: center; */
+}
+
+.skills-grid li:before {
+  content: '•';
+  color: var(--clr-primary);
+  margin-right: var(--spacing-200);
+}
+
 @media (min-width: 48rem) {
   :root {
     --photo-width: 310px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .profile-picture {
