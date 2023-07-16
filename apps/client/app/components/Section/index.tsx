@@ -9,10 +9,11 @@ export const links: LinksFunction = () => [
 
 type SectionProps = {
   children: ReactNode;
+  color?: 'dark' | 'dark-red';
 };
 
-export const Section: FC<SectionProps> = ({ children }) => (
-  <section className="section">
+export const Section: FC<SectionProps> = ({ children, color = 'dark' }) => (
+  <section className={`color-dark${color === 'dark-red' ? '--red' : ''}`}>
     <div className="inner-section container">{children}</div>
   </section>
 );

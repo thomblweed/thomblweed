@@ -1,5 +1,9 @@
-.section {
+.color-dark {
   background-color: var(--clr-dark);
+}
+
+.color-dark--red {
+  background-color: var(--clr-dark-red);
 }
 
 .inner-section {
