@@ -29,15 +29,15 @@
   width: var(--photo-width);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-300);
-  /* justify-items: center; */
+.skill-container {
+  margin: 0 auto;
+  max-width: 90%;
 }
 
-.skills-item {
-  /* justify-self: center; */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(7.5rem, 1fr));
+  gap: var(--spacing-300);
 }
 
 .skills-grid li:before {
@@ -46,13 +46,19 @@
   margin-right: var(--spacing-200);
 }
 
+.skills-list {
+  list-style-position: outside;
+  padding-left: 1.1rem;
+  text-indent: -1.1rem;
+}
+
 @media (min-width: 48rem) {
   :root {
     --photo-width: 310px;
   }
 
   .skills-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(7.5rem, 1fr));
   }
 
   .profile-picture {
@@ -66,6 +72,5 @@
 
   .about-me {
     text-align: left;
-    /* max-width: 40rem; */
   }
 }

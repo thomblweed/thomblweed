@@ -29,78 +29,80 @@ export const AboutMe = () => {
           <div className="about-me">
             <h2>about me</h2>
             <p>
-              I am a Fullstack Developer with over 8 years experience. I started
-              out in late 2014 in the Microsoft SharePoint and CRM development
-              space before moving on to web development in 2018. I am passionate
-              about agile methodology and constantly strive to expand my
-              knowledge and skills.
+              Frontend Developer, with a history of full stack development, over
+              8 years experience and 5 years in the consulting field. Enjoys
+              working in agile environments and promotes collaboration and code
+              pairing. Passionate about learning new skills and has a history of
+              being able to learn unfamiliar technology with new projects.
             </p>
           </div>
         </div>
       </Section>
       <Section color="dark-red">
-        <div className="skills-grid">
-          <div className="skills-item">
-            <h3>libraries</h3>
-            <ul>
-              <li>React</li>
-              <li>React Router</li>
-              <li>XState</li>
-              <li>Redux</li>
-              <li>Mobx</li>
-              <li>React Hook Form</li>
-              <li>Styled Components</li>
-              <li>Material UI</li>
-              <li>Chakra UI</li>
-            </ul>
-          </div>
-          <div className="skills-item">
-            <h3>frameworks</h3>
-            <ul>
-              <li>Remix</li>
-              <li>Next</li>
-              <li>Node</li>
-              <li>Express</li>
-              <li>Koa</li>
-            </ul>
-          </div>
-          <div className="skills-item">
-            <h3>testing</h3>
-            <ul>
-              <li>Jest</li>
-              <li>Vitest</li>
-              <li>Testing Library</li>
-              <li>Playwright</li>
-              <li>Cypress</li>
-            </ul>
-          </div>
-          <div className="skills-item">
-            <h3>languages</h3>
-            <ul>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Java</li>
-            </ul>
-          </div>
-          <div className="skills-item">
-            <h3>database</h3>
-            <ul>
-              <li>Supabase</li>
-              <li>DB2</li>
-              <li>MongoDB</li>
-            </ul>
-          </div>
-          <div className="skills-item">
-            <h3>tools</h3>
-            <ul>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>GitLab</li>
-              <li>Bitbucket</li>
-              <li>VS Code</li>
-            </ul>
+        <div className="skill-container">
+          <div className="skills-grid">
+            <div>
+              <h3>libraries</h3>
+              <ul className="skills-list">
+                <li>React</li>
+                <li>React Router</li>
+                <li>XState</li>
+                <li>Redux</li>
+                <li>Mobx</li>
+                <li>React Hook Form</li>
+                <li>Styled Components</li>
+                <li>Material UI</li>
+                <li>Chakra UI</li>
+              </ul>
+            </div>
+            <div>
+              <h3>frameworks</h3>
+              <ul>
+                <li>Remix</li>
+                <li>Next</li>
+                <li>Node</li>
+                <li>Express</li>
+                <li>Koa</li>
+              </ul>
+            </div>
+            <div>
+              <h3>testing</h3>
+              <ul>
+                <li>Jest</li>
+                <li>Vitest</li>
+                <li>Testing Library</li>
+                <li>Playwright</li>
+                <li>Cypress</li>
+              </ul>
+            </div>
+            <div>
+              <h3>languages</h3>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java</li>
+              </ul>
+            </div>
+            <div>
+              <h3>database</h3>
+              <ul>
+                <li>Supabase</li>
+                <li>DB2</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+            <div>
+              <h3>tools</h3>
+              <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>GitLab</li>
+                <li>Bitbucket</li>
+                <li>VS Code</li>
+              </ul>
+            </div>
           </div>
         </div>
       </Section>
