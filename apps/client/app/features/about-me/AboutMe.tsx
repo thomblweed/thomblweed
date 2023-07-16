@@ -57,7 +57,7 @@ export const AboutMe = () => {
             </div>
             <div>
               <h3>frameworks</h3>
-              <ul>
+              <ul className="skills-list">
                 <li>Remix</li>
                 <li>Next</li>
                 <li>Node</li>
@@ -67,7 +67,7 @@ export const AboutMe = () => {
             </div>
             <div>
               <h3>testing</h3>
-              <ul>
+              <ul className="skills-list">
                 <li>Jest</li>
                 <li>Vitest</li>
                 <li>Testing Library</li>
@@ -77,7 +77,7 @@ export const AboutMe = () => {
             </div>
             <div>
               <h3>languages</h3>
-              <ul>
+              <ul className="skills-list">
                 <li>JavaScript</li>
                 <li>TypeScript</li>
                 <li>HTML</li>
@@ -87,7 +87,7 @@ export const AboutMe = () => {
             </div>
             <div>
               <h3>database</h3>
-              <ul>
+              <ul className="skills-list">
                 <li>Supabase</li>
                 <li>DB2</li>
                 <li>MongoDB</li>
@@ -95,7 +95,7 @@ export const AboutMe = () => {
             </div>
             <div>
               <h3>tools</h3>
-              <ul>
+              <ul className="skills-list">
                 <li>Git</li>
                 <li>GitHub</li>
                 <li>GitLab</li>
