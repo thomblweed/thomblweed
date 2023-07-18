@@ -15,7 +15,6 @@
 
 .about-me {
   margin-inline: var(--spacing-400);
-  text-align: center;
 }
 
 .profile-picture {
@@ -41,9 +40,5 @@
   .about-container {
     grid-template-columns: var(--photo-width) 1fr;
     align-items: center;
-  }
-
-  .about-me {
-    text-align: left;
   }
 }
