@@ -1,0 +1,33 @@
+.skill-container {
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, auto));
+  gap: var(--spacing-300);
+  justify-content: center;
+}
+
+.skills-grid li:before {
+  content: '•';
+  color: var(--clr-primary);
+  margin-right: var(--spacing-200);
+}
+
+.skills-list {
+  list-style-position: outside;
+  padding-left: 1.1rem;
+  text-indent: -1.1rem;
+}
+
+.skills-item {
+  padding: var(--spacing-200);
+}
+
+@media (min-width: 48rem) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    justify-content: start;
+  }
+}

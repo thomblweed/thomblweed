@@ -41,6 +41,8 @@
   --spacing-800: 5rem;
 
   --transition-duration: 0.3s;
+
+  --border-radius: var(--spacing-200);
 }
 
 @media (min-width: 48rem) {
