@@ -40,6 +40,7 @@ export default function Blog() {
         {blogs?.map(({ title, id }) => (
           <BlogInfo key={id} isAdmin={isAdmin} id={id} title={title} />
         ))}
+        coming soon...
       </div>
     </Section>
   );

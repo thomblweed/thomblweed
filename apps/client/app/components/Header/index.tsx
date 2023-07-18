@@ -37,8 +37,8 @@ export const Header = () => {
         <Logo />
         <Navigation
           items={[
-            { value: 'Home', route: '/' },
-            { value: 'Blog', route: '/blog' }
+            { value: 'home', route: '/' },
+            { value: 'blog', route: '/blog' }
           ]}
           content={({ value, route }) => (
             <NavLink

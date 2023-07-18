@@ -29,36 +29,9 @@
   width: var(--photo-width);
 }
 
-.skill-container {
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(7.5rem, 1fr));
-  gap: var(--spacing-300);
-}
-
-.skills-grid li:before {
-  content: '•';
-  color: var(--clr-primary);
-  margin-right: var(--spacing-200);
-}
-
-.skills-list {
-  list-style-position: outside;
-  padding-left: 1.1rem;
-  text-indent: -1.1rem;
-}
-
 @media (min-width: 48rem) {
   :root {
     --photo-width: 310px;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(3, minmax(7.5rem, 1fr));
   }
 
   .profile-picture {
@@ -66,11 +39,12 @@
   }
 
   .about-container {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: var(--photo-width) 1fr;
     align-items: center;
   }
 
   .about-me {
     text-align: left;
+    max-width: 550px;
   }
 }
