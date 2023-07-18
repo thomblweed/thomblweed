@@ -28,7 +28,7 @@ export const AboutMe = () => {
               className="profile-img"
             />
           </picture>
-          <div className="about-me">
+          <div className="about-me center-text">
             <h2>about me</h2>
             <p>
               Frontend Developer, with a history of full stack development, over
@@ -41,6 +41,7 @@ export const AboutMe = () => {
         </div>
       </Section>
       <Section color="dark-red">
+        <h2 className="center-text">skills</h2>
         <Skills />
       </Section>
     </div>

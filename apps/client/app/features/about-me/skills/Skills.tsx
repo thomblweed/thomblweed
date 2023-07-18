@@ -17,9 +17,6 @@ export const Skills = () => (
           <li>Redux</li>
           <li>Mobx</li>
           <li>React Hook Form</li>
-          <li>Styled Components</li>
-          <li>Material UI</li>
-          <li>Chakra UI</li>
         </ul>
       </div>
       <div className="skills-item">
@@ -33,6 +30,16 @@ export const Skills = () => (
         </ul>
       </div>
       <div className="skills-item">
+        <h3>styling</h3>
+        <ul className="skills-list">
+          <li>Styled Components</li>
+          <li>Material UI</li>
+          <li>Chakra UI</li>
+          <li>Tailwind</li>
+          <li>Sass</li>
+        </ul>
+      </div>
+      <div className="skills-item">
         <h3>testing</h3>
         <ul className="skills-list">
           <li>Jest</li>
@@ -40,6 +47,7 @@ export const Skills = () => (
           <li>Testing Library</li>
           <li>Playwright</li>
           <li>Cypress</li>
+          <li>Testcafe</li>
         </ul>
       </div>
       <div className="skills-item">
@@ -53,21 +61,36 @@ export const Skills = () => (
         </ul>
       </div>
       <div className="skills-item">
+        <h3>cloud</h3>
+        <ul className="skills-list">
+          <li>AWS Lambda</li>
+          <li>AWS S3</li>
+          <li>AWS Gateway</li>
+        </ul>
+      </div>
+      <div className="skills-item">
+        <h3>ci/cd</h3>
+        <ul className="skills-list">
+          <li>Git</li>
+          <li>Azure Devops</li>
+          <li>GitHub Actions</li>
+          <li>Jenkins</li>
+        </ul>
+      </div>
+      <div className="skills-item">
         <h3>database</h3>
         <ul className="skills-list">
           <li>Supabase</li>
           <li>DB2</li>
           <li>MongoDB</li>
+          <li>PostgreSQL</li>
         </ul>
       </div>
       <div className="skills-item">
-        <h3>tools</h3>
+        <h3>iac</h3>
         <ul className="skills-list">
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>GitLab</li>
-          <li>Bitbucket</li>
-          <li>VS Code</li>
+          <li>Terraform</li>
+          <li>Architect</li>
         </ul>
       </div>
     </div>
