@@ -8,7 +8,7 @@ export const links: LinksFunction = () => [
 export const Skills = () => (
   <div className="skill-container">
     <div className="skills-grid">
-      <div>
+      <div className="skills-item">
         <h3>libraries</h3>
         <ul className="skills-list">
           <li>React</li>
@@ -22,7 +22,7 @@ export const Skills = () => (
           <li>Chakra UI</li>
         </ul>
       </div>
-      <div>
+      <div className="skills-item">
         <h3>frameworks</h3>
         <ul className="skills-list">
           <li>Remix</li>
@@ -32,7 +32,7 @@ export const Skills = () => (
           <li>Koa</li>
         </ul>
       </div>
-      <div>
+      <div className="skills-item">
         <h3>testing</h3>
         <ul className="skills-list">
           <li>Jest</li>
@@ -42,7 +42,7 @@ export const Skills = () => (
           <li>Cypress</li>
         </ul>
       </div>
-      <div>
+      <div className="skills-item">
         <h3>languages</h3>
         <ul className="skills-list">
           <li>JavaScript</li>
@@ -52,7 +52,7 @@ export const Skills = () => (
           <li>Java</li>
         </ul>
       </div>
-      <div>
+      <div className="skills-item">
         <h3>database</h3>
         <ul className="skills-list">
           <li>Supabase</li>
@@ -60,7 +60,7 @@ export const Skills = () => (
           <li>MongoDB</li>
         </ul>
       </div>
-      <div>
+      <div className="skills-item">
         <h3>tools</h3>
         <ul className="skills-list">
           <li>Git</li>

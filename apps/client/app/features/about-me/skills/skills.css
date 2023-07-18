@@ -21,6 +21,10 @@
   text-indent: -1.1rem;
 }
 
+.skills-item {
+  padding: var(--spacing-200);
+}
+
 @media (min-width: 48rem) {
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));

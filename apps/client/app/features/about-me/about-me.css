@@ -23,7 +23,7 @@
 }
 
 .profile-img {
-  border-radius: var(--spacing-200);
+  border-radius: var(--border-radius);
   -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
   filter: grayscale(30%);
   width: var(--photo-width);
@@ -45,6 +45,5 @@
 
   .about-me {
     text-align: left;
-    max-width: 550px;
   }
 }

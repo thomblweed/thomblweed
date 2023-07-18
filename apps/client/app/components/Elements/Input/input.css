@@ -1,7 +1,7 @@
 .input {
   width: 100%;
   color: var(--clr-grey);
-  border-radius: var(--spacing-200);
+  border-radius: var(--border-radius);
   border: 1px solid var(--clr-primary);
   outline: 2px solid transparent;
   outline-offset: 2px;
