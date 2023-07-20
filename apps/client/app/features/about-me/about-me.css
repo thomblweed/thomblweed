@@ -11,10 +11,12 @@
 .about-container {
   display: grid;
   gap: var(--spacing-300);
+  margin-block: var(--spacing-300);
 }
 
 .about-me {
-  margin-inline: var(--spacing-400);
+  text-align: center;
+  margin-inline: var(--spacing-300);
 }
 
 .profile-picture {
@@ -31,6 +33,12 @@
 @media (min-width: 48rem) {
   :root {
     --photo-width: 310px;
+  }
+
+  .about-me {
+    text-align: left;
+    max-width: 45rem;
+    margin-left: 3rem;
   }
 
   .profile-picture {
