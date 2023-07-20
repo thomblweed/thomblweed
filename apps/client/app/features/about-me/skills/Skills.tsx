@@ -48,6 +48,7 @@ export const Skills = () => (
           <li>Playwright</li>
           <li>Cypress</li>
           <li>Testcafe</li>
+          <li>Supertest</li>
         </ul>
       </div>
       <div className="skills-item">
