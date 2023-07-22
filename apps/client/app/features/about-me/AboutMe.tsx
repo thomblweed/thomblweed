@@ -1,9 +1,6 @@
 import type { LinksFunction } from '@remix-run/node';
 
 import { Section, links as sectionStyles } from '~/components/Section';
-import { ReactRouterSVG } from '~/components/Svg/ReactRouterSVG';
-import { ReactSVG } from '~/components/Svg/ReactSVG';
-import { SolidSVG } from '~/components/Svg/SolidSVG';
 import aboutMeStyles from './about-me.css';
 import { Skills, links as skillsStyles } from './skills/Skills';
 
