@@ -20,7 +20,8 @@
     "clean": "pnpm clean:build && pnpm clean:cache",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
     "clean:cache": "if [ -d \".cache\" ]; then rm -rf \".cache\"; fi",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest"
   },
   "engines": {
     "node": ">=14.0.0"
