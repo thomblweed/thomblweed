@@ -11,7 +11,7 @@
     "watch:css": "postcss styles --base styles --dir app/styles -w",
     "watch:arc": "cross-env NODE_ENV=development arc sandbox --port 2000",
     "dev": "run-p \"dev:*\"",
-    "dev:remix": "remix dev -c \"arc sandbox -e testing\"",
+    "dev:remix": "remix dev --manual -c \"arc sandbox -e testing\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
     "start": "NODE_ENV=production pnpm clean:cache && pnpm build && npm-run-all --parallel \"start:*\"",
     "start:arc": "cross-env NODE_ENV=production arc sandbox",
