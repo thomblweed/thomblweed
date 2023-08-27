@@ -6,6 +6,7 @@
 /build/
 /public/build
 /server/index.mjs*
+/server/metafile*
 preferences.arc
 sam.json
 sam.yaml
