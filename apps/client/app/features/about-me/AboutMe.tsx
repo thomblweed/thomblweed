@@ -2,6 +2,7 @@ import type { LinksFunction } from '@remix-run/node';
 
 import { Section, links as sectionStyles } from '~/components/Section';
 import aboutMeStyles from './about-me.css';
+import { skillsData } from './data/skills.data';
 import { Skills, links as skillsStyles } from './skills/Skills';
 
 export const links: LinksFunction = () => [
@@ -45,8 +46,7 @@ export const AboutMe = () => {
         </div>
       </Section>
       <Section color="dark-red">
-        <h2 className="center-text">skills</h2>
-        <Skills />
+        <Skills data={skillsData} />
       </Section>
     </div>
   );
