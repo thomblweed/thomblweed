@@ -3,8 +3,7 @@ import type { SupabaseClient } from '@supabase/auth-helpers-remix';
 import { createServerClient } from '@supabase/auth-helpers-remix';
 
 import type { Database } from '@types';
-type UserRole = Database['public']['Tables']['user_roles']['Row'];
-type Blog = Database['public']['Tables']['blogs']['Row'];
+import type { BlogData, UserRole } from './types';
 
 export const createSupabaseServerClient = (
   request: Request,
@@ -37,4 +36,4 @@ export const getRoleDataForCurrentUser = async (client: SupabaseClient) =>
   ).data?.user_roles as UserRole | undefined;
 
 export const getAllBlogs = async (client: SupabaseClient) =>
-  (await client.from('blogs').select('*')).data as Blog[] | null;
+  (await client.from('blogs').select('*')).data as BlogData[] | null;
