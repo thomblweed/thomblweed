@@ -1,8 +1,11 @@
 import type { LinksFunction } from '@remix-run/node';
 import { NavLink } from '@remix-run/react';
 
-import { Logo } from '~/components/Logo';
-import { Navigation, links as navigationStyles } from '~/components/Navigation';
+import { Logo } from '~/layouts/MainLayout/components/Logo';
+import {
+  Navigation,
+  links as navigationStyles
+} from '~/layouts/MainLayout/components/Navigation';
 import headerStyles from './desktop-header.css';
 
 export const links: LinksFunction = () => [

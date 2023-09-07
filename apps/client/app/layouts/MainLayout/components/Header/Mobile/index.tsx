@@ -1,4 +1,4 @@
-import { Logo } from '~/components/Logo';
+import { Logo } from '~/layouts/MainLayout/components/Logo';
 
 const MobileHeader = () => (
   <header>

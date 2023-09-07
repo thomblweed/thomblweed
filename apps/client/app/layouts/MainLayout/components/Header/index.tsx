@@ -3,7 +3,10 @@ import { NavLink } from '@remix-run/react';
 // import { useContext } from 'react';
 
 // import { DeviceContext } from '~/state/context/DeviceContext';
-import { Navigation, links as navigationStyles } from '~/components/Navigation';
+import {
+  Navigation,
+  links as navigationStyles
+} from '~/layouts/MainLayout/components/Navigation';
 import { Logo, links as logoStyles } from '../Logo';
 import headerStyles from './header.css';
 
