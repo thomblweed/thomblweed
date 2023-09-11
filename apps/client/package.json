@@ -21,6 +21,12 @@
     "clean": "bun run clean:build && bun run clean:cache",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
     "clean:cache": "if [ -d \".cache\" ]; then rm -rf \".cache\"; fi",
+    "encrypt": "bun run encrypt:env && bun run encrypt:prefs",
+    "encrypt:env": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env > .env.enc",
+    "encrypt:prefs": "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.arc > preferences.enc",
+    "decrypt": "bun run decrypt:env && bun run decrypt:prefs",
+    "decrypt:env": "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env",
+    "decrypt:prefs": "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.enc > preferences.arc",
     "lint": "eslint .",
     "test": "vitest"
   },
