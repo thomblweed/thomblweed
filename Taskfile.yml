@@ -1,0 +1,21 @@
+version: '3'
+
+tasks:
+  dev:
+    deps: [dev:client, dev:supabase]
+  dev:client:
+    dir: packages/client
+    cmds:
+      - bun run dev:remix
+      - bun run dev:css
+  dev:supabase:
+    dir: packages/supabase
+    status:
+      - supabase status
+    cmds:
+      - bun run dev
+
+  db:stop:
+    dir: packages/supabase
+    cmds:
+      - bun run stop
