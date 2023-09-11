@@ -2,9 +2,10 @@
   "name": "supabase",
   "private": true,
   "scripts": {
-    "dev": "supabase start",
+    "start": "supabase start",
     "stop": "supabase stop",
     "push": "supabase db push --password=$SUPABASE_DB_PASSWORD",
+    "status": "supabase status",
     "dump": "pg_dump postgresql://postgres:postgres@localhost:54322/postgres --inserts -f dump.sql",
     "types": "supabase gen types typescript --local > ../types/src/lib/supabase/database.types.ts",
     "encrypt": "bun run encrypt:sql && bun run encrypt:env",

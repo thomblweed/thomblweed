@@ -11,11 +11,47 @@ tasks:
   dev:supabase:
     dir: packages/supabase
     status:
-      - supabase status
+      - bun run status
     cmds:
-      - bun run dev
+      - bun run start
 
-  db:stop:
+  build:
+    deps: [build:client]
+  build:client:
+    dir: packages/client
+    cmds:
+      - bun run build
+
+  clean:
+    deps: [clean:client]
+  clean:client:
+    dir: packages/client
+    cmds:
+      - bun run clean
+
+  stop:
     dir: packages/supabase
     cmds:
       - bun run stop
+
+  encrypt:
+    deps: [encrypt:client, encrypt:supabase]
+  encrypt:client:
+    dir: packages/client
+    cmds:
+      - bun run encrypt
+  encrypt:supabase:
+    dir: packages/supabase
+    cmds:
+      - bun run encrypt
+
+  decrypt:
+    deps: [decrypt:client, decrypt:supabase]
+  decrypt:client:
+    dir: packages/client
+    cmds:
+      - bun run decrypt
+  decrypt:supabase:
+    dir: packages/supabase
+    cmds:
+      - bun run decrypt

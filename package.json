@@ -7,21 +7,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "nx run-many --target=dev --output-style=stream",
-    "start": "nx run-many --target=start --output-style=stream",
-    "build": "nx run-many --target=build --output-style=stream",
-    "clean": "nx run-many --target=clean --output-style=stream",
     "deploy": "nx run-many --target=deploy --output-style=stream",
     "destroy": "nx run-many --target=destroy --output-style=stream",
     "test": "nx run-many --target=test --output-style=stream",
-    "db:start": "nx run supabase:dev",
-    "db:stop": "nx run supabase:stop",
     "db:dump": "nx run supabase:dump",
     "db:seed-user": "nx run helpers:seed-supabase-user",
     "db:diff": "nx run supabase:diff",
     "db:push": "nx run supabase:push",
-    "db:types": "nx run supabase:types",
-    "encrypt": "nx run-many --target=encrypt --output-style=stream",
-    "decrypt": "nx run-many --target=decrypt --output-style=stream"
+    "db:types": "nx run supabase:types"
   }
 }
