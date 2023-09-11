@@ -1,8 +1,8 @@
 import type { LinksFunction } from '@remix-run/node';
 import type { ReactNode } from 'react';
 
-import { Footer, links as footerStyles } from '~/components/Footer';
-import { Header, links as headerStyles } from '~/components/Header';
+import { Footer, links as footerStyles } from './components/Footer';
+import { Header, links as headerStyles } from './components/Header';
 import mainLayoutStyles from './main-layout.css';
 
 export const links: LinksFunction = () => [
