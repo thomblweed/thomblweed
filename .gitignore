@@ -39,8 +39,8 @@ testem.log
 Thumbs.db
 
 # Remix files
-apps/**/build
-apps/**/.cache
+packages/client/**/build
+packages/client/**/.cache
 
 # terraform files
 .terraform

@@ -9,22 +9,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [18]
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: oven-sh/setup-bun@v1
         with:
-          version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+          bun-version: 1.0.0
+      - name: Install Task
+        uses: arduino/setup-task@v1
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
       - name: Build
-        run: pnpm build
+        run: task build
       - name: Unit Test
-        run: pnpm test
+        run: task test

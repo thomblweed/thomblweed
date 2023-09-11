@@ -1,0 +1,22 @@
+{
+  "name": "supabase",
+  "private": true,
+  "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "push": "supabase db push --password=$SUPABASE_DB_PASSWORD",
+    "status": "supabase status",
+    "dump": "pg_dump postgresql://postgres:postgres@localhost:54322/postgres --inserts -f dump.sql",
+    "types": "supabase gen types typescript --local > ../types/src/lib/supabase/database.types.ts",
+    "encrypt": "bun run encrypt:sql && bun run encrypt:env",
+    "encrypt:sql": "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") seed.sql > seed.enc.sql",
+    "encrypt:env": "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.local > .env.enc",
+    "decrypt": "bun run decrypt:sql && bun run decrypt:env",
+    "decrypt:sql": "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") seed.enc.sql > seed.sql",
+    "decrypt:env": "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env.local"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.32.0",
+    "supabase": "^1.86.2"
+  }
+}

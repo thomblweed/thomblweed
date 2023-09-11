@@ -1,0 +1,71 @@
+version: '3'
+
+tasks:
+  dev:
+    deps: [dev:client, dev:supabase]
+  dev:client:
+    dir: packages/client
+    cmds:
+      - bun run dev:remix
+      - bun run dev:css
+  dev:supabase:
+    dir: packages/supabase
+    status:
+      - bun run status
+    cmds:
+      - bun run start
+
+  build:
+    deps: [build:client]
+  build:client:
+    dir: packages/client
+    cmds:
+      - bun run build
+
+  test:
+    deps: [test:client]
+  test:client:
+    dir: packages/client
+    cmds:
+      - bun run test
+
+  deploy:
+    deps: [deploy:client]
+  deploy:client:
+    dir: packages/client
+    cmds:
+      - bun run deploy
+
+  clean:
+    deps: [clean:client]
+  clean:client:
+    dir: packages/client
+    cmds:
+      - bun run clean
+
+  stop:
+    dir: packages/supabase
+    cmds:
+      - bun run stop
+
+  encrypt:
+    deps: [encrypt:client, encrypt:supabase]
+  encrypt:client:
+    dir: packages/client
+    cmds:
+      - bun run encrypt
+  encrypt:supabase:
+    dir: packages/supabase
+    cmds:
+      - bun run encrypt
+
+  decrypt:
+    deps: [decrypt:client, decrypt:supabase]
+  decrypt:client:
+    dir: packages/client
+    cmds:
+      - bun run decrypt
+  decrypt:supabase:
+    dir: packages/supabase
+    cmds:
+      - bun run decrypt

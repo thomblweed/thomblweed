@@ -7,7 +7,7 @@
     "strict": true,
     "skipLibCheck": true,
     "paths": {
-      "@types": ["libs/types/src/index.ts"]
+      "@types": ["packages/types/src/index.ts"]
     }
   }
 }
