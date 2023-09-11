@@ -22,6 +22,20 @@ tasks:
     cmds:
       - bun run build
 
+  test:
+    deps: [test:client]
+  test:client:
+    dir: packages/client
+    cmds:
+      - bun run test
+
+  deploy:
+    deps: [deploy:client]
+  deploy:client:
+    dir: packages/client
+    cmds:
+      - bun run deploy
+
   clean:
     deps: [clean:client]
   clean:client:

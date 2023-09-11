@@ -7,9 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "deploy": "nx run-many --target=deploy --output-style=stream",
     "destroy": "nx run-many --target=destroy --output-style=stream",
-    "test": "nx run-many --target=test --output-style=stream",
     "db:dump": "nx run supabase:dump",
     "db:seed-user": "nx run helpers:seed-supabase-user",
     "db:diff": "nx run supabase:diff",
