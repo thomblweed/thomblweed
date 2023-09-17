@@ -6,66 +6,66 @@ tasks:
   dev:client:
     dir: packages/client
     cmds:
-      - bun run dev:remix
-      - bun run dev:css
+      - pnpm dev:remix
+      - pnpm dev:css
   dev:supabase:
     dir: packages/supabase
     status:
-      - bun run status
+      - pnpm status
     cmds:
-      - bun run start
+      - pnpm start
 
   build:
     deps: [build:client]
   build:client:
     dir: packages/client
     cmds:
-      - bun run build
+      - pnpm build
 
   test:
     deps: [test:client]
   test:client:
     dir: packages/client
     cmds:
-      - bun run test
+      - pnpm test
 
   deploy:
     deps: [deploy:client]
   deploy:client:
     dir: packages/client
     cmds:
-      - bun run deploy
+      - pnpm deploy
 
   clean:
     deps: [clean:client]
   clean:client:
     dir: packages/client
     cmds:
-      - bun run clean
+      - pnpm clean
 
   stop:
     dir: packages/supabase
     cmds:
-      - bun run stop
+      - pnpm stop
 
   encrypt:
     deps: [encrypt:client, encrypt:supabase]
   encrypt:client:
     dir: packages/client
     cmds:
-      - bun run encrypt
+      - pnpm encrypt
   encrypt:supabase:
     dir: packages/supabase
     cmds:
-      - bun run encrypt
+      - pnpm encrypt
 
   decrypt:
     deps: [decrypt:client, decrypt:supabase]
   decrypt:client:
     dir: packages/client
     cmds:
-      - bun run decrypt
+      - pnpm decrypt
   decrypt:supabase:
     dir: packages/supabase
     cmds:
-      - bun run decrypt
+      - pnpm decrypt

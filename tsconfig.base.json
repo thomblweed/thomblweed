@@ -9,5 +9,6 @@
     "paths": {
       "@types": ["packages/types/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

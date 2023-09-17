@@ -13,10 +13,11 @@
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
-      "@types": ["../../libs/types/src/index.ts"]
+      "@types": ["../types/src/index.ts"]
     },
     "skipLibCheck": true,
     // Remix takes care of building everything in `remix build`.
