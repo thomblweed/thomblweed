@@ -14,7 +14,7 @@
     "decrypt:env": "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.enc > .env",
     "decrypt:prefs": "sops --decrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") preferences.enc > preferences.arc",
     "deploy": "NODE_ENV=production pnpm build && arc deploy --production",
-    "deploy:ci": "arc deploy --production --concurrent",
+    "deploy:ci": "arc deploy --production",
     "destroy": "arc destroy --app thomblweed-client --force",
     "dev": "run-p \"dev:*\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
