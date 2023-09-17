@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2019",
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -9,5 +9,6 @@
     "paths": {
       "@types": ["packages/types/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

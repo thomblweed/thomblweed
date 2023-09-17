@@ -3,8 +3,5 @@
   "private": true,
   "scripts": {
     "seed-supabase-user": "ts-node ./src/seedSupabaseUser.ts"
-  },
-  "devDependencies": {
-    "ts-node": "^10.9.1"
   }
 }

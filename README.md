@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-### Install Bun
+### Install pnpm
 
-https://bun.sh/docs/installation
+https://pnpm.io/installation
 
 ### Install Docker Desktop
 
@@ -13,7 +13,7 @@ https://www.docker.com/products/docker-desktop/
 ### Install Taskfile
 
 ```sh
-bun add --global @go-task/cli
+pnpm add -g @go-task/cli
 ```
 
 ## Development
@@ -21,7 +21,7 @@ bun add --global @go-task/cli
 ### Install dependencies
 
 ```sh
-bun install
+pnpm install
 ```
 
 ### development

@@ -1,25 +1,21 @@
 {
+  "extends": "../../tsconfig.base.json",
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "types": ["vitest/globals"],
     "isolatedModules": true,
-    "esModuleInterop": true,
     "jsx": "react-jsx",
-    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "target": "ES2019",
-    "strict": true,
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
-      "@types": ["../../libs/types/src/index.ts"]
+      "@types": ["../types/src/index.ts"]
     },
-    "skipLibCheck": true,
     // Remix takes care of building everything in `remix build`.
     "noEmit": true
-  }
+  },
+  "exclude": [".cache", "public", "styles"]
 }

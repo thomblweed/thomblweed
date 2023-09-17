@@ -17,7 +17,7 @@ export const createSupabaseServerClient = (
       response: response || new Response(),
       cookieOptions: {
         secure: true,
-        maxAge: 48000,
+        // maxAge: 48000,
         name: 'thomblweed-auth-token',
         domain: process.env.SUPABASE_COOKIE_DOMAIN,
         path: '/',
