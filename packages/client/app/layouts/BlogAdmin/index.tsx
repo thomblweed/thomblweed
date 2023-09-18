@@ -13,14 +13,19 @@ export const links: LinksFunction = () => [
 export const BlogAdminLayout = ({ children }: { children: ReactNode }) => {
   const fetcher = useFetcher();
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const fieldInputRef = useRef<HTMLInputElement>(null);
   const isBusy = fetcher.state !== 'idle';
-  const canCloseDialog = fetcher.formData?.get('title') && dialogRef.current;
+  const shouldCloseDialog =
+    fetcher.formData?.get('title') &&
+    dialogRef.current &&
+    fieldInputRef.current;
 
   useEffect(() => {
-    if (canCloseDialog) {
+    if (shouldCloseDialog) {
       dialogRef.current.close();
+      fieldInputRef.current.value = '';
     }
-  }, [canCloseDialog]);
+  }, [shouldCloseDialog]);
 
   const newBlogDialog = () => {
     if (!dialogRef.current) {
@@ -39,6 +44,7 @@ export const BlogAdminLayout = ({ children }: { children: ReactNode }) => {
           <h2>New Blog</h2>
           <fetcher.Form method="post" action="/api/blog/add-blog">
             <Field
+              ref={fieldInputRef}
               label="Title"
               name="title"
               type="text"
