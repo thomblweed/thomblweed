@@ -34,7 +34,7 @@ tasks:
   deploy:client:
     dir: packages/client
     cmds:
-      - pnpm deploy
+      - pnpm run deploy
 
   clean:
     deps: [clean:client]
