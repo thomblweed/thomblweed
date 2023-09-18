@@ -36,13 +36,6 @@ tasks:
     cmds:
       - pnpm deploy
 
-  deploy:ci:
-    deps: [deploy:client:ci]
-  deploy:client:ci:
-    dir: packages/client
-    cmds:
-      - pnpm deploy:ci
-
   clean:
     deps: [clean:client]
   clean:client:
