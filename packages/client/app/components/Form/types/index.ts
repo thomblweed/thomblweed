@@ -1,4 +1,5 @@
-import type { ButtonType, FieldType } from '../enums';
+type FieldType = 'text' | 'email' | 'password';
+type ButtonType = 'submit';
 
 export type FormField = {
   type: FieldType;

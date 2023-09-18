@@ -1,5 +1,5 @@
 import { cssBundleHref } from '@remix-run/css-bundle';
-import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -28,7 +28,7 @@ export const links: LinksFunction = () => [
   ...mainLayoutStyles()
 ];
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   { charset: 'utf-8' },
   { title: 'thomas newman' },
   { name: 'viewport', content: 'width=device-width, minimum-scale=1' }

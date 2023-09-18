@@ -2,7 +2,7 @@ import type { LinksFunction } from '@remix-run/node';
 import { useActionData, useNavigation } from '@remix-run/react';
 
 import { Form, links as formStyles } from '~/components/Form';
-import { ButtonType, FieldType } from '~/components/Form/enums';
+
 import { LoginFields } from '~/enums/login-fields.enum';
 
 export const links: LinksFunction = () => [...formStyles()];
@@ -17,13 +17,13 @@ export const LoginForm = () => {
       schema={{
         fields: [
           {
-            type: FieldType.EMAIL,
+            type: 'email',
             name: LoginFields.EMAIL,
             label: 'Email Address',
             required: true
           },
           {
-            type: FieldType.PASSWORD,
+            type: 'password',
             name: LoginFields.PASSWORD,
             label: 'Password',
             required: true
@@ -32,7 +32,7 @@ export const LoginForm = () => {
         buttons: [
           {
             label: 'Login',
-            type: ButtonType.SUBMIT,
+            type: 'submit',
             id: 'login-button'
           }
         ]
