@@ -26,6 +26,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@typescript/analyze-trace": "^0.10.1",
     "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.15",
     "cssnano": "^6.0.1",

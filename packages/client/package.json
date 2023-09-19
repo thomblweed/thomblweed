@@ -25,7 +25,8 @@
     "lint": "eslint .",
     "start": "NODE_ENV=production pnpm clean:cache && pnpm build && npm-run-all --parallel \"start:*\"",
     "start:arc": "cross-env NODE_ENV=production arc sandbox",
-    "test": "vitest"
+    "test": "vitest",
+    "trace": "tsc --generateTrace ./trace && analyze-trace trace"
   },
   "engines": {
     "node": ">=18.0.0"

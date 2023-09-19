@@ -69,3 +69,10 @@ tasks:
     dir: packages/supabase
     cmds:
       - pnpm decrypt
+
+  trace:
+    deps: [trace:client]
+  trace:client:
+    dir: packages/client
+    cmds:
+      - pnpm trace
