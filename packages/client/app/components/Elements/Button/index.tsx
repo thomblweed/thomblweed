@@ -21,8 +21,11 @@ export const links: LinksFunction = () => [
 
 export const Button: FC<
   ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ width = 'normal', ...rest }) => {
-  const buttonClasses = 'button'.concat(' ').concat(buttonType[width]);
+> = ({ width = 'normal', className, ...rest }) => {
+  let buttonClasses = 'button'.concat(' ').concat(buttonType[width]);
+  if (className) {
+    buttonClasses = buttonClasses.concat(' ').concat(className);
+  }
 
   return <button className={buttonClasses} {...rest} />;
 };

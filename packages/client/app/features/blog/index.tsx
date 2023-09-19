@@ -1,5 +1,12 @@
+import { LinksFunction } from '@remix-run/node';
+
 import type { BlogData } from '~/service/supabase/types';
+import blogStyles from './blog.css';
 import { BlogInfo } from './components/BlogInfo';
+
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: blogStyles }
+];
 
 type BlogProps = {
   data: BlogData[] | null;
