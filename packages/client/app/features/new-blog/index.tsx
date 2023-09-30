@@ -24,10 +24,16 @@ export const NewBlog = () => {
 
   useEffect(() => {
     if (shouldCloseDialog) {
+      handleClose();
+    }
+  }, [shouldCloseDialog]);
+
+  const handleClose = () => {
+    if (dialogRef.current && fieldInputRef.current) {
       dialogRef.current.close();
       fieldInputRef.current.value = '';
     }
-  }, [shouldCloseDialog]);
+  };
 
   const newBlogDialog = () => {
     if (!dialogRef.current) {
@@ -52,13 +58,18 @@ export const NewBlog = () => {
             disabled={isBusy}
             required
           />
-          <Button
-            className="create-blog-button"
-            type="submit"
-            disabled={isBusy}
-          >
-            Create Blog
-          </Button>
+          <div className="new-blog-buttons">
+            <Button type="submit" disabled={isBusy}>
+              Create Blog
+            </Button>
+            <Button
+              type="button"
+              disabled={isBusy}
+              onClick={() => handleClose()}
+            >
+              Cancel
+            </Button>
+          </div>
         </fetcher.Form>
       </dialog>
     </>

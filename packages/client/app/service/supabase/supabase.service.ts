@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import type { SupabaseClient } from '@supabase/auth-helpers-remix';
-import { createServerClient } from '@supabase/auth-helpers-remix';
+import {
+  createServerClient,
+  type SupabaseClient
+} from '@supabase/auth-helpers-remix';
 
 import type { Database } from '@types';
 import type { BlogData, UserRole } from './types';
