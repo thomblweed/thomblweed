@@ -3,17 +3,16 @@ import { json } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 
 import { Section, links as sectionStyles } from '~/components/Section';
-import { Blog } from '~/features/blog';
+import { Blog, links as blogStyles } from '~/features/blog';
 import { links as blogInfoStyles } from '~/features/blog/components/BlogInfo';
 import {
   createSupabaseServerClient,
   getAllBlogs
 } from '~/service/supabase/supabase.service';
-import blogStyles from '~/styles/routes/blog.css';
 import type { AdminContext } from './_auth._admin';
 
 export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: blogStyles },
+  ...blogStyles(),
   ...sectionStyles(),
   ...blogInfoStyles()
 ];

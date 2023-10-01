@@ -19,7 +19,7 @@ export const links: LinksFunction = () => [
   {
     rel: 'icon',
     type: 'image/x-icon',
-    href: '/_static/favicon.ico'
+    href: 'favicon.ico'
   },
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: resetStyles },

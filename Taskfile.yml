@@ -6,14 +6,18 @@ tasks:
   dev:client:
     dir: packages/client
     cmds:
-      - pnpm dev:remix
-      - pnpm dev:css
+      - pnpm dev
   dev:supabase:
     dir: packages/supabase
     status:
       - pnpm status
     cmds:
       - pnpm start
+
+  sst:dev:
+    dir: packages/client
+    cmds:
+      - pnpm sst:dev
 
   build:
     deps: [build:client]
@@ -34,7 +38,7 @@ tasks:
   deploy:client:
     dir: packages/client
     cmds:
-      - pnpm run deploy
+      - pnpm sst:deploy
 
   clean:
     deps: [clean:client]

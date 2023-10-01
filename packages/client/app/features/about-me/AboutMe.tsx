@@ -19,11 +19,11 @@ export const AboutMe = () => {
           <picture className="profile-picture">
             <source
               media="(min-width: 48rem)"
-              srcSet="/_static/images/thom-310.webp"
+              srcSet="/images/thom-310.webp"
               type="image/webp"
             />
             <img
-              src="/_static/images/thom-240.webp"
+              src="/images/thom-240.webp"
               itemType="image/webp"
               alt="thomas newman"
               className="profile-img"
