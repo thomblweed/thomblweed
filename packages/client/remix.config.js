@@ -2,6 +2,6 @@
 export default {
   cacheDirectory: '../../node_modules/.cache/remix',
   ignoredRouteFiles: ['**/.*', '**/*.test.{js,jsx,ts,tsx}'],
-  serverBuildPath: 'server/index.mjs',
+  serverBuildPath: 'build/index.js',
   serverModuleFormat: 'esm'
 };
