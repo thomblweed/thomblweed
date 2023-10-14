@@ -9,7 +9,7 @@ import {
   createSupabaseServerClient,
   getAllBlogs
 } from '~/service/supabase/supabase.service';
-import type { AdminContext } from './_auth._admin';
+import type { AdminContext } from './_admin';
 
 export const links: LinksFunction = () => [
   ...blogStyles(),
