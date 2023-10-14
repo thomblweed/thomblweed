@@ -21,7 +21,12 @@ export default {
         buildCommand: 'pnpm build',
         path: '.',
         runtime: 'nodejs18.x',
-        edge: false
+        edge: false,
+        environment: {
+          SUPABASE_URL: process.env.SUPABASE_URL || '',
+          SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || '',
+          SUPABASE_COOKIE_DOMAIN: process.env.SUPABASE_COOKIE_DOMAIN || ''
+        }
       });
       stack.addOutputs({
         url: site.url
