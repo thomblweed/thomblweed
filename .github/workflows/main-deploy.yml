@@ -25,7 +25,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::576859581264:role/GitHub
-          role-duration-seconds: 30000
+          role-duration-seconds: 43200
           aws-region: eu-west-2
       - uses: pnpm/action-setup@v2
         with:
