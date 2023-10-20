@@ -15,6 +15,10 @@ jobs:
     name: Deploy Client
     if: github.event.pull_request.merged
     runs-on: ubuntu-20.04
+    env:
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_COOKIE_DOMAIN: ${{ secrets.SUPABASE_COOKIE_DOMAIN }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
     steps:
       - uses: actions/checkout@v3
       - name: Configure AWS credentials
