@@ -1,0 +1,18 @@
+.new-blog-dialog {
+  margin: auto;
+  padding: var(--spacing-400);
+  border-radius: var(--border-radius);
+  background-color: var(--clr-dark);
+}
+
+.new-blog-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.new-blog-buttons {
+  margin-top: var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7rem;
+}

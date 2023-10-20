@@ -2,7 +2,7 @@ import type { DataFunctionArgs, LinksFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
 
-import { AdminLayout, links as adminStyles } from '~/layouts/Admin';
+import { BlogAdminLayout, links as adminStyles } from '~/layouts/BlogAdmin';
 import {
   createSupabaseServerClient,
   getRoleDataForCurrentUser
@@ -26,9 +26,9 @@ export default function Admin() {
   const isAdmin = currentUserRole === 'admin';
 
   return isAdmin ? (
-    <AdminLayout>
+    <BlogAdminLayout>
       <Outlet context={{ isAdmin }} />
-    </AdminLayout>
+    </BlogAdminLayout>
   ) : (
     <Outlet context={{ isAdmin }} />
   );

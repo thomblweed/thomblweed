@@ -3,16 +3,16 @@ import type { ButtonHTMLAttributes, FC } from 'react';
 
 import buttonStyles from './button.css';
 
-type ButtonType = 'full' | 'normal' | 'none';
+type ButtonWidthType = 'full' | 'normal' | 'none';
 
-const buttonType = {
+const buttonWidth = {
   full: 'button-width-full',
   normal: 'button-width-normal',
   none: 'button-width-none'
 };
 
 type ButtonProps = {
-  width?: ButtonType;
+  width?: ButtonWidthType;
 };
 
 export const links: LinksFunction = () => [
@@ -22,7 +22,7 @@ export const links: LinksFunction = () => [
 export const Button: FC<
   ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
 > = ({ width = 'normal', ...rest }) => {
-  const buttonClasses = 'button'.concat(' ').concat(buttonType[width]);
+  let buttonClasses = 'button'.concat(' ').concat(buttonWidth[width]);
 
   return <button className={buttonClasses} {...rest} />;
 };

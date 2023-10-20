@@ -1,7 +1,8 @@
 .DS_Store
 
 .cache
-.env
+.env.dev
+.env.prod
 
 /build/
 /public/build
@@ -13,3 +14,5 @@ sam.yaml
 
 app/styles
 trace
+
+.sst
