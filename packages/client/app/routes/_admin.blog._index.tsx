@@ -1,5 +1,8 @@
-import type { DataFunctionArgs, LinksFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
+import {
+  json,
+  type LinksFunction,
+  type LoaderFunctionArgs
+} from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 
 import { Section, links as sectionStyles } from '~/components/Section';
@@ -17,7 +20,7 @@ export const links: LinksFunction = () => [
   ...blogInfoStyles()
 ];
 
-export const loader = async ({ request }: DataFunctionArgs) => {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
   const supabase = createSupabaseServerClient(request);
   const blogsData = await getAllBlogs(supabase);
 
@@ -32,6 +35,7 @@ export default function BlogRoute() {
 
   return (
     <Section>
+      <h2>Blog</h2>
       <Blog data={blogsData} isAdmin={isAdmin} />
     </Section>
   );
