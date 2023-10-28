@@ -21,11 +21,15 @@ export const AboutMe = () => {
               media="(min-width: 48rem)"
               srcSet="/images/thom-310.webp"
               type="image/webp"
+              width={310}
+              height={310}
             />
             <img
               src="/images/thom-240.webp"
               itemType="image/webp"
               alt="thomas newman"
+              width={240}
+              height={240}
               className="profile-img"
             />
           </picture>

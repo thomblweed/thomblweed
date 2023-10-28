@@ -13,7 +13,6 @@ type SkillsProps = {
 
 export const Skills = ({ data }: SkillsProps) => (
   <>
-    <h2 className="center-text">skills</h2>
     <div className="skill-container">
       <div className="skills-grid">
         {data.map(({ heading, skills }) => (

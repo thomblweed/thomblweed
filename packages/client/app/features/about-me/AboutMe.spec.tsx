@@ -14,12 +14,6 @@ describe('AboutMe', () => {
     ).toBeInTheDocument();
   });
 
-  it('should display skills heading 2', () => {
-    expect(
-      screen.getByRole('heading', { level: 2, name: 'skills' })
-    ).toBeInTheDocument();
-  });
-
   it('should display about me paragraph', () => {
     expect(
       screen.getByText(

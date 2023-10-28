@@ -44,7 +44,7 @@ export const skillsData: SkillsData[] = [
   },
   {
     heading: 'cloud',
-    skills: ['AWS Lambda', 'AWS S3', 'AWS Gateway']
+    skills: ['AWS Lambda', 'AWS S3']
   },
   {
     heading: 'ci/cd',
@@ -56,6 +56,6 @@ export const skillsData: SkillsData[] = [
   },
   {
     heading: 'iac',
-    skills: ['Terraform', 'Architect']
+    skills: ['Terraform', 'SST', 'Architect']
   }
 ];
