@@ -20,10 +20,11 @@ export const links: LinksFunction = () => [
 
 export const BlogInfo = ({ id, title }: BlogInfoProps) => {
   const { isAdmin } = useOutletContext<AdminContext>();
+  const trimmmedTitle = title.trim();
 
   return (
-    <article key={id} className="blog-info">
-      <h3>{title}</h3>
+    <article className="blog-info">
+      {trimmmedTitle.length ? <h3>{trimmmedTitle}</h3> : null}
       {isAdmin ? <DeleteBlog id={id} /> : null}
     </article>
   );
