@@ -48,6 +48,9 @@ importers:
       '@remix-run/eslint-config':
         specifier: ^2.1.0
         version: 2.1.0(eslint@8.52.0)(react@18.2.0)(typescript@5.2.2)
+      '@remix-run/testing':
+        specifier: ^2.1.0
+        version: 2.1.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
       '@supabase/supabase-js':
         specifier: ^2.38.3
         version: 2.38.3
@@ -3005,7 +3008,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       react-router-dom: 6.17.0(react-dom@18.2.0)(react@18.2.0)
       typescript: 5.2.2
-    dev: false
 
   /@remix-run/router@1.10.0:
     resolution: {integrity: sha512-Lm+fYpMfZoEucJ7cMxgt4dYt8jLfbpwRCzAjm9UgSLOkmlqo9gupxt6YX3DY0Fk155NT9l17d/ydi+964uS9Lw==}
@@ -3044,6 +3046,26 @@ packages:
       set-cookie-parser: 2.6.0
       source-map: 0.7.4
       typescript: 5.2.2
+
+  /@remix-run/testing@2.1.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-eLPx4Bmjt243kyRpQTong1eFo6nkvSfCr65bb5PfoF172DKnsSSCYWAmBmB72VwtAPESHxBm3g6AUbhwphkU6A==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^18.0.0
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@remix-run/node': 2.1.0(typescript@5.2.2)
+      '@remix-run/react': 2.1.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
+      '@remix-run/router': 1.10.0
+      react: 18.2.0
+      react-router-dom: 6.17.0(react-dom@18.2.0)(react@18.2.0)
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - react-dom
+    dev: true
 
   /@remix-run/web-blob@3.1.0:
     resolution: {integrity: sha512-owGzFLbqPH9PlKb8KvpNJ0NO74HWE2euAn61eEiyCXX/oteoVzTVSN8mpLgDjaxBf2btj5/nUllSUgpyd6IH6g==}
@@ -10102,7 +10124,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-router: 6.17.0(react@18.2.0)
-    dev: false
 
   /react-router@6.17.0(react@18.2.0):
     resolution: {integrity: sha512-YJR3OTJzi3zhqeJYADHANCGPUu9J+6fT5GLv82UWRGSxu6oJYCKVmxUcaBQuGm9udpWmPsvpme/CdHumqgsoaA==}
@@ -10112,7 +10133,6 @@ packages:
     dependencies:
       '@remix-run/router': 1.10.0
       react: 18.2.0
-    dev: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
