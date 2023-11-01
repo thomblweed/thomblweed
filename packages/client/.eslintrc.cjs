@@ -117,12 +117,7 @@ module.exports = {
 
     // Node
     {
-      files: [
-        '.eslintrc.js',
-        'plugin-remix.js',
-        'remix.config.js',
-        'mocks/**/*.js'
-      ],
+      files: ['.eslintrc.cjs', 'remix.config.js', 'mocks/**/*.js'],
       env: {
         node: true
       }
