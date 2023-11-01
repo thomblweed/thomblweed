@@ -21,6 +21,20 @@ export const links: LinksFunction = () => [
     type: 'image/x-icon',
     href: 'favicon.ico'
   },
+  {
+    rel: 'preload',
+    type: 'font/woff2',
+    href: '/fonts/roboto-mono-v22-latin-regular.woff2',
+    as: 'font',
+    crossOrigin: 'anonymous'
+  },
+  {
+    rel: 'preload',
+    type: 'font/woff2',
+    href: '/fonts/roboto-mono-v22-latin-700.woff2',
+    as: 'font',
+    crossOrigin: 'anonymous'
+  },
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: styles },
