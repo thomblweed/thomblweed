@@ -10,18 +10,18 @@ export const links: LinksFunction = () => [
 
 type BlogProps = {
   data: BlogData[] | null;
-  isAdmin: boolean;
 };
 
-export const Blog = ({ data, isAdmin }: BlogProps) => {
-  return (
-    <>
-      <div className="blog-container">
-        {data?.map(({ title, id }) => (
-          <BlogInfo key={id} isAdmin={isAdmin} id={id} title={title} />
-        ))}
-        coming soon...
-      </div>
-    </>
-  );
-};
+export const Blog = ({ data }: BlogProps) => (
+  <>
+    <div className="blog-container">
+      {data?.length ? (
+        data.map(({ title, id }) => (
+          <BlogInfo key={id + title} id={id} title={title} />
+        ))
+      ) : (
+        <span>coming soon...</span>
+      )}
+    </div>
+  </>
+);
