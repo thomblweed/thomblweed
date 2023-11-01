@@ -33,6 +33,13 @@ tasks:
     cmds:
       - pnpm test
 
+  lint:
+    deps: [lint:client]
+  lint:client:
+    dir: packages/client
+    cmds:
+      - pnpm lint
+
   deploy:
     deps: [deploy:client]
   deploy:client:
