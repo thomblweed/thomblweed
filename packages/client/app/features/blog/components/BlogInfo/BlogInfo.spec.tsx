@@ -18,22 +18,39 @@ describe('When "isAdmin" is FALSE', () => {
   });
 
   it('should render the title when text has length', () => {
+    const stringsHaveLength = (s: string) => s !== ' ' && s.length > 0;
     fc.assert(
       fc
-        .property(fc.nat(), fc.string(), (id, title) => {
-          render(<BlogInfo id={id} title={title} />);
-          const trimmmedTitle = title.trim();
+        .property(
+          fc.nat(),
+          fc.string().filter(stringsHaveLength),
+          (id, title) => {
+            render(<BlogInfo id={id} title={title} />);
 
-          if (trimmmedTitle.length) {
             const heading = screen.getByRole('heading', { level: 3 });
             expect(heading).toBeInTheDocument();
-            expect(heading).toHaveTextContent(trimmmedTitle);
-          } else {
-            expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+            expect(heading).toHaveTextContent(title.trim());
+            expect(screen.queryByRole('button')).not.toBeInTheDocument();
           }
+        )
+        .afterEach(cleanup)
+    );
+  });
 
-          expect(screen.queryByRole('button')).not.toBeInTheDocument();
-        })
+  it('should NOT render the title when text has no length', () => {
+    const stringHaveNoLength = (s: string) => s.length === 0;
+    fc.assert(
+      fc
+        .property(
+          fc.nat(),
+          fc.string().filter(stringHaveNoLength),
+          (id, title) => {
+            render(<BlogInfo id={id} title={title} />);
+
+            expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+            expect(screen.queryByRole('button')).not.toBeInTheDocument();
+          }
+        )
         .afterEach(cleanup)
     );
   });
