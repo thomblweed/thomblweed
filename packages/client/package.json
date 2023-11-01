@@ -22,7 +22,7 @@
     "encrypt": "pnpm encrypt:env:dev && pnpm encrypt:env:prod",
     "encrypt:env:dev": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.dev > .env.dev.enc",
     "encrypt:env:prod": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod > .env.prod.enc",
-    "lint": "eslint .",
+    "lint": "eslint --cache --cache-location ../../node_modules/.cache/eslint .",
     "sst:deploy": "sst deploy --stage prod",
     "sst:dev": "sst dev",
     "start": "NODE_ENV=production pnpm clean:cache && pnpm build && npm-run-all --parallel \"start:*\"",
