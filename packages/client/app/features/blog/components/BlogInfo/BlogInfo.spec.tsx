@@ -6,6 +6,7 @@ import { BlogInfo } from '.';
 
 describe('When "isAdmin" is FALSE', () => {
   vi.mock('@remix-run/react', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const actual = (await vi.importActual('@remix-run/react')) as any;
     return {
       ...actual,

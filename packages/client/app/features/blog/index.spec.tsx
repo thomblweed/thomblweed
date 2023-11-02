@@ -3,6 +3,7 @@ import fc from 'fast-check';
 import { vi } from 'vitest';
 
 import { BlogData } from '~/service/supabase/types';
+
 import { Blog } from '.';
 
 vi.mock('./components/BlogInfo');

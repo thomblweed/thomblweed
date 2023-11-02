@@ -1,6 +1,7 @@
 import { LinksFunction } from '@remix-run/node';
 
 import type { BlogData } from '~/service/supabase/types';
+
 import blogStyles from './blog.css';
 import { BlogInfo } from './components/BlogInfo';
 

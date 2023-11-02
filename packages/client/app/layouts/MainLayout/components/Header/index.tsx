@@ -7,7 +7,9 @@ import {
   Navigation,
   links as navigationStyles
 } from '~/layouts/MainLayout/components/Navigation';
+
 import { Logo, links as logoStyles } from '../Logo';
+
 import headerStyles from './header.css';
 
 // const Placeholder = () => <div className='h-[68px]'></div>;

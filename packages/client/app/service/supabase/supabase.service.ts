@@ -3,8 +3,8 @@ import {
   createServerClient,
   type SupabaseClient
 } from '@supabase/auth-helpers-remix';
-
 import type { Database } from '@types';
+
 import type { BlogData, UserRole } from './types';
 
 export const createSupabaseServerClient = (
