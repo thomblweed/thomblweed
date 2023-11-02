@@ -13,3 +13,5 @@ export const Input = forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ): JSX.Element => <input ref={ref} className="input" {...props} />
 );
+
+Input.displayName = 'Input';

@@ -62,7 +62,8 @@ module.exports = {
             extensions: ['.ts', '.tsx']
           },
           typescript: {
-            alwaysTryTypes: true
+            alwaysTryTypes: true,
+            project: './packages/client/tsconfig.json'
           }
         }
       },
@@ -81,7 +82,8 @@ module.exports = {
             groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
             'newlines-between': 'always'
           }
-        ]
+        ],
+        '@typescript-eslint/consistent-type-definitions': 'off'
       }
     },
 
@@ -117,7 +119,7 @@ module.exports = {
 
     // Node
     {
-      files: ['.eslintrc.cjs', 'remix.config.js', 'mocks/**/*.js'],
+      files: ['.eslintrc.cjs', 'remix.config.js'],
       env: {
         node: true
       }

@@ -6,6 +6,7 @@ import {
   Navigation,
   links as navigationStyles
 } from '~/layouts/MainLayout/components/Navigation';
+
 import headerStyles from './desktop-header.css';
 
 export const links: LinksFunction = () => [

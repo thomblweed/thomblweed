@@ -1,5 +1,5 @@
-import type { FC, LabelHTMLAttributes } from 'react';
 import type { LinksFunction } from '@remix-run/node';
+import type { FC, LabelHTMLAttributes } from 'react';
 
 import labelStyles from './label.css';
 
@@ -15,7 +15,7 @@ export const Label: FC<LabelProps & LabelHTMLAttributes<HTMLLabelElement>> = ({
   text,
   ...rest
 }) => (
-  <label className='label text-secondary' {...rest}>
+  <label className="label text-secondary" {...rest}>
     {text}
   </label>
 );

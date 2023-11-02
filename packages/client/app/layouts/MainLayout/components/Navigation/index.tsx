@@ -9,7 +9,7 @@ type NavContent = {
 };
 
 type NavigationProps = {
-  items: Array<NavContent>;
+  items: NavContent[];
   content: (props: NavContent) => ReactNode;
 };
 
