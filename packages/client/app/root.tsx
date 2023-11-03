@@ -1,4 +1,3 @@
-import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
@@ -6,7 +5,8 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useMatches
 } from '@remix-run/react';
 import type { ReactNode } from 'react';
 
@@ -35,7 +35,6 @@ export const links: LinksFunction = () => [
     as: 'font',
     crossOrigin: 'anonymous'
   },
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: resetStyles },
   { rel: 'stylesheet', href: styles },
   { rel: 'stylesheet', href: fontStyles },
@@ -48,20 +47,27 @@ export const meta: MetaFunction = () => [
   { name: 'viewport', content: 'width=device-width, minimum-scale=1' }
 ];
 
-const Document = ({ children }: { children: ReactNode }) => (
-  <html lang="en">
-    <head>
-      <Meta />
-      <Links />
-    </head>
-    <body>
-      {children}
-      <ScrollRestoration />
-      <Scripts />
-      {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
-    </body>
-  </html>
-);
+type Hydrate = { handle: { hydrate?: boolean } };
+
+const Document = ({ children }: { children: ReactNode }) => {
+  const matches = useMatches() as Hydrate[];
+  const includeScripts = matches.some((match) => match.handle?.hydrate);
+
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ScrollRestoration />
+        {includeScripts ? <Scripts /> : null}
+        <LiveReload />
+      </body>
+    </html>
+  );
+};
 
 export default function Root() {
   return (

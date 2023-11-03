@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { json, redirect } from '@remix-run/node';
 
-import { LoginFields } from '~/enums/login-fields.enum';
 import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 import { getFormValuesFromRequest } from '~/utils';
+
+import { LoginFields } from '../enums/login-fields.enum';
 
 export const loginHandler = async (request: Request) => {
   const [email, password] = (await getFormValuesFromRequest(request, [

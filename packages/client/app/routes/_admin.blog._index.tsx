@@ -38,3 +38,5 @@ export default function BlogRoute() {
     </Section>
   );
 }
+
+export const handle = { hydrate: true };
