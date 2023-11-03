@@ -2,7 +2,8 @@ import type { LinksFunction } from '@remix-run/node';
 import { useActionData, useNavigation } from '@remix-run/react';
 
 import { Form, links as formStyles } from '~/components/Form';
-import { LoginFields } from '~/enums/login-fields.enum';
+
+import { LoginFields } from '../enums/login-fields.enum';
 
 export const links: LinksFunction = () => [...formStyles()];
 
