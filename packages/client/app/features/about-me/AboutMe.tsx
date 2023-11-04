@@ -20,13 +20,13 @@ export const AboutMe = () => {
           <picture className="profile-picture">
             <source
               media="(min-width: 48rem)"
-              srcSet="/images/thom-310.webp"
+              srcSet="/images/thom-360.webp"
               type="image/webp"
               width={310}
               height={310}
             />
             <img
-              src="/images/thom-240.webp"
+              src="/images/thom-360.webp"
               itemType="image/webp"
               alt="thomas newman"
               width={240}
