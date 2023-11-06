@@ -1,7 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import type { ReactNode } from 'react';
 
-import navigationStyles from './navigation.css';
+import './navigation.css';
 
 type NavContent = {
   value: string;
@@ -13,15 +12,11 @@ type NavigationProps = {
   content: (props: NavContent) => ReactNode;
 };
 
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: navigationStyles }
-];
-
 export const Navigation = ({ items, content }: NavigationProps) => (
-  <nav aria-label='primary'>
-    <ul className='navigation-list'>
+  <nav aria-label="primary">
+    <ul className="navigation-list">
       {items.map(({ value, route }) => (
-        <li className='navigation-item' key={value}>
+        <li className="navigation-item" key={value}>
           {content({ value, route })}
         </li>
       ))}

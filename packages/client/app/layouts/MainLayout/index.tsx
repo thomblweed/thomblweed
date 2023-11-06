@@ -1,15 +1,9 @@
-import type { LinksFunction } from '@remix-run/node';
 import type { ReactNode } from 'react';
 
-import { Footer, links as footerStyles } from './components/Footer';
-import { Header, links as headerStyles } from './components/Header';
-import mainLayoutStyles from './main-layout.css';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: mainLayoutStyles },
-  ...headerStyles(),
-  ...footerStyles()
-];
+import './main-layout.css';
 
 export const MainLayout = ({ children }: { children: ReactNode }) => (
   <>

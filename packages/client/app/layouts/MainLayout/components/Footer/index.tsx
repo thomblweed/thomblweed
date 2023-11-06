@@ -1,14 +1,8 @@
-import type { LinksFunction } from '@remix-run/node';
-
-import footerStyles from './footer.css';
+import './footer.css';
 
 type FooterProps = {
   footerText: string;
 };
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: footerStyles }
-];
 
 export const Footer = ({ footerText }: FooterProps) => (
   <footer className="footer">

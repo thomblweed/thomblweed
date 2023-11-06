@@ -1,11 +1,5 @@
-import type { LinksFunction } from '@remix-run/node';
-
-import skillsStyles from './skills.css';
+import './skills.css';
 import { type SkillsData } from './types';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: skillsStyles }
-];
 
 type SkillsProps = {
   data: SkillsData[];

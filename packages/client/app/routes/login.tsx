@@ -1,13 +1,8 @@
-import type { ActionFunction, LinksFunction } from '@remix-run/node';
+import type { ActionFunction } from '@remix-run/node';
 import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
 
-import {
-  AdminLogin,
-  links as adminLoginStyles
-} from '~/features/admin-login/AdminLogin';
+import { AdminLogin } from '~/features/admin-login/AdminLogin';
 import { loginHandler } from '~/features/admin-login/handlers/login';
-
-export const links: LinksFunction = () => [...adminLoginStyles()];
 
 export const action: ActionFunction = async ({ request }) =>
   loginHandler(request);

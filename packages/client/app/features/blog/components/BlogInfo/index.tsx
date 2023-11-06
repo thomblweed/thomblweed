@@ -1,24 +1,15 @@
-import type { LinksFunction } from '@remix-run/node';
 import { useOutletContext } from '@remix-run/react';
 
-import { AdminContext } from '~/routes/_admin';
+import { AdminContext } from '~/routes/_blog-admin';
 
-import {
-  DeleteBlog,
-  links as deleteBlogStyles
-} from '../admin/actions/DeleteBlog';
+import { DeleteBlog } from '../admin/actions/DeleteBlog';
 
-import blogInfoStyles from './blog-info.css';
+import './blog-info.css';
 
 type BlogInfoProps = {
   id: number;
   title: string;
 };
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: blogInfoStyles },
-  ...deleteBlogStyles()
-];
 
 export const BlogInfo = ({ id, title }: BlogInfoProps) => {
   const { isAdmin } = useOutletContext<AdminContext>();

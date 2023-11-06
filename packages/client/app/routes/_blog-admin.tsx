@@ -1,16 +1,14 @@
-import type { DataFunctionArgs, LinksFunction } from '@remix-run/node';
+import type { DataFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
 
-import { BlogAdminLayout, links as adminStyles } from '~/layouts/BlogAdmin';
+import { BlogAdminLayout } from '~/layouts/BlogAdmin';
 import {
   createSupabaseServerClient,
   getRoleDataForCurrentUser
 } from '~/service/supabase/supabase.service';
 
 export type AdminContext = { isAdmin: boolean };
-
-export const links: LinksFunction = () => [...adminStyles()];
 
 export const loader = async ({ request }: DataFunctionArgs) => {
   const supabase = createSupabaseServerClient(request);

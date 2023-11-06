@@ -1,10 +1,4 @@
-import type { LinksFunction } from '@remix-run/node';
-
-import logoStyles from './logo.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: logoStyles }
-];
+import './logo.css';
 
 export const Logo = () => (
   <div>

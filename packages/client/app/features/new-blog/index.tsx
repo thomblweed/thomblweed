@@ -1,17 +1,10 @@
-import { type LinksFunction } from '@remix-run/node';
 import { useFetcher } from '@remix-run/react';
 import { useEffect, useRef } from 'react';
 
-import { Button, links as buttonStyles } from '~/components/Elements/Button';
-import { Field, links as fieldStyles } from '~/components/Form/Field';
+import { Button } from '~/components/Elements/Button';
+import { Field } from '~/components/Form/Field';
 
-import newBlogStyles from './new-blog.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: newBlogStyles },
-  ...buttonStyles(),
-  ...fieldStyles()
-];
+import './new-blog.css';
 
 export const NewBlog = () => {
   const fetcher = useFetcher();

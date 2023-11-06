@@ -1,8 +1,4 @@
-import type { LinksFunction } from '@remix-run/node';
-
-import { LoginForm, links as loginFormStyles } from './LoginForm';
-
-export const links: LinksFunction = () => [...loginFormStyles()];
+import { LoginForm } from './LoginForm';
 
 export const AdminLogin = () => {
   return (
