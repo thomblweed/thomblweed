@@ -1,11 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import type { FC, ReactNode } from 'react';
 
-import sectionStyles from './section.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: sectionStyles }
-];
+import './section.css';
 
 type SectionProps = {
   children: ReactNode;

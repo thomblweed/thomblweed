@@ -1,18 +1,11 @@
-import type { LinksFunction } from '@remix-run/node';
 import { forwardRef, type ForwardedRef } from 'react';
 
-import { Input, links as inputStyles } from '~/components/Elements/Input';
-import { Label, links as labelStyles } from '~/components/Elements/Label';
+import { Input } from '~/components/Elements/Input';
+import { Label } from '~/components/Elements/Label';
 
 import type { InputType } from '../types';
 
-import fieldStyles from './field.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: fieldStyles },
-  ...labelStyles(),
-  ...inputStyles()
-];
+import './field.css';
 
 type FieldProps = {
   name: string;

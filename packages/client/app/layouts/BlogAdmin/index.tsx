@@ -1,14 +1,8 @@
-import type { LinksFunction } from '@remix-run/node';
 import { type ReactNode } from 'react';
 
-import { NewBlog, links as newBlogStyles } from '~/features/new-blog';
+import { NewBlog } from '~/features/new-blog';
 
-import adminStyles from './admin.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: adminStyles },
-  ...newBlogStyles()
-];
+import './admin.css';
 
 export const BlogAdminLayout = ({ children }: { children: ReactNode }) => {
   return (

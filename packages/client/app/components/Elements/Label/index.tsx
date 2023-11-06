@@ -1,11 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import type { FC, LabelHTMLAttributes } from 'react';
 
-import labelStyles from './label.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: labelStyles }
-];
+import './label.css';
 
 type LabelProps = {
   text: string;

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm clean:build && pnpm build:css && pnpm build:remix",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
-    "build:remix": "remix build",
+    "build:remix": "vite build && vite build --ssr",
     "clean": "pnpm clean:build && pnpm clean:cache && pnpm clean:server && pnpm clean:styles && pnpm clean:sst",
     "clean:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
     "clean:cache": "if [ -d \".cache\" ]; then rm -rf \".cache\"; fi",
@@ -18,7 +18,7 @@
     "decrypt:env:prod": "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod.enc > .env.prod",
     "dev": "run-p \"dev:*\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
-    "dev:remix": "sst bind remix dev",
+    "dev:remix": "sst bind vite dev",
     "encrypt": "pnpm encrypt:env:dev && pnpm encrypt:env:prod",
     "encrypt:env:dev": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.dev > .env.dev.enc",
     "encrypt:env:prod": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod > .env.prod.enc",

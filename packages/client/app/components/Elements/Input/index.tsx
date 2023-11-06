@@ -1,11 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import { forwardRef, type ForwardedRef, type InputHTMLAttributes } from 'react';
 
-import inputStyles from './input.css';
-
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: inputStyles }
-];
+import './input.css';
 
 export const Input = forwardRef(
   (

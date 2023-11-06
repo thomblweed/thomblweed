@@ -10,10 +10,10 @@ import {
 } from '@remix-run/react';
 import type { ReactNode } from 'react';
 
-import { MainLayout, links as mainLayoutStyles } from '~/layouts/MainLayout';
-import fontStyles from '~/styles/font.css';
-import resetStyles from '~/styles/reset.css';
-import styles from '~/styles/styles.css';
+import { MainLayout } from '~/layouts/MainLayout';
+import '~/styles/font.css';
+import '~/styles/reset.css';
+import '~/styles/styles.css';
 
 export const links: LinksFunction = () => [
   {
@@ -34,11 +34,7 @@ export const links: LinksFunction = () => [
     href: '/fonts/roboto-mono-v22-latin-700.woff2',
     as: 'font',
     crossOrigin: 'anonymous'
-  },
-  { rel: 'stylesheet', href: resetStyles },
-  { rel: 'stylesheet', href: styles },
-  { rel: 'stylesheet', href: fontStyles },
-  ...mainLayoutStyles()
+  }
 ];
 
 export const meta: MetaFunction = () => [
@@ -62,8 +58,8 @@ const Document = ({ children }: { children: ReactNode }) => {
       <body>
         {children}
         <ScrollRestoration />
-        {includeScripts ? <Scripts /> : null}
         <LiveReload />
+        {includeScripts ? <Scripts /> : null}
       </body>
     </html>
   );

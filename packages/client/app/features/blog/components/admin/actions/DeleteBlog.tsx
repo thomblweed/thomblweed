@@ -1,9 +1,6 @@
-import type { LinksFunction } from '@remix-run/node';
 import { useFetcher } from '@remix-run/react';
 
-import { Button, links as buttonStyles } from '~/components/Elements/Button';
-
-export const links: LinksFunction = () => [...buttonStyles()];
+import { Button } from '~/components/Elements/Button';
 
 export const DeleteBlog = ({ id }: { id: number }) => {
   const { submit } = useFetcher();

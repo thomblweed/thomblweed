@@ -1,23 +1,12 @@
-import {
-  json,
-  type LinksFunction,
-  type LoaderFunctionArgs
-} from '@remix-run/node';
+import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import { Section, links as sectionStyles } from '~/components/Section';
-import { Blog, links as blogStyles } from '~/features/blog';
-import { links as blogInfoStyles } from '~/features/blog/components/BlogInfo';
+import { Section } from '~/components/Section';
+import { Blog } from '~/features/blog';
 import {
   createSupabaseServerClient,
   getAllBlogs
 } from '~/service/supabase/supabase.service';
-
-export const links: LinksFunction = () => [
-  ...blogStyles(),
-  ...sectionStyles(),
-  ...blogInfoStyles()
-];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const supabase = createSupabaseServerClient(request);
