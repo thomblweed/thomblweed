@@ -2,7 +2,7 @@ import type { SSTConfig } from 'sst';
 import { RemixSite } from 'sst/constructs';
 
 export default {
-  config(_input) {
+  config() {
     return {
       stage: 'dev',
       name: 'thomblweed-client',
