@@ -26,9 +26,9 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         run: pnpm install
-      - name: Build
-        run: task build
       - name: Lint
         run: task lint
+      - name: Build
+        run: task build
       - name: Unit Test
         run: task test
