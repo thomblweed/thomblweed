@@ -1,6 +1,6 @@
 # thomblweed
 
-## Prerequisites
+## Setup
 
 ### Install pnpm
 
@@ -12,8 +12,20 @@ https://www.docker.com/products/docker-desktop/
 
 ### Install Taskfile
 
+https://taskfile.dev/installation/
+
+### Install Sops
+
+https://github.com/getsops/sops
+
+### Install Age
+
+https://github.com/FiloSottile/age
+
+### Decrypt Secrets
+
 ```sh
-pnpm add -g @go-task/cli
+task decrypt
 ```
 
 ## Development

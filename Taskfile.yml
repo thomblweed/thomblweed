@@ -33,6 +33,11 @@ tasks:
     cmds:
       - pnpm test
 
+  reset-db:
+    dir: packages/supabase
+    cmds:
+      - pnpm reset
+
   lint:
     deps: [lint:client]
   lint:client:
