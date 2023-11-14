@@ -12,8 +12,8 @@ export const DeleteBlog = ({ id }: { id: number }) => {
   };
 
   return (
-    <Button type="button" width="none" onClick={() => handleSubmit(id)}>
-      &#10005;
+    <Button type="button" onClick={() => handleSubmit(id)}>
+      Delete
     </Button>
   );
 };
