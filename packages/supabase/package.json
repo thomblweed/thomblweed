@@ -10,6 +10,7 @@
     "encrypt:env": "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.local > .env.enc",
     "encrypt:sql": "sops --encrypt --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") seed.sql > seed.enc.sql",
     "push": "supabase db push --password=$SUPABASE_DB_PASSWORD",
+    "reset": "supabase db reset",
     "start": "supabase start",
     "status": "supabase status",
     "stop": "supabase stop",

@@ -12,12 +12,15 @@ const buttonWidth = {
 
 type ButtonProps = {
   width?: ButtonWidthType;
+  className?: string;
 };
 
 export const Button: FC<
   ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ width = 'normal', ...rest }) => {
-  const buttonClasses = 'button'.concat(' ').concat(buttonWidth[width]);
+> = ({ width = 'normal', className, ...rest }) => {
+  const buttonClasses = ['button', buttonWidth[width], className]
+    .filter(Boolean)
+    .join(' ');
 
   return <button className={buttonClasses} {...rest} />;
 };
