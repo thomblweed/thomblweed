@@ -4,10 +4,8 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@remix-run/css-bundle": "^2.2.0",
-    "@remix-run/node": "^2.2.0",
-    "@remix-run/react": "^2.2.0",
-    "@remix-run/serve": "^2.2.0",
+    "@remix-run/node": "2.3.0-pre.0",
+    "@remix-run/react": "2.3.0-pre.0",
     "@supabase/auth-helpers-remix": "^0.2.4",
     "axios": "^1.6.0",
     "bcrypt": "^5.1.1",
@@ -17,9 +15,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.2.0",
-    "@remix-run/eslint-config": "^2.2.0",
-    "@remix-run/testing": "^2.2.0",
+    "@remix-run/dev": "2.3.0-pre.0",
+    "@remix-run/eslint-config": "2.3.0-pre.0",
+    "@remix-run/serve": "2.3.0-pre.0",
+    "@remix-run/testing": "2.3.0-pre.0",
     "@supabase/supabase-js": "^2.38.4",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
