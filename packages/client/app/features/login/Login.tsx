@@ -1,6 +1,6 @@
 import { LoginForm } from './LoginForm';
 
-export const AdminLogin = () => {
+export const Login = () => {
   return (
     <div className="center">
       <div>

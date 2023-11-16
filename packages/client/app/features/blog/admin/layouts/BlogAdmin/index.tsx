@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import { NewBlog } from '~/features/new-blog';
+import { NewBlog } from '~/features/blog/admin/new-blog';
 
 import './admin.css';
 

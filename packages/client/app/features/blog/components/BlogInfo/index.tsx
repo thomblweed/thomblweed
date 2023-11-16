@@ -1,9 +1,7 @@
 import { useOutletContext } from '@remix-run/react';
 
-import { AdminContext } from '~/routes/_blog-admin';
-
-import { DeleteBlog } from '../admin/actions/DeleteBlog';
-
+import { DeleteBlog } from '../../admin/delete-blog';
+import type { AdminContext } from '../../admin/types/AdminContext.type';
 import './blog-info.css';
 
 type BlogInfoProps = {

@@ -2,32 +2,27 @@ import type { DataFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
 
-import { BlogAdminLayout } from '~/layouts/BlogAdmin';
-import {
-  createSupabaseServerClient,
-  getRoleDataForCurrentUser
-} from '~/service/supabase/supabase.service';
-
-export type AdminContext = { isAdmin: boolean };
+import { BlogAdminLayout } from '~/features/blog/admin/layouts/BlogAdmin';
+import type { AdminContext } from '~/features/blog/admin/types/AdminContext.type';
+import { getCurrentUserRole } from '~/service/user.service';
 
 export const loader = async ({ request }: DataFunctionArgs) => {
-  const supabase = createSupabaseServerClient(request);
-  const roleData = await getRoleDataForCurrentUser(supabase);
+  const currentUserRole = await getCurrentUserRole(request);
 
   return json({
-    currentUserRole: roleData?.role || 'user'
+    currentUserRole
   });
 };
 
-export default function Admin() {
+export default function BlogAdminRoute() {
   const { currentUserRole } = useLoaderData<typeof loader>();
   const isAdmin = currentUserRole === 'admin';
 
   return isAdmin ? (
     <BlogAdminLayout>
-      <Outlet context={{ isAdmin }} />
+      <Outlet context={{ isAdmin } satisfies AdminContext} />
     </BlogAdminLayout>
   ) : (
-    <Outlet context={{ isAdmin }} />
+    <Outlet context={{ isAdmin } satisfies AdminContext} />
   );
 }
