@@ -1,14 +1,14 @@
 import type { ActionFunction } from '@remix-run/node';
 import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
 
-import { AdminLogin } from '~/features/admin-login/AdminLogin';
-import { loginHandler } from '~/features/admin-login/handlers/login';
+import { loginHandler } from '~/features/login/handlers/login';
+import { Login } from '~/features/login/Login';
 
 export const action: ActionFunction = async ({ request }) =>
   loginHandler(request);
 
-export default function Login() {
-  return <AdminLogin />;
+export default function LoginRoute() {
+  return <Login />;
 }
 
 export const ErrorBoundary = () => {
