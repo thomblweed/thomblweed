@@ -116,7 +116,7 @@ p {
 @media (min-width: 48rem) {
   .container {
     --max-width: 87.5rem;
-    --spacing-size: 1rem;
+    --spacing-size: 1.5rem;
   }
 }
 
