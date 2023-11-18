@@ -24,6 +24,8 @@
     "lint": "eslint --fix --cache --cache-location ../../node_modules/.cache/eslint .",
     "sst:deploy": "sst deploy --stage prod",
     "sst:dev": "sst dev",
+    "sst:remove": "sst remove",
+    "sst:remove:prod": "sst remove --stage prod",
     "start": "NODE_ENV=production remix-serve build/index.js",
     "test": "vitest",
     "trace": "tsc --generateTrace ./trace && analyze-trace trace"
