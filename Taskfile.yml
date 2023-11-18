@@ -52,6 +52,20 @@ tasks:
     cmds:
       - pnpm lint
 
+  destroy:
+    deps: [destroy:client]
+  destroy:client:
+    dir: packages/client
+    cmds:
+      - pnpm sst:remove
+
+  destroy:prod:
+    deps: [destroy:prod:client]
+  destroy:prod:client:
+    dir: packages/client
+    cmds:
+      - pnpm sst:remove:prod
+
   deploy:
     deps: [deploy:client]
   deploy:client:
