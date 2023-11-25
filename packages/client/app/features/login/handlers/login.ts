@@ -23,7 +23,7 @@ export const loginHandler = async (request: Request) => {
   });
 
   if (error) {
-    console.error(error);
+    console.error({ loginError: error });
     return json(
       {
         loginError: 'An error occured when logging in'
@@ -34,7 +34,7 @@ export const loginHandler = async (request: Request) => {
     );
   }
 
-  return redirect('/', {
+  return redirect('/blog', {
     headers: response.headers
   });
 };
