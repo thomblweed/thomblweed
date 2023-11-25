@@ -12,7 +12,7 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ message: 'method not allow' }, 405);
   }
 
-  const supabase = createSupabaseServerClient(request);
+  const { supabase } = createSupabaseServerClient(request);
   const { data, error: userError } = await supabase.auth.getUser();
   if (userError) {
     console.error(userError);

@@ -9,7 +9,7 @@ import {
 } from '~/service/supabase/supabase.service';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const supabase = createSupabaseServerClient(request);
+  const { supabase } = createSupabaseServerClient(request);
   const blogsData = await getAllBlogs(supabase);
 
   return json({

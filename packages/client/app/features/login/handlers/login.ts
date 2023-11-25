@@ -14,8 +14,7 @@ export const loginHandler = async (request: Request) => {
     return json({ loginError: 'email and/or password must be provided' });
   }
 
-  const response = new Response();
-  const supabase = createSupabaseServerClient(request, response);
+  const { supabase, headers } = createSupabaseServerClient(request);
 
   const { error } = await supabase.auth.signInWithPassword({
     email,
@@ -29,12 +28,12 @@ export const loginHandler = async (request: Request) => {
         loginError: 'An error occured when logging in'
       },
       {
-        headers: response.headers
+        headers
       }
     );
   }
 
   return redirect('/blog', {
-    headers: response.headers
+    headers
   });
 };
