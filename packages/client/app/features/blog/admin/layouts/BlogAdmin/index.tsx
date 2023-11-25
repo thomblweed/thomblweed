@@ -7,7 +7,7 @@ import './admin.css';
 export const BlogAdminLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className="admin-container container">
+      <div className="admin-container">
         <NewBlog />
       </div>
       {children}
