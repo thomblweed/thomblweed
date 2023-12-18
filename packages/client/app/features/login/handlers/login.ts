@@ -1,9 +1,9 @@
 import { json, redirect } from '@remix-run/node';
 
-import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 import { getFormValuesFromRequest } from '~/utils';
 
 import { LoginFields } from '../enums/login-fields.enum';
+import { loginUserWithEmailAndPassword } from '../service/auth.service';
 
 export const loginHandler = async (request: Request) => {
   const [email, password] = (await getFormValuesFromRequest(request, [
@@ -14,9 +14,7 @@ export const loginHandler = async (request: Request) => {
     return json({ loginError: 'email and/or password must be provided' });
   }
 
-  const { supabase, headers } = createSupabaseServerClient(request);
-
-  const { error } = await supabase.auth.signInWithPassword({
+  const { error, headers } = await loginUserWithEmailAndPassword(request, {
     email,
     password
   });

@@ -1,4 +1,4 @@
-export const enum LoginFields {
-  EMAIL = 'email',
-  PASSWORD = 'password'
-}
+export const LoginFields = {
+  EMAIL: 'email',
+  PASSWORD: 'password'
+} as const;
