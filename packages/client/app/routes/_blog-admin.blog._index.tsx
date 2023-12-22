@@ -10,14 +10,11 @@ import { Section } from '~/components/Section';
 import { Blog } from '~/features/blog';
 import { BlogAdminLayout } from '~/features/blog/admin/layouts/BlogAdmin';
 import { type AdminContext } from '~/features/blog/admin/types/AdminContext.type';
-import {
-  createSupabaseServerClient,
-  getAllBlogs
-} from '~/service/supabase/supabase.service';
+import { getAllBlogs } from '~/features/blog/service/blog.service';
+import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const { supabase } = createSupabaseServerClient(request);
-  const blogsData = await getAllBlogs(supabase);
+  const blogsData = await getAllBlogs(request);
 
   return json({
     blogsData

@@ -2,16 +2,17 @@ import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { Section } from '~/components/Section';
-import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
+import { getBlogById } from '~/features/blog/service/blog.service';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const { blogId } = params;
-  const { supabase } = createSupabaseServerClient(request);
-  const { data: blog, error } = await supabase
-    .from('blogs')
-    .select('*')
-    .eq('id', `${blogId}`)
-    .single();
+
+  if (!blogId) {
+    console.error('blogId is required');
+    return json({ message: 'bad request' }, 400);
+  }
+
+  const { blog, error } = await getBlogById(request, blogId);
 
   if (error) {
     console.error(error);

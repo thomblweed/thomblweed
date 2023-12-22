@@ -8,3 +8,7 @@
   height: 200px;
   padding: 0.5rem;
 }
+
+a {
+  height: max-content;
+}

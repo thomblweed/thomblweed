@@ -3,7 +3,7 @@ import { createServerClient, parse, serialize } from '@supabase/ssr';
 import { type SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from '@types';
 
-import type { BlogData, UserRole } from './types';
+import type { UserRole } from './types';
 
 export const createSupabaseServerClient = (request: Request) => {
   const cookies = parse(request.headers.get('Cookie') ?? '');
@@ -45,6 +45,3 @@ export const getRoleDataForCurrentUser = async (client: SupabaseClient) =>
       .limit(1)
       .single()
   ).data?.user_roles as UserRole | undefined;
-
-export const getAllBlogs = async (client: SupabaseClient) =>
-  (await client.from('blogs').select('*')).data as BlogData[] | null;
