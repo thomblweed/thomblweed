@@ -7,7 +7,6 @@ export default defineConfig({
     remix({
       cacheDirectory: '../../node_modules/.cache/remix',
       ignoredRouteFiles: ['**/.*', '**/*.test.{js,jsx,ts,tsx}'],
-      serverBuildPath: 'build/index.js',
       serverModuleFormat: 'esm'
     }),
     tsconfigPaths()

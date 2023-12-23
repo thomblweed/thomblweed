@@ -26,7 +26,7 @@
     "sst:dev": "sst dev",
     "sst:remove": "sst remove",
     "sst:remove:prod": "sst remove --stage prod",
-    "start": "NODE_ENV=production remix-serve build/index.js",
+    "start": "NODE_ENV=production remix-serve build/server/index.js",
     "test": "vitest",
     "trace": "tsc --generateTrace ./trace && analyze-trace trace"
   },
