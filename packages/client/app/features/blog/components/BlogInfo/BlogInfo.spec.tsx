@@ -1,8 +1,9 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { createRemixStub } from '@remix-run/testing';
+import { cleanup, render, screen, within } from '@testing-library/react';
 import fc from 'fast-check';
 import { vi } from 'vitest';
 
-import { BlogInfo } from '.';
+import { BlogInfo } from './index';
 
 describe('When "isAdmin" is FALSE', () => {
   vi.mock('@remix-run/react', async () => {
@@ -26,9 +27,17 @@ describe('When "isAdmin" is FALSE', () => {
           fc.nat(),
           fc.string().filter(stringsHaveLength),
           (id, title) => {
-            render(<BlogInfo id={id} title={title} />);
+            const RemixStub = createRemixStub([
+              {
+                path: '/',
+                Component: () => <BlogInfo id={id} title={title} />
+              }
+            ]);
+            render(<RemixStub />);
 
-            const heading = screen.getByRole('heading', { level: 3 });
+            const link = screen.getByRole('link');
+            expect(link).toBeInTheDocument();
+            const heading = within(link).getByRole('heading', { level: 3 });
             expect(heading).toBeInTheDocument();
             expect(heading).toHaveTextContent(title.trim());
             expect(screen.queryByRole('button')).not.toBeInTheDocument();
@@ -46,7 +55,13 @@ describe('When "isAdmin" is FALSE', () => {
           fc.nat(),
           fc.string().filter(stringHaveNoLength),
           (id, title) => {
-            render(<BlogInfo id={id} title={title} />);
+            const RemixStub = createRemixStub([
+              {
+                path: '/',
+                Component: () => <BlogInfo id={id} title={title} />
+              }
+            ]);
+            render(<RemixStub />);
 
             expect(screen.queryByRole('heading')).not.toBeInTheDocument();
             expect(screen.queryByRole('button')).not.toBeInTheDocument();

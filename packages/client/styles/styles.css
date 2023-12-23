@@ -93,9 +93,13 @@ h3 {
   margin-bottom: var(--spacing-200);
 }
 
-p {
-  /* text-shadow: 1px 1px 10px var(--clr-alternate),
-    1px 1px 10px var(--clr-alternate); */
+a {
+  transition: all var(--transition-duration) ease-out;
+}
+
+a:hover {
+  color: var(--clr-primary);
+  text-shadow: 0 0 8px var(--clr-grey);
 }
 
 /* debug */
