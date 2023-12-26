@@ -2,6 +2,7 @@ import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 
 import { Section } from '~/components/Section';
+import { Blog } from '~/features/blog/components/blog';
 import { getBlogById } from '~/features/blog/service/blog.service';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -32,11 +33,9 @@ export default function BlogItemPage() {
 
   return (
     <>
-      <div className="container">
-        <Link to="/blog">Back to Blog</Link>
-      </div>
       <Section>
-        {blog ? <h2>{blog.title}</h2> : null}
+        <Link to="/blog">Back to Blog</Link>
+        {blog != null ? <Blog blog={blog} /> : null}
         {message ? (
           <>
             <div>{message}</div>

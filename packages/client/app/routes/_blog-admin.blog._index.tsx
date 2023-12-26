@@ -7,9 +7,9 @@ import {
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 
 import { Section } from '~/components/Section';
-import { Blog } from '~/features/blog';
 import { BlogAdminLayout } from '~/features/blog/admin/layouts/BlogAdmin';
 import { type AdminContext } from '~/features/blog/admin/types/AdminContext.type';
+import { Blogs } from '~/features/blog/blogs';
 import { getAllBlogs } from '~/features/blog/service/blog.service';
 import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 
@@ -63,10 +63,10 @@ export default function BlogRoute() {
       <h2>Blog</h2>
       {isAdmin ? (
         <BlogAdminLayout>
-          <Blog data={blogsData} />
+          <Blogs data={blogsData} />
         </BlogAdminLayout>
       ) : (
-        <Blog data={blogsData} />
+        <Blogs data={blogsData} />
       )}
     </Section>
   );

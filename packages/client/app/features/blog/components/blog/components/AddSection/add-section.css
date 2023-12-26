@@ -1,0 +1,47 @@
+.add-section {
+  display: flex;
+  align-items: center;
+  height: var(--spacing-400);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .add-line {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 6px 1px var(--clr-secondary);
+  }
+
+  &:hover .add-icon {
+    line {
+      stroke: var(--clr-primary);
+    }
+
+    rect {
+      stroke: var(--clr-primary);
+    }
+  }
+}
+
+.add-line {
+  border-top: 2px solid var(--clr-grey);
+  height: 0;
+  width: 100%;
+  transition-property: border-color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-out;
+}
+
+.add-icon {
+  width: 60px;
+
+  line {
+    stroke: var(--clr-grey);
+    transition: stroke var(--transition-duration) ease-out;
+  }
+
+  rect {
+    stroke: var(--clr-grey);
+    transition: stroke var(--transition-duration) ease-out;
+  }
+}

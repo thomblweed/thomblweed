@@ -5,7 +5,7 @@ export const getBlogById = async (request: Request, blogId: string) => {
   const { supabase } = createSupabaseServerClient(request);
   const { data: blog, error } = await supabase
     .from('blogs')
-    .select('*')
+    .select('id, title')
     .eq('id', `${blogId}`)
     .single();
 
@@ -15,5 +15,7 @@ export const getBlogById = async (request: Request, blogId: string) => {
 export const getAllBlogs = async (request: Request) => {
   const { supabase } = createSupabaseServerClient(request);
 
-  return (await supabase.from('blogs').select('*')).data as BlogData[] | null;
+  return (await supabase.from('blogs').select('id, title')).data as
+    | BlogData[]
+    | null;
 };
