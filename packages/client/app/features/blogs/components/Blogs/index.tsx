@@ -1,13 +1,8 @@
-import type { BlogData } from '~/service/supabase/types';
+import { BlogData } from '~/service/supabase/types';
 
-import './blogs.css';
-import { BlogInfo } from './components/BlogInfo';
+import { BlogInfo } from '../BlogInfo';
 
-type BlogProps = {
-  data: BlogData[] | null;
-};
-
-export const Blogs = ({ data }: BlogProps) => (
+export const Blogs = ({ data }: { data: BlogData[] | null }) => (
   <>
     <div className="blog-container">
       {data?.length ? (

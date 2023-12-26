@@ -1,8 +1,7 @@
 import { type ReactNode } from 'react';
 
-import { NewBlog } from '~/features/blog/admin/new-blog';
-
 import './admin.css';
+import { NewBlog } from './components/NewBlog';
 
 export const BlogAdminLayout = ({ children }: { children: ReactNode }) => {
   return (

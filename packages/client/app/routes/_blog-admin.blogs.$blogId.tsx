@@ -2,8 +2,8 @@ import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 
 import { Section } from '~/components/Section';
-import { Blog } from '~/features/blog/components/blog';
-import { getBlogById } from '~/features/blog/service/blog.service';
+import { Blog } from '~/features/blogs/composables/blog';
+import { getBlogById } from '~/features/blogs/service/blog.service';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const { blogId } = params;
@@ -34,7 +34,7 @@ export default function BlogItemPage() {
   return (
     <>
       <Section>
-        <Link to="/blog">Back to Blog</Link>
+        <Link to="/blogs">Back to Blogs</Link>
         {blog != null ? <Blog blog={blog} /> : null}
         {message ? (
           <>

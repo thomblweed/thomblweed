@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 
 import { BlogData } from '~/service/supabase/types';
 
-import { Blogs } from './blogs';
+import { BlogsFeature } from '.';
 
 vi.mock('./components/BlogInfo');
 
@@ -22,7 +22,7 @@ describe('When blogs data array has a minimum of 1 value', () => {
   it('should NOT display comming soon message', () => {
     fc.assert(
       fc.property(blogData, (data) => {
-        render(<Blogs data={data} />);
+        render(<BlogsFeature data={data} />);
 
         expect(screen.queryByText('coming soon...')).not.toBeInTheDocument();
       })
@@ -34,7 +34,7 @@ describe('When blogs data array is empty', () => {
   const blogData: BlogData[] = [];
 
   it('should display coming soon message', () => {
-    render(<Blogs data={blogData} />);
+    render(<BlogsFeature data={blogData} />);
 
     expect(screen.getByText('coming soon...')).toBeInTheDocument();
   });
@@ -44,7 +44,7 @@ describe('When blogs data array is null', () => {
   const blogData: BlogData[] | null = null;
 
   it('should display coming soon message', () => {
-    render(<Blogs data={blogData} />);
+    render(<BlogsFeature data={blogData} />);
 
     expect(screen.getByText('coming soon...')).toBeInTheDocument();
   });

@@ -6,11 +6,9 @@ import {
 } from '@remix-run/node';
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 
-import { Section } from '~/components/Section';
-import { BlogAdminLayout } from '~/features/blog/admin/layouts/BlogAdmin';
-import { type AdminContext } from '~/features/blog/admin/types/AdminContext.type';
-import { Blogs } from '~/features/blog/blogs';
-import { getAllBlogs } from '~/features/blog/service/blog.service';
+import { BlogsFeature } from '~/features/blogs';
+import { type AdminContext } from '~/features/blogs/composables/admin/types/AdminContext.type';
+import { getAllBlogs } from '~/features/blogs/service/blog.service';
 import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
@@ -51,25 +49,14 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     return json({ message: 'bad request' }, 400);
   }
 
-  return redirect(`/blog/${blog.id}`);
+  return redirect(`/blogs/${blog.id}`);
 };
 
 export default function BlogRoute() {
   const { blogsData } = useLoaderData<typeof loader>();
   const { isAdmin } = useOutletContext<AdminContext>();
 
-  return (
-    <Section>
-      <h2>Blog</h2>
-      {isAdmin ? (
-        <BlogAdminLayout>
-          <Blogs data={blogsData} />
-        </BlogAdminLayout>
-      ) : (
-        <Blogs data={blogsData} />
-      )}
-    </Section>
-  );
+  return <BlogsFeature data={blogsData} isAdmin={isAdmin} />;
 }
 
 export const handle = { hydrate: true };
