@@ -1,8 +1,19 @@
 import './add-section.css';
 
 export const AddSection = () => {
+  const handleAddSection = () => {
+    console.log('cheese');
+  };
+
   return (
-    <div className="add-section">
+    <div
+      className="add-section"
+      onClick={() => handleAddSection()}
+      role="toolbar"
+      onKeyDown={() => {
+        console.log('woo');
+      }}
+    >
       <hr className="add-line" />
       <svg
         className="add-icon"

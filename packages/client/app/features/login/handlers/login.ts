@@ -31,7 +31,7 @@ export const loginHandler = async (request: Request) => {
     );
   }
 
-  return redirect('/blog', {
+  return redirect('/blogs', {
     headers
   });
 };
