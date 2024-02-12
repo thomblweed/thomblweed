@@ -13,7 +13,7 @@ export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();
   const id = formData.get('id');
 
-  const supabase = createSupabaseServerClient(request);
+  const { supabase } = createSupabaseServerClient(request);
   const { error } = await supabase.from('blogs').delete().match({ id });
   if (error) {
     console.error(error);

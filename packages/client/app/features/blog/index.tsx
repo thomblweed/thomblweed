@@ -1,22 +1,32 @@
-import type { BlogData } from '~/service/supabase/types';
+import { Section } from '~/components/Section';
 
-import './blog.css';
-import { BlogInfo } from './components/BlogInfo';
+import ComingSoon from './content/ComingSoon.mdx';
 
-type BlogProps = {
-  data: BlogData[] | null;
+import 'highlight.js/styles/base16/dark-violet.css';
+import './blogs.css';
+
+// type BlogsProps = {
+//   data: BlogData[] | null;
+//   isAdmin: boolean;
+// };
+
+// export const BlogsFeature = ({ data, isAdmin }: BlogsProps) => (
+//   <Section>
+//     <h2>Blog</h2>
+//     {isAdmin ? (
+//       <BlogAdminLayout>
+//         <BlogsList data={data} />
+//       </BlogAdminLayout>
+//     ) : (
+//       <BlogsList data={data} />
+//     )}
+//   </Section>
+// );
+
+export const BlogFeature = () => {
+  return (
+    <Section>
+      <ComingSoon />
+    </Section>
+  );
 };
-
-export const Blog = ({ data }: BlogProps) => (
-  <>
-    <div className="blog-container">
-      {data?.length ? (
-        data.map(({ title, id }) => (
-          <BlogInfo key={id + title} id={id} title={title} />
-        ))
-      ) : (
-        <span>coming soon...</span>
-      )}
-    </div>
-  </>
-);

@@ -1,7 +1,7 @@
-import { useOutletContext } from '@remix-run/react';
+import { Link, useOutletContext } from '@remix-run/react';
 
-import { DeleteBlog } from '../../admin/delete-blog';
-import type { AdminContext } from '../../admin/types/AdminContext.type';
+import { DeleteBlog } from '../../../features/admin/delete-blog';
+import type { AdminContext } from '../../../features/admin/types/AdminContext.type';
 import './blog-info.css';
 
 type BlogInfoProps = {
@@ -15,7 +15,11 @@ export const BlogInfo = ({ id, title }: BlogInfoProps) => {
 
   return (
     <article className="blog-info">
-      {trimmmedTitle.length ? <h3>{trimmmedTitle}</h3> : null}
+      {trimmmedTitle.length ? (
+        <Link to={`/blogs/${id}`}>
+          <h3>{trimmmedTitle}</h3>
+        </Link>
+      ) : null}
       {isAdmin ? <DeleteBlog id={id} /> : null}
     </article>
   );

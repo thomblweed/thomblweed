@@ -1,7 +1,7 @@
 import {
   createSupabaseServerClient,
   getRoleDataForCurrentUser
-} from './supabase/supabase.service';
+} from '~/service/supabase/supabase.service';
 
 export const getCurrentUserRole = async (request: Request) => {
   const { supabase } = createSupabaseServerClient(request);

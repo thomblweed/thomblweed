@@ -1,4 +1,4 @@
-import { useFetcher } from '@remix-run/react';
+import { Form, useFetcher } from '@remix-run/react';
 import { useEffect, useRef } from 'react';
 
 import { Button } from '~/components/Elements/Button';
@@ -43,7 +43,7 @@ export const NewBlog = () => {
       </Button>
       <dialog className="new-blog-dialog" ref={dialogRef}>
         <h2>New Blog</h2>
-        <fetcher.Form method="post" action="/api/blog/add-blog">
+        <Form method="post">
           <Field
             ref={fieldInputRef}
             label="Title"
@@ -64,7 +64,7 @@ export const NewBlog = () => {
               Cancel
             </Button>
           </div>
-        </fetcher.Form>
+        </Form>
       </dialog>
     </>
   );

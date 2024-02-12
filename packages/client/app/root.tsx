@@ -19,22 +19,22 @@ export const links: LinksFunction = () => [
   {
     rel: 'icon',
     type: 'image/x-icon',
-    href: 'favicon.ico'
+    href: '/favicon/favicon.ico'
+  },
+  {
+    rel: 'preload',
+    type: 'font/woff2',
+    href: '/fonts/roboto-mono-v22-latin-regular.woff2',
+    as: 'font',
+    crossOrigin: 'anonymous'
+  },
+  {
+    rel: 'preload',
+    type: 'font/woff2',
+    href: '/fonts/roboto-mono-v22-latin-700.woff2',
+    as: 'font',
+    crossOrigin: 'anonymous'
   }
-  // {
-  //   rel: 'preload',
-  //   type: 'font/woff2',
-  //   href: '/fonts/roboto-mono-v22-latin-regular.woff2',
-  //   as: 'font',
-  //   crossOrigin: 'anonymous'
-  // },
-  // {
-  //   rel: 'preload',
-  //   type: 'font/woff2',
-  //   href: '/fonts/roboto-mono-v22-latin-700.woff2',
-  //   as: 'font',
-  //   crossOrigin: 'anonymous'
-  // }
 ];
 
 export const meta: MetaFunction = () => [
