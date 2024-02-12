@@ -3,9 +3,11 @@
 }
 
 .about-grid {
-  display: grid;
-  grid-template-rows: max-content max-content;
-  gap: var(--spacing-300);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spacing-400);
+  justify-content: space-evenly;
 }
 
 .about-container {

@@ -2,8 +2,8 @@ import { json, type LoaderFunctionArgs } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
 
 import { Section } from '~/components/Section';
-import { Blog } from '~/features/blogs/composables/blog';
-import { getBlogById } from '~/features/blogs/service/blog.service';
+import { Blog } from '~/features/blog/features/blog';
+import { getBlogById } from '~/features/blog/service/blog.service';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const { blogId } = params;
@@ -29,12 +29,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 };
 
 export default function BlogItemPage() {
+  // @ts-expect-error - ts bug with useLoaderData
   const { blog, message } = useLoaderData<typeof loader>();
 
   return (
     <>
       <Section>
-        <Link to="/blogs">Back to Blogs</Link>
+        <Link to="/blog">back</Link>
         {blog != null ? <Blog blog={blog} /> : null}
         {message ? (
           <>

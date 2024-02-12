@@ -1,7 +1,7 @@
 import { Link, useOutletContext } from '@remix-run/react';
 
-import { DeleteBlog } from '../../composables/admin/delete-blog';
-import type { AdminContext } from '../../composables/admin/types/AdminContext.type';
+import { DeleteBlog } from '../../../features/admin/delete-blog';
+import type { AdminContext } from '../../../features/admin/types/AdminContext.type';
 import './blog-info.css';
 
 type BlogInfoProps = {

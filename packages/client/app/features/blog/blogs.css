@@ -1,0 +1,11 @@
+/* .blog-container { */
+/*   display: grid; */
+/*   grid-template-columns: 1fr 1fr; */
+/*   grid-gap: var(--spacing-400); */
+/*   margin-block: var(--spacing-300); */
+/* } */
+
+code {
+  border-radius: var(--border-radius);
+  max-width: fit-content;
+}

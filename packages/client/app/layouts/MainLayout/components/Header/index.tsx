@@ -14,7 +14,7 @@ export const Header = () => {
         <Navigation
           items={[
             { value: 'home', route: '/' },
-            { value: 'blogs', route: '/blogs' }
+            { value: 'blog', route: '/blog' }
           ]}
           content={({ value, route }) => (
             <NavLink

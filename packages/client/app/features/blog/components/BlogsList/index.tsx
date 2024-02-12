@@ -1,8 +1,10 @@
+import { Outlet } from '@remix-run/react';
+
 import { BlogData } from '~/service/supabase/types';
 
-import { BlogInfo } from '../BlogInfo';
+import { BlogInfo } from './BlogInfo';
 
-export const Blogs = ({ data }: { data: BlogData[] | null }) => (
+export const BlogsList = ({ data }: { data: BlogData[] | null }) => (
   <>
     <div className="blog-container">
       {data?.length ? (
@@ -10,7 +12,7 @@ export const Blogs = ({ data }: { data: BlogData[] | null }) => (
           <BlogInfo key={id + title} id={id} title={title} />
         ))
       ) : (
-        <span>coming soon...</span>
+        <Outlet />
       )}
     </div>
   </>
