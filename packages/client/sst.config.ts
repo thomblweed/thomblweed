@@ -14,13 +14,13 @@ export default {
   },
   stacks(app) {
     app.setDefaultFunctionProps({
-      runtime: 'nodejs18.x'
+      runtime: 'nodejs20.x'
     });
     app.stack(function Site({ stack }) {
       const site = new RemixSite(stack, 'site', {
         buildCommand: 'pnpm build',
         path: '.',
-        runtime: 'nodejs18.x',
+        runtime: 'nodejs20.x',
         edge: false,
         environment: {
           SUPABASE_URL: process.env.SUPABASE_URL || '',
