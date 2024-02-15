@@ -47,10 +47,9 @@ import { BlogFeature } from '~/features/blog';
 //
 //   return <BlogsFeature data={blogsData} isAdmin={isAdmin} />;
 // }
-//
 
 export default function BlogRoute() {
   return <BlogFeature />;
 }
 
-export const handle = { hydrate: true };
+// export const handle = { hydrate: true };
