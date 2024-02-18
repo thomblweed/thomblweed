@@ -2,11 +2,12 @@ version: '3'
 
 tasks:
   dev:
-    deps: [dev:client, start:supabase]
+    deps: [dev:client]
   dev:client:
     dir: packages/client
     cmds:
       - pnpm dev
+
   start:supabase:
     dir: packages/supabase
     status:

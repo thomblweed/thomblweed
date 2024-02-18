@@ -40,7 +40,8 @@ export const links: LinksFunction = () => [
 export const meta: MetaFunction = () => [
   { charset: 'utf-8' },
   { title: 'thomas newman' },
-  { name: 'viewport', content: 'width=device-width, minimum-scale=1' }
+  { name: 'viewport', content: 'width=device-width, minimum-scale=1' },
+  { name: 'description', content: 'Thomas Newman, Frontend Developer.' }
 ];
 
 type Hydrate = { handle: { hydrate?: boolean } };

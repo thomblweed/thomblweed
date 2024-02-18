@@ -2,7 +2,7 @@
   --photo-width: 240px;
 }
 
-.about-grid {
+.about-container {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -10,15 +10,14 @@
   justify-content: space-evenly;
 }
 
-.about-container {
-  display: grid;
+.about-section {
+  display: flex;
   gap: var(--spacing-300);
-  margin-block: var(--spacing-300);
+  flex-direction: column;
 }
 
 .about-me {
   text-align: center;
-  margin-inline: var(--spacing-300);
 }
 
 .profile-picture {
@@ -40,15 +39,14 @@
   .about-me {
     text-align: left;
     max-width: 45rem;
-    margin-left: 3rem;
   }
 
   .profile-picture {
     justify-self: center;
   }
 
-  .about-container {
-    grid-template-columns: var(--photo-width) 1fr;
-    align-items: center;
-  }
+  /* .about-section { */
+  /*   align-items: center; */
+  /*   flex-direction: row; */
+  /* } */
 }
