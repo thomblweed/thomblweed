@@ -2,8 +2,6 @@ export const ReactSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    // width="256px"
-    // height="228px"
     viewBox="0 0 256 228"
     version="1.1"
     preserveAspectRatio="xMidYMid"
