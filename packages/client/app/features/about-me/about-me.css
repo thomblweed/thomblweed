@@ -12,38 +12,41 @@
 
 .about-section {
   display: flex;
-  gap: var(--spacing-300);
+  gap: var(--spacing-400);
   flex-direction: column;
+  align-items: center;
 }
 
 .about-me {
   text-align: center;
+  max-width: 61rem;
 }
 
-.profile-picture {
-  justify-self: center;
-}
-
-.profile-img {
-  border-radius: var(--border-radius);
-  -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(30%);
-  width: var(--photo-width);
-}
+/* .profile-picture { */
+/*   justify-self: center; */
+/* } */
+/**/
+/* .profile-img { */
+/*   border-radius: var(--border-radius); */
+/*   -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
+*/
+/*   filter: grayscale(30%); */
+/*   width: var(--photo-width); */
+/* } */
 
 @media (min-width: 48rem) {
   :root {
     --photo-width: 310px;
   }
 
-  .about-me {
-    text-align: left;
-    max-width: 45rem;
-  }
+  /* .about-me { */
+  /*   text-align: left; */
+  /*   max-width: 45rem; */
+  /* } */
 
-  .profile-picture {
-    justify-self: center;
-  }
+  /* .profile-picture { */
+  /*   justify-self: center; */
+  /* } */
 
   /* .about-section { */
   /*   align-items: center; */
