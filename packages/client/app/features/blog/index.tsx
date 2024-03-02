@@ -1,9 +1,5 @@
 import { Section } from '~/components/Section';
-
-import ComingSoon from './content/ComingSoon.mdx';
-
-import 'highlight.js/styles/base16/dark-violet.css';
-import './blogs.css';
+import { Frontmatter } from '~/routes/_blog-admin.blog._index';
 
 // type BlogsProps = {
 //   data: BlogData[] | null;
@@ -23,10 +19,23 @@ import './blogs.css';
 //   </Section>
 // );
 
-export const BlogFeature = () => {
+// export const loadPosts = async () => { const posts = import.meta.glob<{ frontmatter: Frontmatter }>(
+//     './content/*.mdx',
+//     { eager: true }
+//   );
+//
+//   return posts;
+// };
+
+export const BlogFeature = ({ posts }: { posts: Frontmatter[] }) => {
   return (
-    <Section>
-      <ComingSoon />
-    </Section>
+    <ul>
+      {posts?.map((post) => (
+        <li key={post.title}>
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
+        </li>
+      ))}
+    </ul>
   );
 };

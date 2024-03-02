@@ -1,3 +1,5 @@
+import { json, useLoaderData } from '@remix-run/react';
+
 import { BlogFeature } from '~/features/blog';
 
 // export const loader = async ({ request }: LoaderFunctionArgs) => {
@@ -48,8 +50,40 @@ import { BlogFeature } from '~/features/blog';
 //   return <BlogsFeature data={blogsData} isAdmin={isAdmin} />;
 // }
 
-export default function BlogRoute() {
-  return <BlogFeature />;
-}
+export type Frontmatter = {
+  title: string;
+  description: string;
+};
 
-// export const handle = { hydrate: true };
+export type PostMeta = {
+  slug: string;
+  frontmatter: Frontmatter;
+};
+
+export const loader = async () => {
+  const posts = import.meta.glob<{ frontmatter: Frontmatter }>(
+    '../routes/*.blog.*.mdx',
+    {
+      eager: true
+    }
+  );
+  // const build = await import('virtual:remix/server-build');
+  const entries = Object.entries(posts).map(([file, post]) => {
+    // const id = file.replace('./content/', '').replace(/\.mdx$/, '');
+    // const slug = build.routes[id].path;
+
+    return {
+      // slug,
+      ...post.frontmatter
+    };
+  });
+  console.log({ entries });
+
+  return json(entries);
+};
+
+export default function BlogRoute() {
+  const posts = useLoaderData<typeof loader>();
+
+  return <BlogFeature posts={posts} />;
+}
