@@ -1,4 +1,3 @@
-import { Section } from '~/components/Section';
 import { Frontmatter } from '~/routes/_blog-admin.blog._index';
 
 // type BlogsProps = {

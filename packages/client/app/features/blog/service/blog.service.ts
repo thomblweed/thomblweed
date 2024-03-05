@@ -1,5 +1,4 @@
 import { createSupabaseServerClient } from '~/service/supabase/supabase.service';
-
 import { BlogData } from '~/service/supabase/types';
 
 export const getBlogById = async (request: Request, blogId: string) => {

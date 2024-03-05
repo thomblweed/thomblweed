@@ -68,7 +68,8 @@ export const loader = async () => {
     }
   );
   // const build = await import('virtual:remix/server-build');
-  const entries = Object.entries(posts).map(([file, post]) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const entries = Object.entries(posts).map(([_file, post]) => {
     // const id = file.replace('./content/', '').replace(/\.mdx$/, '');
     // const slug = build.routes[id].path;
 
