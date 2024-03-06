@@ -18,6 +18,7 @@ export default {
     });
     app.stack(function Site({ stack }) {
       const site = new RemixSite(stack, 'site', {
+        customDomain: 'thomblweed.info',
         buildCommand: 'pnpm build',
         path: '.',
         runtime: 'nodejs20.x',
