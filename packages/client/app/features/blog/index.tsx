@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 
-import { Frontmatter, PostMeta } from '~/routes/_blog-admin.blog._index';
+import { PostMeta } from '~/routes/_blog-admin.blog._index';
 
 // type BlogsProps = {
 //   data: BlogData[] | null;
