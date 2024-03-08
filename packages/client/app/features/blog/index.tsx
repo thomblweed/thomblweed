@@ -1,4 +1,6 @@
-import { Frontmatter } from '~/routes/_blog-admin.blog._index';
+import { Link } from '@remix-run/react';
+
+import { Frontmatter, PostMeta } from '~/routes/_blog-admin.blog._index';
 
 // type BlogsProps = {
 //   data: BlogData[] | null;
@@ -26,12 +28,12 @@ import { Frontmatter } from '~/routes/_blog-admin.blog._index';
 //   return posts;
 // };
 
-export const BlogFeature = ({ posts }: { posts: Frontmatter[] }) => {
+export const BlogFeature = ({ posts }: { posts: PostMeta[] }) => {
   return (
     <ul>
       {posts?.map((post) => (
         <li key={post.title}>
-          <h3>{post.title}</h3>
+          <Link to={`${post.filename}`}>{post.title}</Link>
           <p>{post.description}</p>
         </li>
       ))}

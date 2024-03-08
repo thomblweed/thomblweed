@@ -55,9 +55,8 @@ export type Frontmatter = {
   description: string;
 };
 
-export type PostMeta = {
-  slug: string;
-  frontmatter: Frontmatter;
+export type PostMeta = Frontmatter & {
+  filename: string;
 };
 
 export const loader = async () => {
@@ -67,18 +66,16 @@ export const loader = async () => {
       eager: true
     }
   );
-  // const build = await import('virtual:remix/server-build');
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const entries = Object.entries(posts).map(([_file, post]) => {
-    // const id = file.replace('./content/', '').replace(/\.mdx$/, '');
-    // const slug = build.routes[id].path;
+  const entries = Object.entries(posts).map(([file, post]) => {
+    const filename = file
+      .replace('./_blog-admin.blog.', '')
+      .replace(/\.mdx$/, '');
 
     return {
-      // slug,
+      filename,
       ...post.frontmatter
     };
   });
-  console.log({ entries });
 
   return json(entries);
 };
