@@ -20,14 +20,6 @@ import { PostMeta } from '~/routes/_blog-admin.blog._index';
 //   </Section>
 // );
 
-// export const loadPosts = async () => { const posts = import.meta.glob<{ frontmatter: Frontmatter }>(
-//     './content/*.mdx',
-//     { eager: true }
-//   );
-//
-//   return posts;
-// };
-
 export const BlogFeature = ({ posts }: { posts: PostMeta[] }) => {
   return (
     <ul>
