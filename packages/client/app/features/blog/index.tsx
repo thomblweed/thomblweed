@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 
-import './blog.css';
 import { PostMeta } from '~/routes/_blog-admin.blog._index';
+import './blog-feature.css';
 
 // type BlogsProps = {
 //   data: BlogData[] | null;
@@ -26,7 +26,7 @@ export const BlogFeature = ({ posts }: { posts: PostMeta[] }) => {
     <ul>
       {posts?.map((post) => (
         <li key={post.title}>
-          <Link className="blog-link" to={`${post.filename}`}>
+          <Link className="text-medium" to={`${post.filename}`}>
             {post.title}
           </Link>{' '}
           <p className="blog-description">{post.description}</p>

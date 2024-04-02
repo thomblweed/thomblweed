@@ -1,21 +1,91 @@
 ---
 title: Creating my website
-description: a breif walkthrough of the tools I am using to create this website
+description: An overview of the tools I am using to create this website and why I have chosen each one.
 ---
 
 import { Link } from '@remix-run/react';
+import { WebDevSVG } from '../features/blog/components/svg/WebDevSVG';
 
 ## {frontmatter.title}
 
-I've been working on this site intermittently for months, utilizing various approaches and tools as opportunities to explore interesting technologies. However, I found myself changing my mind several times throughout the process and eventually circled back to the <a href="https://remix.run/" target="_blank">Remix</a> framework.
+I've been working on this site intermittently for months, utilising various approaches and tools as opportunities to explore interesting technologies. After many attempts and approaches I eventually landed on the <a href="https://remix.run/" target="_blank">Remix</a> framework.
 
 ### Remix
 
-I remember watching <a href="https://www.youtube.com/watch?v=4dOAFJUOi-s" target="_blank">this video</a> for Remix beta v1 some years ago and I was genuinely excited by the approaches
-demonstrated. In particular, the handling of <a href="https://remix.run/docs/en/main/components/form" target="_blank">forms</a> in Remix with a server action. As I initially needed a login form for this site, I decided this was a good excuse to use Remix and then I just found I enjoyed the developer experiance so much and so stuck with it. The login form has since become obsolete for the time being, but you can view it <Link to="/login">here</Link>.
+I remember watching <a href="https://www.youtube.com/watch?v=4dOAFJUOi-s" target="_blank">this video</a> for Remix beta v1 some years ago and and I found it genuinely exciting. In particular, the handling of <a href="https://remix.run/docs/en/main/components/form" target="_blank">forms</a> with a server action. When I needed to implement a login form for my site, I saw it as a perfect opportunity to try Remix, and I was delighted with the developer experience. Although the login form is currently not in use, you can still view it <Link to="/login">here</Link>.
 
-The intial idea was to create a blog site I could add and edit content on the site directly like a cms. After some time I decided I would utilise mdx instead for the time being as Remix has such <a href='https://remix.run/docs/en/main/future/vite#add-mdx-plugin' target='_blank'>great support</a> for this expecially now I have gone down the route of adding <a href='https://remix.run/docs/en/main/future/vite' target='_blank'>Vite</a> to the mix.
+My initial goal was to build a blog site where I could directly add and edit content like a cms. However, for the time being, I've decided to utilise MDX, given Remix's <a href='https://remix.run/docs/en/main/future/vite#add-mdx-plugin' target='_blank'>excellent support</a> for it. Additionally, integrating <a href='https://remix.run/docs/en/main/future/vite' target='_blank'>Vite</a> into the mix has made this approach even more appealing.
 
-### SST
+I will be posting more detail on what I have learned along the way in future.
 
-Deploying Remix to AWS is so great with <a href='https://sst.dev/' target='_blank'>SST</a>.
+### Styling
+
+In my day-to-day work over the past few years I have been using <a href='https://styled-components.com/' target='_blank'>styled-components</a>, <a href='https://emotion.sh/docs/introduction' target='_blank'>Emotion</a> and component libraries such as <a href='https://mui.com/' target='_blank'>Material UI</a> and <a href='https://chakra-ui.com/' target='_blank'>Chakra UI</a>.
+
+It has therefore been a while since I've used regular CSS extensively and I had not previously used CSS variables before so decided to do that here. I don't consider myself a designer, and so for this theme I looked into some ideas around cyberpunk and sci-fi genres and aimed to create a theme reflective of those.
+
+Below are my css variables for my theme.
+
+```CSS
+:root {
+ --clr-primary: hsl(322, 46%, 70%);
+ --clr-secondary: hsl(199, 49%, 55%);
+ --clr-alternate: hsl(323, 22%, 47%);
+ --clr-grey: hsl(208, 88%, 83%);
+ --clr-bright: hsl(180, 100%, 97%);
+ --clr-dark: hsl(237, 43%, 10%);
+ --clr-dark-red: hsl(288, 43%, 9%);
+
+ --ff-primary: 'Roboto Mono', 'Helvetica', 'Arial', 'sans-serif';
+ --ff-body: var(--ff-primary);
+ --ff-heading: var(--ff-primary);
+
+ --fw-regular: 400;
+ --fw-bold: 700;
+
+ --fs-300: 0.775rem;
+ --fs-400: 1rem;
+ --fs-450: 1.125rem;
+ --fs-500: 1.375rem;
+ --fs-600: 1.875rem;
+ --fs-700: 2.5rem;
+ --fs-800: 3rem;
+ --fs-900: 3.5rem;
+
+ --fs-body: var(--fs-400);
+ --fs-primary-heading: var(--fs-600);
+ --fs-secondary-heading: var(--fs-500);
+ --fs-third-heading: var(--fs-450);
+ --fs-nav: var(--fs-500);
+ --fs-button: var(--fs-400);
+
+ --spacing-100: 0.375rem;
+ --spacing-200: 0.5rem;
+ --spacing-300: 1rem;
+ --spacing-400: 1.5rem;
+ --spacing-500: 2rem;
+ --spacing-600: 3rem;
+ --spacing-700: 4rem;
+ --spacing-800: 5rem;
+
+ --transition-duration: 0.3s;
+
+ --border-radius: var(--spacing-200);
+}
+
+@media (min-width: 48rem) {
+ :root {
+   --fs-body: var(--fs-450);
+   --fs-primary-heading: var(--fs-700);
+   --fs-secondary-heading: var(--fs-600);
+   --fs-third-heading: var(--fs-500);
+   --fs-button: var(--fs-450);
+
+   --fs-nav: var(--fs-300);
+ }
+}
+```
+
+### Deployment and hosting
+
+I'm in the process of documenting why I use <a href="https://sst.dev/" target="_blank">SST</a> to deploy and host my site on AWS...more information to come.

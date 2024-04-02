@@ -1,3 +1,7 @@
 .footer {
   padding: var(--spacing-300) 0;
+
+  p {
+    padding: 0;
+  }
 }
