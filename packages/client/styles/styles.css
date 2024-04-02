@@ -74,11 +74,8 @@ li {
   font-size: var(--fs-body);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  text-transform: lowercase;
+p {
+  padding-block: var(--spacing-100);
 }
 
 h2 {
@@ -94,7 +91,9 @@ h3 {
 }
 
 a {
-  transition: all var(--transition-duration) ease-out;
+  color: var(--clr-primary);
+  text-underline-offset: 0.25rem;
+  transition: var(--transition-duration) ease-out;
 }
 
 a:hover {

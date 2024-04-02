@@ -7,9 +7,11 @@
 
 .nav-link {
   text-decoration: inherit;
+  color: var(--clr-alternate);
 }
 
 .nav-link-active {
   text-decoration: underline;
+  color: var(--clr-grey);
   text-underline-offset: 0.5rem;
 }
