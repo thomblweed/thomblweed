@@ -8,13 +8,15 @@ Source code for my website at https://thomblweed.dev/
 
 https://pnpm.io/installation
 
-### Install Docker Desktop
-
-https://www.docker.com/products/docker-desktop/
-
 ### Install Taskfile
 
 https://taskfile.dev/installation/
+
+## Database Setup (Not currently used by the site)
+
+### Install Docker Desktop
+
+https://www.docker.com/products/docker-desktop/
 
 ### Install Sops
 
