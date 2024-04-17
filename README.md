@@ -1,5 +1,7 @@
 # thomblweed
 
+Source code for my website at https://thomblweed.dev/
+
 ## Setup
 
 ### Install pnpm
@@ -41,5 +43,3 @@ pnpm install
 ```sh
 task dev
 ```
-
-## Database

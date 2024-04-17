@@ -8,8 +8,8 @@ code {
 .blog-container {
   max-width: 60rem;
   margin: 0 auto;
-}
 
-p {
-  margin-bottom: var(--spacing-200);
+  p {
+    margin-bottom: var(--spacing-200);
+  }
 }
