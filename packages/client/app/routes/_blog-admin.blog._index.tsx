@@ -53,6 +53,7 @@ import { BlogFeature } from '~/features/blog';
 export type Frontmatter = {
   title: string;
   description: string;
+  date: string;
 };
 
 export type PostMeta = Frontmatter & {

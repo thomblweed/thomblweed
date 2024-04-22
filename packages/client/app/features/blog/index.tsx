@@ -28,7 +28,10 @@ export const BlogFeature = ({ posts }: { posts: PostMeta[] }) => {
         <li key={post.title}>
           <Link className="text-medium" to={`${post.filename}`}>
             {post.title}
-          </Link>{' '}
+          </Link>
+          <div className="text-secondary">
+            {new Date(post.date).toLocaleDateString()}
+          </div>
           <p className="blog-description">{post.description}</p>
         </li>
       ))}
