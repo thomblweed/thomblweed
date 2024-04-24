@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdx-js/rollup": "^3.0.1",
     "@remix-run/node": "2.9.0",
-    "@remix-run/react": "2.8.1",
+    "@remix-run/react": "2.9.0",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.7",
     "cross-env": "^7.0.3",
@@ -19,10 +19,10 @@
     "remark-mdx-frontmatter": "^4.0.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "2.8.1",
+    "@remix-run/dev": "2.9.0",
     "@remix-run/eslint-config": "2.9.0",
-    "@remix-run/serve": "2.8.1",
-    "@remix-run/testing": "2.8.1",
+    "@remix-run/serve": "2.9.0",
+    "@remix-run/testing": "2.9.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/react": "^18.2.64",
