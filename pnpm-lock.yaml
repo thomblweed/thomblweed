@@ -91,8 +91,8 @@ importers:
         specifier: ^10.4.18
         version: 10.4.19(postcss@8.4.38)
       aws-cdk-lib:
-        specifier: 2.137.0
-        version: 2.137.0(constructs@10.3.0)
+        specifier: 2.138.0
+        version: 2.138.0(constructs@10.3.0)
       constructs:
         specifier: 10.3.0
         version: 10.3.0
@@ -5244,8 +5244,8 @@ packages:
       - yaml
       - mime-types
 
-  /aws-cdk-lib@2.137.0(constructs@10.3.0):
-    resolution: {integrity: sha512-pD3AGdKBa8q1+vVWRabiDHuecVMlP8ERGPHc9Pb0dVlpbC/ODC6XXC1S0TAMsr0JI5Lh6pk4vL5cC+spsMeotw==}
+  /aws-cdk-lib@2.138.0(constructs@10.3.0):
+    resolution: {integrity: sha512-BdLOd6Fkl/7PH8RahRbhYQf3zRFCxVtOdkKOAZHHqtaNkmTyfkUGMXyzyQ4rIHvR8EOy1C1x5CAufqoZuJM0gA==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
