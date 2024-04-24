@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@mdx-js/rollup": "^3.0.1",
-    "@remix-run/node": "2.8.1",
+    "@remix-run/node": "2.9.0",
     "@remix-run/react": "2.8.1",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.7",
