@@ -1,7 +1,7 @@
 ---
 title: Creating my website
 description: An overview of the tools I am using to create this website and why I have chosen each one.
-date: 2024-04-02
+date: 2024-04-26
 ---
 
 import { Link } from '@remix-run/react';
@@ -89,4 +89,54 @@ Below are my css variables for my theme.
 
 ### Deployment and hosting
 
-I'm in the process of documenting why I use <a href="https://sst.dev/" target="_blank">SST</a> to deploy and host my site on AWS...more information to come.
+There are some great options for deploying and hosting a website for a low cost or even free. I tried Vercel and Netlify free tiers which are both excellent but they both host in the US by default which comes with performance issues for me being in the UK. Options to improve this, such as CDN and region host changes, add additional cost.
+
+Remix comes with a great option to enable deployment to AWS using <a href="https://arc.codes/docs/en/get-started/quickstart" target='_blank'>Architect</a> of which I did use for a while and could host in the UK and retain no costs.
+
+I then discovered <a href="https://sst.dev/" target="_blank">SST</a> which has slightly more complexity to the config than Architect, but auto sets ups CloudFront for you as well as your local development environment connected to a live AWS Lambda.
+
+I won't go through every detail of the setup, or how it works you can read that on their documentation, but you can see how declarative the below config is. Once I setup the Route53 hosted zone, see how simple it is to set the domainName, it does everything else for you.
+
+```TypeScript
+{
+  config() {
+    return {
+      stage: 'dev',
+      name: 'thomblweed-client',
+      region: 'eu-west-2',
+      cdk: {
+        fileAssetsBucketName: 'thomblweed-cdk-toolkit'
+      }
+    };
+  },
+  stacks(app) {
+    app.setDefaultFunctionProps({
+      runtime: 'nodejs20.x'
+    });
+    app.stack(function Site({ stack }) {
+      const site = new RemixSite(stack, 'site', {
+        customDomain: {
+          domainName: 'thomblweed.dev'
+        },
+        buildCommand: 'pnpm build',
+        path: '.',
+        runtime: 'nodejs20.x',
+        edge: false,
+        environment: {
+          SUPABASE_URL: process.env.SUPABASE_URL || '',
+          SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || '',
+          SUPABASE_COOKIE_DOMAIN: process.env.SUPABASE_COOKIE_DOMAIN || ''
+        }
+      });
+      stack.addOutputs({
+        url: site.url
+      });
+    });
+    if (app.stage !== 'prod') {
+      app.setDefaultRemovalPolicy('destroy');
+    }
+  }
+} satisfies SSTConfig;
+```
+
+In the couple of months since deploying this site I have had zero issues, and my costs have totalled to around £1.60 per month so far.
