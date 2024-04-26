@@ -9,7 +9,7 @@ import { WebDevSVG } from '../features/blog/components/svg/WebDevSVG';
 
 ## {frontmatter.title}
 
-I've been working on this site intermittently for months, utilising various approaches and tools as opportunities to explore interesting technologies. After many attempts and approaches I eventually landed on the <a href="https://remix.run/" target="_blank">Remix</a> framework.
+I've been working on this site intermittently for months, utilising various approaches and tools as opportunities to explore interesting technologies. After many attempts and approaches I eventually landed on the <a href="https://remix.run/" target="_blank">Remix</a> framework. Code can be found <a href="https://github.com/thomblweed/thomblweed" target="_blank">here</a>.
 
 ### Remix
 
@@ -93,9 +93,9 @@ There are some great options for deploying and hosting a website for a low cost 
 
 Remix comes with a great option to enable deployment to AWS using <a href="https://arc.codes/docs/en/get-started/quickstart" target='_blank'>Architect</a> of which I did use for a while and could host in the UK and retain no costs.
 
-I then discovered <a href="https://sst.dev/" target="_blank">SST</a> which has slightly more complexity to the config than Architect, but auto sets ups CloudFront for you as well as your local development environment connected to a live AWS Lambda.
+I then discovered <a href="https://sst.dev/" target="_blank">SST</a> which has slightly more complexity to the config than Architect, but automatically sets up CloudFront for you, as well as your local development environment connected to a live AWS Lambda.
 
-I won't go through every detail of the setup, or how it works you can read that on their documentation, but you can see how declarative the below config is. Once I setup the Route53 hosted zone, see how simple it is to set the domainName, it does everything else for you.
+I won't go through every detail of the setup, or how it works you can read that on their documentation, but you can see how declarative the below config is. Once I setup the Route53 hosted zone, see how simple it is to set the `domainName`, it does everything else for you.
 
 ```TypeScript
 {
