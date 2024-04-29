@@ -130,8 +130,8 @@ importers:
         specifier: ^6.2.0
         version: 6.2.2(eslint@8.57.0)(typescript@5.4.5)
       fast-check:
-        specifier: ^3.17.1
-        version: 3.17.2
+        specifier: ^3.18.0
+        version: 3.18.0
       happy-dom:
         specifier: ^14.7.1
         version: 14.7.1
@@ -7766,8 +7766,8 @@ packages:
   /extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  /fast-check@3.17.2:
-    resolution: {integrity: sha512-+3DPTxtxABLgmmVpYxrash3DHoq0cMa1jjLYNp3qqokKKhqVEaS4lbnaDKqWU5Dd6C2pEudPPBAEEQ9nUou9OQ==}
+  /fast-check@3.18.0:
+    resolution: {integrity: sha512-/951xaT0kA40w0GXRsZXEwSTE7LugjZtSA/8vPgFkiPQ8wNp8tRvqWuNDHBgLxJYXtsK11e/7Q4ObkKW5BdTFQ==}
     engines: {node: '>=8.0.0'}
     dependencies:
       pure-rand: 6.1.0
