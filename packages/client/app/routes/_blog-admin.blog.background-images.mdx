@@ -1,0 +1,73 @@
+---
+title: Handling Background Images
+description: The approach I took to adding a background image to my site and why.
+date: 2024-05-28
+---
+
+import { Link } from '@remix-run/react';
+
+## {frontmatter.title}
+
+There is a whole other discussion to be had on whether using background images is a good idea for modern websites. I won't go into that here, but the reason I am using one is it's an easier way for me to add an extra look to the site and also to learn something from the process.
+
+### The Old Way
+
+The way I learned to handle background images years ago was to use the CSS "background-image" property. Something like this:
+
+```HTML
+<div class="background-image"></div>
+```
+
+```CSS
+.background-image {
+  background-image: url('/img/background-image.jpg');
+  background-size: cover;
+}
+```
+
+Why is this not a good idea? Firstly, we have accessibility challenges: screen readers will not announce the background image to the user. It is also not easy to make this responsive for different screen sizes. There are performance issues as well: the browser has to download and parse the CSS before it finds it needs to download the image, this pushes the downloading of the image down the HTTP waterfall.
+
+### A Better Way
+
+By using the picture element, we can add multiple sources for different screen sizes, allowing the browser to choose the best one. I chose the approach below to be very specific about the image sizes, but you can use the "srcset" attribute in other ways, such as for pixel density. You can read about that <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank">here</a>.
+
+```HTML
+<picture className="picture-background">
+  <source
+    media="(min-width: 2400px)"
+    srcSet="/images/space-city-2400.webp"
+  />
+  <source
+    media="(min-width: 1920px)"
+    srcSet="/images/space-city-1920.webp"
+  />
+  <source
+    media="(min-width: 1280px)"
+    srcSet="/images/space-city-1440.webp"
+  />
+  <source media="(min-width: 500px)" srcSet="/images/space-city-960.webp" />
+  <img
+    src="/images/space-city-480.webp"
+    alt="space city"
+    className="image-background"
+  />
+</picture>
+```
+
+```CSS
+.picture-background {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  overflow: hidden;
+}
+
+.image-background {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+```
+
+By using this approach, we solve the accessibility issues and make the site more responsive by downloading an image that better suits the screen size. The performance gains are also significant because we are not reliant on CSS to download the image; the browser downloads the image in parallel with the CSS, improving performance.
