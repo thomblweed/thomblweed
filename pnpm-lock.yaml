@@ -148,8 +148,8 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       sst:
-        specifier: ^2.42.0
-        version: 2.42.0(@types/react@18.3.3)
+        specifier: ^2.43.0
+        version: 2.43.0(@types/react@18.3.3)
       supabase:
         specifier: ^1.148.6
         version: 1.163.2
@@ -5892,23 +5892,6 @@ packages:
       - utf-8-validate
     dev: true
 
-  /aws-sdk@2.1605.0:
-    resolution: {integrity: sha512-/wtOuF7WgkbN6YL3xJ+FB54kvIAfnP/DQVDaE6rSYv6ft0xr01Si94NgQWhb5OcFkFfRAC4auZX8PiFNtOi9xQ==}
-    engines: {node: '>= 10.0.0'}
-    requiresBuild: true
-    dependencies:
-      buffer: 4.9.2
-      events: 1.1.1
-      ieee754: 1.1.13
-      jmespath: 0.16.0
-      querystring: 0.2.0
-      sax: 1.2.1
-      url: 0.10.3
-      util: 0.12.5
-      uuid: 8.0.0
-      xml2js: 0.6.2
-    dev: true
-
   /aws-sdk@2.1624.0:
     resolution: {integrity: sha512-SxBGDkdmsQTXLKPaY+hLqjlQyZBaGaFD34EhTd4aYuuqT952sxYeDt7w75py4o4O5z4hUUTccqTF9dtpxCPJfg==}
     engines: {node: '>= 10.0.0'}
@@ -8427,6 +8410,7 @@ packages:
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -8793,6 +8777,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -12731,8 +12716,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /sst@2.42.0(@types/react@18.3.3):
-    resolution: {integrity: sha512-p3Wi8SS7pn0MQ+062uEiMZJX1iq2nSaJi76f+bQki2FLj9xu3l1F4x9IULv76pMFNPZKtNd8yr1/RT2RiwK95Q==}
+  /sst@2.43.0(@types/react@18.3.3):
+    resolution: {integrity: sha512-iTcYYaCfusJJZHJCwhHsanRMFouMvnLOBfPOOZGiq5ezw38iPCMF/sZfT9nLWD50BSbEsDP2OiAVeXJAQvmrsQ==}
     hasBin: true
     peerDependencies:
       '@sls-next/lambda-at-edge': ^3.7.0
@@ -12770,7 +12755,7 @@ packages:
       adm-zip: 0.5.12
       aws-cdk-lib: 2.142.1(constructs@10.3.0)
       aws-iot-device-sdk: 2.2.13
-      aws-sdk: 2.1605.0
+      aws-sdk: 2.1624.0
       builtin-modules: 3.2.0
       cdk-assets: 2.142.1
       chalk: 5.3.0
