@@ -148,8 +148,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       sst:
-        specifier: ^2.43.0
-        version: 2.43.0(@types/react@18.3.3)
+        specifier: ^2.43.1
+        version: 2.43.1(@types/react@18.3.3)
       supabase:
         specifier: ^1.148.6
         version: 1.163.2
@@ -12559,8 +12559,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /sst@2.43.0(@types/react@18.3.3):
-    resolution: {integrity: sha512-iTcYYaCfusJJZHJCwhHsanRMFouMvnLOBfPOOZGiq5ezw38iPCMF/sZfT9nLWD50BSbEsDP2OiAVeXJAQvmrsQ==}
+  /sst@2.43.1(@types/react@18.3.3):
+    resolution: {integrity: sha512-D2SabojjbVkG678uni9ih9Q7qsuoEvBdSKltItY3YrBYeIsJ2YYthHCdQXP+6U40cwpAu3rr/VtGQsJDA4aCQw==}
     hasBin: true
     peerDependencies:
       '@sls-next/lambda-at-edge': ^3.7.0
