@@ -94,8 +94,8 @@ importers:
         specifier: ^10.4.18
         version: 10.4.19(postcss@8.4.38)
       aws-cdk-lib:
-        specifier: 2.141.0
-        version: 2.141.0(constructs@10.3.0)
+        specifier: 2.146.0
+        version: 2.146.0(constructs@10.3.0)
       constructs:
         specifier: 10.3.0
         version: 10.3.0
@@ -5655,8 +5655,8 @@ packages:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  /aws-cdk-lib@2.141.0(constructs@10.3.0):
-    resolution: {integrity: sha512-xda56Lfwpdqg9MssnFdXrAKTmeeNjfrfFCaWwqGqToG6cfGY2W+6wyyoObX60/MeZGhhs3Lhdb/K94ulLJ4X/A==}
+  /aws-cdk-lib@2.142.1(constructs@10.3.0):
+    resolution: {integrity: sha512-xs4NRoml5/Zh30YHSk/Wwmr7VcZOZHyIInuBye3gC/BYwCh1lsUe9/ChWIeLUCRhUrELd5npyoBOJiHb3ql7Rg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -5679,8 +5679,8 @@ packages:
       - yaml
       - mime-types
 
-  /aws-cdk-lib@2.142.1(constructs@10.3.0):
-    resolution: {integrity: sha512-xs4NRoml5/Zh30YHSk/Wwmr7VcZOZHyIInuBye3gC/BYwCh1lsUe9/ChWIeLUCRhUrELd5npyoBOJiHb3ql7Rg==}
+  /aws-cdk-lib@2.146.0(constructs@10.3.0):
+    resolution: {integrity: sha512-W3F2zH+P7hUxmu2dlEKJBBi6Twc4//NsJJW00h2LN0dKU+2302QY8jR+P7jgEYzZ7U50phtH4zO6BPmJrhLVEg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
