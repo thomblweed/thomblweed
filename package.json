@@ -55,7 +55,7 @@
     "sst": "^2.43.1",
     "supabase": "^1.148.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2",
+    "typescript": "^5.5.2",
     "vite": "^5.3.1",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.6.0"
