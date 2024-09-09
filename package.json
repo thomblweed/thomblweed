@@ -52,7 +52,7 @@
     "postcss": "^8.4.44",
     "postcss-cli": "^11.0.0",
     "prettier": "^3.3.3",
-    "sst": "2.43.6",
+    "sst": "3.0.125",
     "supabase": "^1.187.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
