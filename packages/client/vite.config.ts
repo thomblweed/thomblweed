@@ -6,7 +6,6 @@ import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 
-/** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [
     mdx({
@@ -14,12 +13,7 @@ export default defineConfig({
       rehypePlugins: [rehypeHighlight]
     }),
     remix({
-      cacheDirectory: '../../node_modules/.cache/remix',
       ignoredRouteFiles: ['**/.*', '**/*.test.{js,jsx,ts,tsx}'],
-      serverModuleFormat: 'esm',
-      assetsBuildDirectory: 'public/build',
-      publicPath: '/build/',
-      serverBuildDirectory: 'build',
       serverBuildFile: 'index.js'
     }),
     tsconfigPaths()
