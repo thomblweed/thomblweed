@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.14.0",
     "@typescript/analyze-trace": "^0.10.1",
-    "@vitejs/plugin-react": "^4.3.2",
+    "@vitejs/plugin-react": "^4.3.3",
     "@vitest/coverage-v8": "^2.1.4",
     "autoprefixer": "^10.4.20",
     "aws-cdk-lib": "2.164.1",
