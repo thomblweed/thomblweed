@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm clean:build && pnpm build:css && pnpm build:remix",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
-    "build:remix": "vite build && vite build --ssr",
+    "build:remix": "remix vite:build",
     "clean": "pnpm clean:build && pnpm clean:public:build && pnpm clean:styles && pnpm clean:sst",
     "clean:build": "if [ -d \"build\" ]; then rm -rf \"build\"; fi",
     "clean:public:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
