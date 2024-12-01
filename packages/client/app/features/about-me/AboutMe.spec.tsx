@@ -17,7 +17,7 @@ describe('AboutMe', () => {
   it('should display about me paragraph', () => {
     expect(
       screen.getByText(
-        /I'm a developer based in Edinburgh with over 9 years experience. Although my background encompasses fullstack development, I have recently been focussing in the frontend space. I have an enthusiasm for learning, and have a track record of adapting to new technologies./
+        /I'm a developer based in Edinburgh with 10 years experience. Although my background encompasses fullstack development, I have been focussing in the frontend space for the past 3 years. I have an enthusiasm for learning, and have a track record of adapting to new technologies./
       )
     ).toBeInTheDocument();
   });
