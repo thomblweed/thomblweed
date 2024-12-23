@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import { formatDate } from 'date-fns';
 
-import { PostMeta } from '~/routes/_blog-admin.blog._index';
+import { PostMeta } from '~/routes/blog._index';
 
 import './blog-feature.css';
 

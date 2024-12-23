@@ -1,4 +1,4 @@
-import { json, useLoaderData } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 
 import { BlogFeature } from '~/features/blog';
 
@@ -62,15 +62,13 @@ export type PostMeta = Frontmatter & {
 
 export const loader = async () => {
   const posts = import.meta.glob<{ frontmatter: Frontmatter }>(
-    '../routes/*.blog.*.mdx',
+    '../routes/blog.*.mdx',
     {
       eager: true
     }
   );
   const entries = Object.entries(posts).map(([file, post]) => {
-    const filename = file
-      .replace('./_blog-admin.blog.', '')
-      .replace(/\.mdx$/, '');
+    const filename = file.replace('./blog.', '').replace(/\.mdx$/, '');
 
     return {
       filename,
@@ -78,7 +76,7 @@ export const loader = async () => {
     };
   });
 
-  return json(entries);
+  return Response.json(entries);
 };
 
 export default function BlogRoute() {

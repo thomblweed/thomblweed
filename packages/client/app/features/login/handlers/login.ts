@@ -21,7 +21,7 @@ export const loginHandler = async (request: Request) => {
 
   if (error) {
     console.error({ loginError: error });
-    return json(
+    return Response.json(
       {
         loginError: 'An error occured when logging in'
       },
