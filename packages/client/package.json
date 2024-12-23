@@ -22,7 +22,7 @@
     "encrypt:env:dev": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.dev > .env.dev.enc",
     "encrypt:env:prod": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod > .env.prod.enc",
     "lint": "eslint --fix --cache --cache-location ../../node_modules/.cache/eslint .",
-    "sst:deploy": "sst deploy --stage prod",
+    "sst:deploy": "sst deploy --stage production",
     "sst:dev": "sst dev",
     "sst:remove": "sst remove",
     "sst:remove:prod": "sst remove --stage prod",
@@ -31,6 +31,9 @@
     "trace": "tsc --generateTrace ./trace && analyze-trace trace"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "sst": "3.4.27"
   }
 }
