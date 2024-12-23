@@ -1,42 +1,23 @@
-import type { SSTConfig } from 'sst';
-import { RemixSite } from 'sst/constructs';
+/// <reference path="./.sst/platform/config.d.ts" />
 
-export default {
-  config() {
+export default $config({
+  app(input) {
     return {
-      stage: 'dev',
       name: 'thomblweed-client',
-      region: 'eu-west-2',
-      cdk: {
-        fileAssetsBucketName: 'thomblweed-cdk-toolkit'
-      }
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
+      protect: ['production'].includes(input?.stage),
+      home: 'aws'
     };
   },
-  stacks(app) {
-    app.setDefaultFunctionProps({
-      runtime: 'nodejs20.x'
+  async run() {
+    new sst.aws.Remix('site', {
+      buildCommand: 'pnpm build',
+      path: '.',
+      edge: false,
+      domain: {
+        name: 'thomblweed.dev',
+        dns: sst.aws.dns({ zone: 'Z10479952V71QFTCNVY8Y' })
+      }
     });
-    app.stack(function Site({ stack }) {
-      const site = new RemixSite(stack, 'site', {
-        customDomain: {
-          domainName: 'thomblweed.dev'
-        },
-        buildCommand: 'pnpm build',
-        path: '.',
-        runtime: 'nodejs20.x',
-        edge: false,
-        environment: {
-          SUPABASE_URL: process.env.SUPABASE_URL || '',
-          SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || '',
-          SUPABASE_COOKIE_DOMAIN: process.env.SUPABASE_COOKIE_DOMAIN || ''
-        }
-      });
-      stack.addOutputs({
-        url: site.url
-      });
-    });
-    if (app.stage !== 'prod') {
-      app.setDefaultRemovalPolicy('destroy');
-    }
   }
-} satisfies SSTConfig;
+});
