@@ -13,7 +13,11 @@ export default $config({
     new sst.aws.Remix('site', {
       buildCommand: 'pnpm build',
       path: '.',
-      edge: false
+      edge: false,
+      domain: {
+        name: 'thomblweed.dev',
+        dns: sst.aws.dns({ zone: 'Z10479952V71QFTCNVY8Y' })
+      }
     });
   }
 });
