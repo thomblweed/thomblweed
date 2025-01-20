@@ -12,7 +12,7 @@
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "highlight.js": "^11.11.1",
-    "isbot": "^5.1.20",
+    "isbot": "^5.1.21",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rehype-highlight": "^7.0.1",
