@@ -8,7 +8,7 @@
     "@remix-run/node": "2.15.2",
     "@remix-run/react": "2.15.2",
     "@supabase/ssr": "^0.5.1",
-    "@supabase/supabase-js": "^2.47.12",
+    "@supabase/supabase-js": "^2.48.0",
     "cross-env": "^7.0.3",
     "date-fns": "^4.1.0",
     "highlight.js": "^11.11.1",
