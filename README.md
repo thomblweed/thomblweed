@@ -42,6 +42,8 @@ pnpm install
 
 ### development
 
+SST knows how to run the Remix app in dev mode. 
+
 ```sh
-task dev
+task sst:dev
 ```

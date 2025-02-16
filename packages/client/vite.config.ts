@@ -14,7 +14,12 @@ export default defineConfig({
     }),
     remix({
       ignoredRouteFiles: ['**/.*', '**/*.test.{js,jsx,ts,tsx}'],
-      serverBuildFile: 'index.js'
+      serverBuildFile: 'index.js',
+      future: {
+        unstable_optimizeDeps: true,
+        v3_fetcherPersist: true,
+        v3_relativeSplatPath: true
+      }
     }),
     tsconfigPaths()
   ]
