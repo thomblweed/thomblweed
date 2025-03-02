@@ -1,4 +1,4 @@
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router';
 import { formatDate } from 'date-fns';
 
 import { type PostMeta } from '~/routes/blog._index';

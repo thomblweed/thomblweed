@@ -1,5 +1,5 @@
-import type { ActionFunction } from '@remix-run/node';
-import { isRouteErrorResponse, useRouteError } from '@remix-run/react';
+import type { ActionFunction } from 'react-router';
+import { isRouteErrorResponse, useRouteError } from 'react-router';
 
 import { loginHandler } from '~/features/login/handlers/login';
 import { Login } from '~/features/login/Login';

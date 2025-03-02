@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "pnpm clean:build && pnpm build:css && pnpm build:remix",
+    "build": "pnpm clean:build && pnpm build:css && pnpm build:react-router",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
-    "build:remix": "remix vite:build",
+    "build:react-router": "react-router build",
     "clean": "pnpm clean:build && pnpm clean:public:build && pnpm clean:styles && pnpm clean:sst",
     "clean:build": "if [ -d \"build\" ]; then rm -rf \"build\"; fi",
     "clean:public:build": "if [ -d \"public/build\" ]; then rm -rf \"public/build\"; fi",
@@ -17,7 +17,7 @@
     "decrypt:env:prod": "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod.enc > .env.prod",
     "dev": "run-p \"dev:*\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
-    "dev:remix": "sst dev 'remix vite:dev'",
+    "dev:react-router": "sst dev 'react-router dev'",
     "encrypt": "pnpm encrypt:env:dev && pnpm encrypt:env:prod",
     "encrypt:env:dev": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.dev > .env.dev.enc",
     "encrypt:env:prod": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod > .env.prod.enc",
@@ -26,10 +26,10 @@
     "sst:dev": "sst dev",
     "sst:remove": "sst remove",
     "sst:remove:prod": "sst remove --stage prod",
-    "start": "NODE_ENV=production remix-serve build/server/index.js",
+    "start": "NODE_ENV=production react-router-serve build/server/index.js",
     "test": "vitest",
     "trace": "tsc --generateTrace ./trace && analyze-trace trace",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "react-router typegen && tsc --noEmit"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -1,14 +1,13 @@
-import { createRemixStub } from '@remix-run/testing';
 import { cleanup, render, screen, within } from '@testing-library/react';
 import fc from 'fast-check';
+import { createRoutesStub } from 'react-router';
 import { vi } from 'vitest';
 
 import { BlogInfo } from './index';
 
 describe('When "isAdmin" is FALSE', () => {
-  vi.mock('@remix-run/react', async () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const actual = (await vi.importActual('@remix-run/react')) as any;
+  vi.mock('react-router', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('react-router')>();
     return {
       ...actual,
       useOutletContext: () => ({ isAdmin: false })
@@ -27,7 +26,7 @@ describe('When "isAdmin" is FALSE', () => {
           fc.nat(),
           fc.string().filter(stringsHaveLength),
           (id, title) => {
-            const RemixStub = createRemixStub([
+            const RemixStub = createRoutesStub([
               {
                 path: '/',
                 Component: () => <BlogInfo id={id} title={title} />
@@ -55,7 +54,7 @@ describe('When "isAdmin" is FALSE', () => {
           fc.nat(),
           fc.string().filter(stringHaveNoLength),
           (id, title) => {
-            const RemixStub = createRemixStub([
+            const RemixStub = createRoutesStub([
               {
                 path: '/',
                 Component: () => <BlogInfo id={id} title={title} />

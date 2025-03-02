@@ -1,13 +1,5 @@
-import {
-  Links,
-  Meta,
-  MetaFunction,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useMatches
-} from '@remix-run/react';
-import { LinksFunction } from '@remix-run/react/dist/routeModules';
+import { Links, Meta, MetaFunction, Outlet, Scripts, ScrollRestoration, useMatches } from 'react-router';
+import { LinksFunction } from '@react-router/react/dist/routeModules';
 import type { ReactNode } from 'react';
 
 import { MainLayout } from '~/layouts/MainLayout';

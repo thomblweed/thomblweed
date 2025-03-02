@@ -1,9 +1,4 @@
-import {
-    index,
-    layout,
-    route,
-    type RouteConfig
-} from '@remix-run/route-config';
+import { index, layout, route, type RouteConfig } from '@react-router/dev/routes';
 
 const getBlogRoutes = () =>
     Object.keys(import.meta.glob('./routes/blog.*.mdx')).map((file) => {

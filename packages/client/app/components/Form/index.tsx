@@ -1,5 +1,5 @@
-import type { FormMethod } from '@remix-run/react';
-import { Form as RemixForm } from '@remix-run/react';
+import type { FormMethod } from 'react-router';
+import { Form as RemixForm } from 'react-router';
 import type { RefAttributes } from 'react';
 
 import { Button } from '../Elements/Button';
