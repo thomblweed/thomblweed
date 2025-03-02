@@ -1,5 +1,5 @@
-import { Link } from 'react-router';
 import { formatDate } from 'date-fns';
+import { Link } from 'react-router';
 
 import { type PostMeta } from '~/routes/blog._index';
 

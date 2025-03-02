@@ -1,6 +1,14 @@
-import { Links, Meta, MetaFunction, Outlet, Scripts, ScrollRestoration, useMatches } from 'react-router';
-import { LinksFunction } from '@react-router/react/dist/routeModules';
 import type { ReactNode } from 'react';
+import {
+  Links,
+  type LinksFunction,
+  Meta,
+  type MetaFunction,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useMatches
+} from 'react-router';
 
 import { MainLayout } from '~/layouts/MainLayout';
 import '~/styles/font.css';
