@@ -2,18 +2,24 @@
 
 export default $config({
   app(input) {
+    const isProduction = input?.stage === 'production';
+
     return {
       name: 'thomblweed-client',
-      removal: input?.stage === 'production' ? 'retain' : 'remove',
-      protect: ['production'].includes(input?.stage),
-      home: 'aws'
+      removal: isProduction ? 'retain' : 'remove',
+      protect: isProduction,
+      home: 'aws',
+      providers: {
+        aws: {
+          region: 'eu-west-2'
+        }
+      }
     };
   },
   async run() {
-    new sst.aws.Remix('site', {
+    new sst.aws.React('site', {
       buildCommand: 'pnpm build',
       path: '.',
-      edge: false,
       domain: {
         name: 'thomblweed.dev',
         dns: sst.aws.dns({ zone: 'Z10479952V71QFTCNVY8Y' })
