@@ -6,7 +6,7 @@ export {}
 declare module "sst" {
   export interface Resource {
     "site": {
-      "type": "sst.aws.Remix"
+      "type": "sst.aws.React"
       "url": string
     }
   }

@@ -12,3 +12,4 @@ server.js
 
 app/styles
 *.config.*
+sst-platform-override
