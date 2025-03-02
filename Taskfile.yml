@@ -121,3 +121,8 @@ tasks:
     dir: packages/client
     cmds:
       - pnpm typecheck
+
+  check:
+    cmds:
+      - pnpm check
+
