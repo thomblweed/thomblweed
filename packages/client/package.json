@@ -28,7 +28,8 @@
     "sst:remove:prod": "sst remove --stage prod",
     "start": "NODE_ENV=production remix-serve build/server/index.js",
     "test": "vitest",
-    "trace": "tsc --generateTrace ./trace && analyze-trace trace"
+    "trace": "tsc --generateTrace ./trace && analyze-trace trace",
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20.0.0"

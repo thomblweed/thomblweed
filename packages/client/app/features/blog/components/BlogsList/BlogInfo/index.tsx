@@ -16,7 +16,7 @@ export const BlogInfo = ({ id, title }: BlogInfoProps) => {
   return (
     <article className="blog-info">
       {trimmmedTitle.length ? (
-        <Link to={`/blogs/${id}`}>
+        <Link to={`../${id}`}>
           <h3>{trimmmedTitle}</h3>
         </Link>
       ) : null}
