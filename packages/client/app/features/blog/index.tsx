@@ -1,27 +1,9 @@
-import { Link } from '@remix-run/react';
 import { formatDate } from 'date-fns';
+import { Link } from 'react-router';
 
-import { PostMeta } from '~/routes/blog._index';
+import { type PostMeta } from '~/routes/blog._index';
 
 import './blog-feature.css';
-
-// type BlogsProps = {
-//   data: BlogData[] | null;
-//   isAdmin: boolean;
-// };
-
-// export const BlogsFeature = ({ data, isAdmin }: BlogsProps) => (
-//   <Section>
-//     <h2>Blog</h2>
-//     {isAdmin ? (
-//       <BlogAdminLayout>
-//         <BlogsList data={data} />
-//       </BlogAdminLayout>
-//     ) : (
-//       <BlogsList data={data} />
-//     )}
-//   </Section>
-// );
 
 export const BlogFeature = ({ posts }: { posts: PostMeta[] }) => {
   return (

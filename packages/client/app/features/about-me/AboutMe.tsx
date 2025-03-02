@@ -20,23 +20,6 @@ export const AboutMe = () => (
           </p>
         </div>
         <Tooling />
-        {/* <picture className="profile-picture"> */}
-        {/*   <source */}
-        {/*     media="(min-width: 48rem)" */}
-        {/*     srcSet="/images/thom-620.webp" */}
-        {/*     type="image/webp" */}
-        {/*     width={310} */}
-        {/*     height={310} */}
-        {/*   /> */}
-        {/*   <img */}
-        {/*     src="/images/thom-620.webp" */}
-        {/*     itemType="image/webp" */}
-        {/*     alt="thomas newman" */}
-        {/*     width={240} */}
-        {/*     height={240} */}
-        {/*     className="profile-img" */}
-        {/*   /> */}
-        {/* </picture> */}
       </div>
     </Section>
     <Section color="dark-red">

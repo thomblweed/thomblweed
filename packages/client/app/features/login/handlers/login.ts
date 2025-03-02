@@ -1,4 +1,4 @@
-import { json, redirect } from '@remix-run/node';
+import { redirect } from 'react-router';
 
 import { getFormValuesFromRequest } from '~/utils';
 
@@ -11,7 +11,7 @@ export const loginHandler = async (request: Request) => {
     LoginFields.PASSWORD
   ])) as string[];
   if (email == null || password == null) {
-    return json({ loginError: 'email and/or password must be provided' });
+    return {loginError: 'email and/or password must be provided' };
   }
 
   const { error, headers } = await loginUserWithEmailAndPassword(request, {

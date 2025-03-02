@@ -1,4 +1,4 @@
-import { Outlet } from '@remix-run/react';
+import { Outlet } from 'react-router';
 import 'highlight.js/styles/base16/dark-violet.css';
 
 import { Section } from '~/components/Section';

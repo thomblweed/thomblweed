@@ -1,14 +1,14 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import type { ReactNode } from 'react';
 import {
   Links,
-  LiveReload,
+  type LinksFunction,
   Meta,
+  type MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
   useMatches
-} from '@remix-run/react';
-import type { ReactNode } from 'react';
+} from 'react-router';
 
 import { MainLayout } from '~/layouts/MainLayout';
 import '~/styles/font.css';
@@ -59,7 +59,6 @@ const Document = ({ children }: { children: ReactNode }) => {
       <body>
         {children}
         <ScrollRestoration />
-        <LiveReload />
         {includeScripts ? <Scripts /> : null}
       </body>
     </html>

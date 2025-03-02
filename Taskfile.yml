@@ -114,3 +114,10 @@ tasks:
     dir: packages/client
     cmds:
       - pnpm trace
+
+  typecheck:
+    deps: [typecheck:client]
+  typecheck:client:
+    dir: packages/client
+    cmds:
+      - pnpm typecheck

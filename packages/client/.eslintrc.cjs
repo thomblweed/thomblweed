@@ -59,11 +59,11 @@ module.exports = {
         'import/internal-regex': '^~/',
         'import/resolver': {
           node: {
-            extensions: ['.ts', '.tsx']
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.css']
           },
           typescript: {
             alwaysTryTypes: true,
-            project: './packages/client/tsconfig.json'
+            project: './tsconfig.json'
           }
         }
       },

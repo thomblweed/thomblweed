@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from '@remix-run/react';
+import { Link, useOutletContext } from 'react-router';
 
 import { DeleteBlog } from '../../../features/admin/delete-blog';
 import type { AdminContext } from '../../../features/admin/types/AdminContext.type';
@@ -16,7 +16,7 @@ export const BlogInfo = ({ id, title }: BlogInfoProps) => {
   return (
     <article className="blog-info">
       {trimmmedTitle.length ? (
-        <Link to={`/blogs/${id}`}>
+        <Link to={`../${id}`}>
           <h3>{trimmmedTitle}</h3>
         </Link>
       ) : null}

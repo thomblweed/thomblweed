@@ -1,22 +1,27 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["env.d.ts", "mdx.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "env.d.ts",
+    "mdx.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".react-router/types/**/*"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "vite/client", "@react-router/node"],
     "isolatedModules": true,
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "skipLibCheck": true,
     "resolveJsonModule": true,
-    "target": "ES2022",
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"],
       "@types": ["../types/src/index.ts"]
     },
+    "rootDirs": [".", "./.react-router/types"],
 
     // Vite takes care of building everything, not tsc.
     "noEmit": true

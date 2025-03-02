@@ -1,5 +1,5 @@
 import mdx from '@mdx-js/rollup';
-import { vitePlugin as remix } from '@remix-run/dev';
+import { reactRouter } from '@react-router/dev/vite';
 import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
@@ -12,10 +12,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       rehypePlugins: [rehypeHighlight]
     }),
-    remix({
-      ignoredRouteFiles: ['**/.*', '**/*.test.{js,jsx,ts,tsx}'],
-      serverBuildFile: 'index.js'
-    }),
+    reactRouter(),
     tsconfigPaths()
   ]
 });
