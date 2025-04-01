@@ -62,7 +62,7 @@
     "supabase": "2.15.8",
     "ts-node": "10.9.2",
     "typescript": "5.8.2",
-    "vite": "5.4.12",
+    "vite": "5.4.16",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.1.1"
   }
