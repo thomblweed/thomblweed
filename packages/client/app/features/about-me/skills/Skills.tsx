@@ -1,5 +1,5 @@
 import './skills.css';
-import { type SkillsData } from './types';
+import type { SkillsData } from './types';
 
 type SkillsProps = {
   data: SkillsData[];

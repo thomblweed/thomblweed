@@ -14,7 +14,7 @@ export const AboutMe = () => (
           <p>
             I&apos;m a developer based in Edinburgh with 10 years experience.
             Although my background encompasses fullstack development, I have
-            been focussing in the frontend space for the past 3 years. I have an
+            been focussing in the frontend space for the past 4 years. I have an
             enthusiasm for learning, and have a track record of adapting to new
             technologies.
           </p>
