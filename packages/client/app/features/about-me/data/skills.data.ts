@@ -6,8 +6,7 @@ export const skillsData: SkillsData[] = [
     skills: [
       'React',
       'React Router',
-      'Tanstack Table',
-      'Tanstack Form',
+      'Tanstack Query/Table/Form',
       'XState',
       'Redux/Toolkit',
       'Mobx',
@@ -52,7 +51,7 @@ export const skillsData: SkillsData[] = [
   },
   {
     heading: 'ci/cd',
-    skills: ['Git', 'Azure Devops', 'GitHub Actions']
+    skills: ['Git', 'Azure Devops', 'GitHub Actions', 'Bitbucket']
   },
   {
     heading: 'database',
