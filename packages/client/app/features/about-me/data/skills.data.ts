@@ -6,16 +6,14 @@ export const skillsData: SkillsData[] = [
     skills: [
       'React',
       'React Router',
-      'Tanstack Query/Table/Form',
+      'Tanstack Query / Table / Form',
       'XState',
-      'Redux/Toolkit',
-      'Mobx',
-      'React Hook Form'
+      'Redux Toolkit'
     ]
   },
   {
     heading: 'frameworks',
-    skills: ['Remix/React Router 7', 'Next', 'Node', 'Express', 'Koa']
+    skills: ['Remix / React Router 7', 'Next', 'Node', 'Express', 'Koa']
   },
   {
     heading: 'styling',
