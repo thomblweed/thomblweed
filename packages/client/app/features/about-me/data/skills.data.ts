@@ -3,7 +3,13 @@ import { type SkillsData } from '../skills/types';
 export const skillsData: SkillsData[] = [
   {
     heading: 'libraries',
-    skills: ['React', 'React Router', 'Tanstack Query / Table / Form']
+    skills: [
+      'React',
+      'React Router',
+      'Tanstack Query / Table / Form',
+      'Shadcn',
+      'MiddyJS'
+    ]
   },
   {
     heading: 'frameworks',
