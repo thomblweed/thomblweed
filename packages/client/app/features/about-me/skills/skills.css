@@ -1,11 +1,12 @@
 .skill-container {
   margin: 0 auto;
+  max-width: 74.5rem;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7.5rem, auto));
-  gap: var(--spacing-300);
+  gap: var(--spacing-400);
   justify-content: center;
 }
 
@@ -23,7 +24,7 @@
 
 @media (min-width: 48rem) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
     justify-content: start;
   }
 }
