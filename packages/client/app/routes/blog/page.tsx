@@ -13,14 +13,11 @@ export type PostMeta = Frontmatter & {
 };
 
 export const loader = async () => {
-  const posts = import.meta.glob<{ frontmatter: Frontmatter }>(
-    '../routes/blog.*.mdx',
-    {
-      eager: true
-    }
-  );
+  const posts = import.meta.glob<{ frontmatter: Frontmatter }>('./*.mdx', {
+    eager: true
+  });
   const entries = Object.entries(posts).map(([file, post]) => {
-    const filename = file.replace('./blog.', '').replace(/\.mdx$/, '');
+    const filename = file.replace('./blog', '').replace(/\.mdx$/, '');
 
     return {
       filename,
