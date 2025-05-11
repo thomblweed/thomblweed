@@ -92,7 +92,7 @@ h3 {
 
 a {
   color: var(--clr-primary);
-  text-underline-offset: 0.25rem;
+  text-decoration: none;
   transition: var(--transition-duration) ease-out;
 }
 
