@@ -10,7 +10,7 @@ export const LoginForm = () => {
 
   return (
     <Form
-      method="post"
+      method="POST"
       schema={{
         fields: [
           {

@@ -11,9 +11,9 @@ import {
 } from 'react-router';
 
 import { MainLayout } from '~/layouts/MainLayout';
-import '~/styles/font.css';
-import '~/styles/reset.css';
-import '~/styles/styles.css';
+import '../styles/font.css';
+import '../styles/reset.css';
+import '../styles/styles.css';
 
 export const links: LinksFunction = () => [
   {
