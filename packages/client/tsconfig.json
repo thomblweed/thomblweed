@@ -1,12 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": [
-    "mdx.d.ts",
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "test/**/*.tsx",
-    "test/**/*.ts"
-  ],
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": [".sst", "sst-platform-override", "node_modules"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "types": ["vitest/globals", "vite/client", "@react-router/node"],
