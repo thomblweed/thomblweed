@@ -21,7 +21,7 @@
     "react-router": "7.5.3",
     "rehype-highlight": "7.0.2",
     "remark-frontmatter": "5.0.0",
-    "remark-mdx-frontmatter": "5.1.0"
+    "remark-mdx-frontmatter": "5.2.0"
   },
   "devDependencies": {
     "@react-router/dev": "7.6.1",
