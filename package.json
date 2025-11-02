@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@mdx-js/rollup": "3.1.0",
-    "@react-router/node": "7.6.1",
+    "@react-router/node": "7.9.5",
     "@supabase/ssr": "0.6.1",
     "@supabase/supabase-js": "2.78.0",
     "clsx": "^2.1.1",
@@ -24,10 +24,10 @@
     "remark-mdx-frontmatter": "5.2.0"
   },
   "devDependencies": {
-    "@react-router/dev": "7.6.1",
-    "@react-router/fs-routes": "7.6.1",
-    "@react-router/remix-routes-option-adapter": "7.6.1",
-    "@react-router/serve": "7.6.1",
+    "@react-router/dev": "7.9.5",
+    "@react-router/fs-routes": "7.9.5",
+    "@react-router/remix-routes-option-adapter": "7.9.5",
+    "@react-router/serve": "7.9.5",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.3.0",
     "@types/react": "19.1.17",
