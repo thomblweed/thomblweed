@@ -23,6 +23,9 @@ export default $config({
       domain: {
         name: 'thomblweed.dev',
         dns: sst.aws.dns({ zone: 'Z10479952V71QFTCNVY8Y' })
+      },
+      server: {
+        runtime: 'nodejs22.x'
       }
     });
   }
