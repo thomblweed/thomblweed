@@ -28,7 +28,7 @@ tasks:
       - pnpm build
 
   start:
-    deps: [start:client, start:supabase]
+    deps: [start:client]
   start:client:
     dir: packages/client
     cmds:
@@ -125,4 +125,3 @@ tasks:
   check:
     cmds:
       - pnpm check
-
