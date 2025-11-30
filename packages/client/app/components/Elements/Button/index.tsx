@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 import './button.css';
