@@ -1,2 +1,8 @@
 packages:
-  - 'packages/*'
+  - packages/*
+
+onlyBuiltDependencies:
+  - aws-sdk
+  - esbuild
+  - supabase
+  - unrs-resolver

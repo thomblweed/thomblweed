@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "pnpm clean:build && pnpm build:css && pnpm build:react-router",
+    "build": "pnpm build:css && pnpm build:react-router",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
     "build:react-router": "react-router build",
     "clean": "pnpm clean:build && pnpm clean:public:build && pnpm clean:styles && pnpm clean:sst",
@@ -17,7 +17,7 @@
     "decrypt:env:prod": "sops --input-type dotenv --decrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod.enc > .env.prod",
     "dev": "run-p \"dev:*\"",
     "dev:css": "postcss styles --base styles --dir app/styles -w",
-    "dev:react-router": "sst dev 'react-router dev'",
+    "dev:react-router": "react-router dev",
     "encrypt": "pnpm encrypt:env:dev && pnpm encrypt:env:prod",
     "encrypt:env:dev": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.dev > .env.dev.enc",
     "encrypt:env:prod": "sops --input-type dotenv --encrypt --output-type dotenv --age $(cat $SOPS_AGE_KEY_FILE |grep -oP \"public key: \\K(.*)\") .env.prod > .env.prod.enc",
@@ -32,9 +32,6 @@
     "typecheck": "react-router typegen && tsc --noEmit"
   },
   "engines": {
-    "node": ">=20.0.0"
-  },
-  "dependencies": {
-    "sst": "3.4.27"
+    "node": ">=22.0.0"
   }
 }
