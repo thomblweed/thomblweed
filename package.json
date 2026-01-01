@@ -51,7 +51,7 @@
     "eslint-plugin-markdown": "5.1.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "5.2.0",
-    "eslint-plugin-testing-library": "7.13.5",
+    "eslint-plugin-testing-library": "7.15.4",
     "fast-check": "4.3.0",
     "happy-dom": "20.0.11",
     "npm-check-updates": "19.2.0",
