@@ -43,6 +43,9 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         run: pnpm install
+      - uses: pulumi/actions@v5
+        with:
+          pulumi-version: 3.147.0
       - name: Deploy
         working-directory: packages/client
         run: task deploy
