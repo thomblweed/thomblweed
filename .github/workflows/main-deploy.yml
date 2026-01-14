@@ -26,9 +26,11 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::576859581264:role/GitHub
           aws-region: eu-west-2
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 10
       - name: Use Node.js 22
         uses: actions/setup-node@v3
         with:
