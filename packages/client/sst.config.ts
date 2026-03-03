@@ -25,7 +25,7 @@ export default $config({
         dns: sst.aws.dns({ zone: 'Z10479952V71QFTCNVY8Y' })
       },
       server: {
-        runtime: 'nodejs22.x'
+        runtime: 'nodejs24.x'
       }
     });
   }
