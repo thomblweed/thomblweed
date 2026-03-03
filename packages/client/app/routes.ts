@@ -17,5 +17,4 @@ export default [
     route('blog', 'routes/blog/page.tsx', { index: true }),
     ...getBlogRoutes()
   ]),
-  route('login', 'routes/login.tsx')
 ] satisfies RouteConfig;
