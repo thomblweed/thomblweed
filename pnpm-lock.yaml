@@ -92,10 +92,10 @@ importers:
         version: 10.4.27(postcss@8.5.9)
       aws-cdk-lib:
         specifier: 2.248.0
-        version: 2.248.0(constructs@10.5.1)
+        version: 2.248.0(constructs@10.6.0)
       constructs:
-        specifier: 10.5.1
-        version: 10.5.1
+        specifier: 10.6.0
+        version: 10.6.0
       cssnano:
         specifier: 7.1.4
         version: 7.1.4(postcss@8.5.9)
@@ -1541,8 +1541,8 @@ packages:
   confbox@0.2.2:
     resolution: {integrity: sha512-1NB+BKqhtNipMsov4xI/NnhCKp9XG9NamYp5PVm9klAT0fsrNPjaFICsCFhNhwZJKNh7zB/3q8qXz0E9oaMNtQ==}
 
-  constructs@10.5.1:
-    resolution: {integrity: sha512-f/TfFXiS3G/yVIXDjOQn9oTlyu9Wo7Fxyjj7lb8r92iO81jR2uST+9MstxZTmDGx/CgIbxCXkFXgupnLTNxQZg==}
+  constructs@10.6.0:
+    resolution: {integrity: sha512-TxHOnBO5zMo/G76ykzGF/wMpEHu257TbWiIxP9K0Yv/+t70UzgBQiTqjkAsWOPC6jW91DzJI0+ehQV6xDRNBuQ==}
 
   content-disposition@0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
@@ -5350,12 +5350,12 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  aws-cdk-lib@2.248.0(constructs@10.5.1):
+  aws-cdk-lib@2.248.0(constructs@10.6.0):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.273
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.1
       '@aws-cdk/cloud-assembly-schema': 53.13.0
-      constructs: 10.5.1
+      constructs: 10.6.0
 
   aws4fetch@1.0.18: {}
 
@@ -5566,7 +5566,7 @@ snapshots:
 
   confbox@0.2.2: {}
 
-  constructs@10.5.1: {}
+  constructs@10.6.0: {}
 
   content-disposition@0.5.4:
     dependencies:
