@@ -38,6 +38,10 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Local tooling caches
+.ncu-config
+.pnpm-store
+
 # Remix files
 packages/client/**/build
 packages/client/**/.cache
