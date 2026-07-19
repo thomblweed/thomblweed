@@ -36,7 +36,7 @@
     "@vitejs/plugin-react": "5.2.0",
     "@vitest/coverage-v8": "4.1.10",
     "autoprefixer": "10.5.4",
-    "aws-cdk-lib": "2.248.0",
+    "aws-cdk-lib": "2.261.0",
     "constructs": "10.6.0",
     "cssnano": "7.1.9",
     "eslint": "8.57.1",
