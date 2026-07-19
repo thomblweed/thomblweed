@@ -1,6 +1,14 @@
 packages:
   - packages/*
 
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - postcss@8.5.20
+  - happy-dom@20.11.0
+
 onlyBuiltDependencies:
   - aws-sdk
   - esbuild
