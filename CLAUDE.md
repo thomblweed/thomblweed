@@ -1,8 +1,3 @@
----
-description: Git commit and push conventions
-alwaysApply: true
----
-
 # Git commits and pushes
 
 - Use **Conventional Commits** for all commits the agent creates:
