@@ -26,7 +26,7 @@
     "@react-router/fs-routes": "7.18.1",
     "@react-router/remix-routes-option-adapter": "7.18.1",
     "@react-router/serve": "7.18.1",
-    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.5",
