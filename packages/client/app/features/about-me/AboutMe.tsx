@@ -12,9 +12,9 @@ export const AboutMe = () => (
         <div className="about-me">
           <h2>Hi, I&apos;m Thom!</h2>
           <p>
-            I&apos;m a developer based in Edinburgh with 11 years experience.
+            I&apos;m a developer based in Edinburgh with 12 years experience.
             Although my background encompasses fullstack development, I have
-            been focussing in the frontend space for the past 4 years. I have an
+            been focussing in the frontend space for the past 5 years. I have an
             enthusiasm for learning, and have a track record of adapting to new
             technologies.
           </p>
